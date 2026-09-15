@@ -1,5 +1,5 @@
 {
-  "name": "infra-inspector",
+  "name": "nabz",
   "version": "0.2.0",
   "private": true,
   "description": "Chrome extension (Manifest V3) that surfaces CDN / edge / backend infrastructure headers for the currently inspected page.",

@@ -1,4 +1,4 @@
-# Infra Inspector
+# Nabz
 
 A small Manifest V3 Chrome extension that reads the response headers of the
 current page's main document and surfaces what they reveal about the
@@ -70,11 +70,11 @@ labels, rendering, styling).
 
 ## 2. Required Chrome permissions
 
-| Permission | Why |
-|---|---|
-| `webRequest` | Lets the background service worker read response headers (`onResponseStarted`, read-only) for the popup's data path. No `webRequestBlocking` is requested - the extension never modifies or delays a request. |
-| `storage` | Used exclusively for `chrome.storage.session`, an in-memory, per-browser-session store, to hand the latest captured headers from the service worker to the popup. Nothing is written to disk. |
-| `host_permissions: http://*/*`, `https://*/*` | `webRequest` only reports headers for origins the extension has host permission for. Because the extension's entire purpose is inspecting *whichever* site you're currently on, and the popup must show data the instant you click the icon (i.e. before any user gesture could grant a narrower, on-demand permission), a static broad host permission is the only way to reliably capture the real navigation's headers without an extra duplicate request. |
+| Permission                                    | Why                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `webRequest`                                  | Lets the background service worker read response headers (`onResponseStarted`, read-only) for the popup's data path. No `webRequestBlocking` is requested - the extension never modifies or delays a request.                                                                                                                                                                                                                                                 |
+| `storage`                                     | Used exclusively for `chrome.storage.session`, an in-memory, per-browser-session store, to hand the latest captured headers from the service worker to the popup. Nothing is written to disk.                                                                                                                                                                                                                                                                 |
+| `host_permissions: http://*/*`, `https://*/*` | `webRequest` only reports headers for origins the extension has host permission for. Because the extension's entire purpose is inspecting _whichever_ site you're currently on, and the popup must show data the instant you click the icon (i.e. before any user gesture could grant a narrower, on-demand permission), a static broad host permission is the only way to reliably capture the real navigation's headers without an extra duplicate request. |
 
 No other permissions are requested. In particular:
 
@@ -96,7 +96,7 @@ No other permissions are requested. In particular:
 An `activeTab`-only design (re-`fetch()` the page when the popup opens,
 instead of a persistent `webRequest` listener) was considered, since it
 avoids a standing broad host permission. It was rejected because it issues
-a *second*, duplicate request for every popup open - which can return
+a _second_, duplicate request for every popup open - which can return
 different edge/PoP/cache-status values than the actual page load (cache
 state, load balancing, edge routing all vary request-to-request), directly
 undermining the tool's purpose of reporting what the real navigation saw.
@@ -105,8 +105,8 @@ undermining the tool's purpose of reporting what the real navigation saw.
 
 - **Background / popup path:** `chrome.webRequest.onResponseStarted` is
   registered with `types: ["main_frame"]` and `extraInfoSpec:
-  ["responseHeaders"]`. This event fires once per top-level navigation,
-  and only for the *final* response - Chrome fires `onBeforeRedirect`
+["responseHeaders"]`. This event fires once per top-level navigation,
+  and only for the _final_ response - Chrome fires `onBeforeRedirect`
   instead for 3xx hops, so intermediate redirects never pollute the
   capture. Headers are merged into a plain `Record<string, string>`
   (joining duplicate header names with `, `, matching the Fetch API's
@@ -175,7 +175,7 @@ npm test                # vitest run (parser unit tests)
 3. Enable **Developer mode** (top-right toggle).
 4. Click **Load unpacked** and select the `dist/` directory produced by the
    build.
-5. Pin the "Infra Inspector" icon from the extensions toolbar menu if you
+5. Pin the "Nabz" icon from the extensions toolbar menu if you
    want it visible at all times.
 
 After editing source files, either re-run `npm run build` (or leave
@@ -192,7 +192,7 @@ usually exercise both parsers at once.
    `myshopify.com` domain, or any custom domain you know is Shopify-backed).
 3. Click the extension icon:
    - **Overview** should show `Provider: Cloudflare` and `Platform:
-     Shopify`.
+Shopify`.
    - **Cloudflare** should show a `Ray ID` and a parsed `PoP` code (a
      3-4 letter airport code, e.g. `MXP`, `FRA`, `SJC`).
    - **Application / Origin** should show the Shopify `Request ID` and,
@@ -203,7 +203,7 @@ usually exercise both parsers at once.
      `Server-Timing` header with those metric names.
    - Expand **Raw headers** to confirm every value shown above traces back
      to an actual response header.
-4. Open DevTools (`F12` / right-click → *Inspect*) on the same page, select
+4. Open DevTools (`F12` / right-click → _Inspect_) on the same page, select
    the **Infra** panel, then reload the page. A new entry (`Request 1`)
    should appear in the left-hand navigation history with a one-line
    summary (Cloudflare PoP, Shopify node, datacenter region). Navigate to
