@@ -1,0 +1,80 @@
+{
+  "apiBlockIndex": 4,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "low",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01DTMVQm62MbRvJWxVWinCLR",
+        "input": {
+          "query": "Shopify x-request-id header support documentation"
+        },
+        "name": "WebSearch",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf56tmVZmrmigVGAQL319",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 4093,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 4093,
+      "cache_read_input_tokens": 126860,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 4093,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 4093,
+          "cache_read_input_tokens": 126860,
+          "input_tokens": 2,
+          "output_tokens": 357,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 357,
+      "output_tokens_details": {
+        "thinking_tokens": 37
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "b7bfa964-b4ee-49e6-8126-864f5a6f2b3d",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf56tm2HXq9wgCR9CuXT8",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:55:07.746Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "0f33f5ac-0515-47f9-9b4d-9d8fb41e61c5",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01DTMVQm62MbRvJWxVWinCLR": {
+      "query": "Shopify x-request-id header support documentation"
+    }
+  }
+}

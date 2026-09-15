@@ -1,0 +1,36 @@
+{
+  "attachment": {
+    "changes": [
+      {
+        "field": "isGitRepo"
+      }
+    ],
+    "snapshot": {
+      "additionalWorkingDirectories": [],
+      "isGitRepo": true,
+      "isWorktree": false,
+      "osVersion": "Darwin 25.6.0",
+      "platform": "darwin",
+      "scratchpadDirectory": "/private/tmp/claude-501/-Users-andreacollet-Projects-nabz/e8bbb107-a9de-473f-931b-c4e312de1e8e/scratchpad",
+      "shell": "zsh",
+      "workingDirectory": "/Users/andreacollet/Projects/nabz"
+    },
+    "type": "environment"
+  },
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "parentUuid": "d4cfc00b-08fc-4cd8-8b24-6a265aa9c217",
+  "rendered": [
+    {
+      "content": "\u003csystem-reminder\u003e\n# Environment update\n - Is a git repository: true (was false)\n\u003c/system-reminder\u003e"
+    }
+  ],
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:54:31.974Z",
+  "type": "attachment",
+  "userType": "external",
+  "uuid": "ee88b930-b2d7-4be1-80ff-e40d5074cdcd",
+  "version": "2.1.270"
+}

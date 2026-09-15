@@ -8,6 +8,13 @@ Shopify), serving-node identifiers, and Server-Timing breakdowns.
 It is a local, read-only diagnostic tool. It makes no network requests of
 its own, sends no data anywhere, and has no backend.
 
+Every identifier has a copy button, and most rows have an (i) info button:
+click it for a one-line explanation of what the value actually is and,
+when a genuine canonical public page exists for it, a link to that page.
+Fields with no single authoritative public reference (e.g. a platform's
+internal request ID) get an explanation but no link - see
+`src/parsers/docs.ts`, which is the one place all of that copy lives.
+
 ## 1. Architecture
 
 ```

@@ -1,0 +1,22 @@
+{
+  "attachment": {
+    "text": "\u003ctotal_tokens\u003e14966473 tokens left\u003c/total_tokens\u003e",
+    "type": "total_tokens_reminder"
+  },
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "parentUuid": "312a6738-53a4-487a-a05b-89ecfd170767",
+  "rendered": [
+    {
+      "content": "\u003csystem-reminder\u003e\n\u003ctotal_tokens\u003e14966473 tokens left\u003c/total_tokens\u003e\n\u003c/system-reminder\u003e"
+    }
+  ],
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:58:11.006Z",
+  "type": "attachment",
+  "userType": "external",
+  "uuid": "ef424e64-e7e6-4aad-af9b-eab32050e4b4",
+  "version": "2.1.270"
+}

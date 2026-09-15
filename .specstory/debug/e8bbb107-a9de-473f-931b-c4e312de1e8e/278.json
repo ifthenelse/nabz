@@ -1,0 +1,69 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "low",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "signature": "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",
+        "thinking": "",
+        "type": "thinking"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf56vGU817Re9URj1apvH",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6276,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 6276,
+      "cache_read_input_tokens": 130953,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 6276,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 6276,
+          "cache_read_input_tokens": 130953,
+          "input_tokens": 2,
+          "output_tokens": 1106,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1106,
+      "output_tokens_details": {
+        "thinking_tokens": 829
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "a61820ae-de78-4ae2-b460-b61f4b854cd3",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf56vFwcxmHhaKww6L7vW",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:55:34.607Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "59a6a0f5-ec93-42b9-8e71-e468c1ba5be5",
+  "version": "2.1.270"
+}

@@ -1,0 +1,28 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "text": "Provide an info button for each item that displays a tooltip with a short description and possibly a link to a public documentation",
+        "type": "text"
+      }
+    ],
+    "role": "user"
+  },
+  "origin": {
+    "kind": "human"
+  },
+  "parentUuid": "251c1053-894b-4776-a847-c5b82dfaa9ad",
+  "permissionMode": "auto",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "promptSource": "sdk",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:54:31.974Z",
+  "type": "user",
+  "userType": "external",
+  "uuid": "d4cfc00b-08fc-4cd8-8b24-6a265aa9c217",
+  "version": "2.1.270"
+}

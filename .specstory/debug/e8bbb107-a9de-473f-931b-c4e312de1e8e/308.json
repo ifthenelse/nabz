@@ -1,0 +1,85 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "low",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01MopsBURxp85qmaay17fmQs",
+        "input": {
+          "file_path": "/Users/andreacollet/Projects/nabz/src/utils/render.ts",
+          "new_string": "export function renderCapture(container: HTMLElement, capture: Capture | undefined): void {\n  container.replaceChildren();\n  openTooltip = null;\n\n  if (!capture) {",
+          "old_string": "export function renderCapture(container: HTMLElement, capture: Capture | undefined): void {\n  container.replaceChildren();\n\n  if (!capture) {",
+          "replace_all": false
+        },
+        "name": "Edit",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf575Xbi3yfqrx4AJh2uP",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1650,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 1650,
+      "cache_read_input_tokens": 154684,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1650,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 1650,
+          "cache_read_input_tokens": 154684,
+          "input_tokens": 2,
+          "output_tokens": 269,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 269,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "b21703a5-8742-4dc0-ba33-8c1dd03b15bf",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf575X6gqqvkp2vJJUeee",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:57:33.416Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "b7ead6d3-81a2-4c20-92ab-2dc4324394df",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01MopsBURxp85qmaay17fmQs": {
+      "file_path": "/Users/andreacollet/Projects/nabz/src/utils/render.ts",
+      "new_string": "export function renderCapture(container: HTMLElement, capture: Capture | undefined): void {\n  container.replaceChildren();\n  openTooltip = null;\n\n  if (!capture) {",
+      "old_string": "export function renderCapture(container: HTMLElement, capture: Capture | undefined): void {\n  container.replaceChildren();\n\n  if (!capture) {"
+    }
+  }
+}

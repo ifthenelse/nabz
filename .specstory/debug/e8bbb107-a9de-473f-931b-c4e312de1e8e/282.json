@@ -1,0 +1,80 @@
+{
+  "apiBlockIndex": 4,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "low",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_019eRQ5FgThbwmus9EDZttB9",
+        "input": {
+          "query": "Netlify x-nf-request-id response header documentation"
+        },
+        "name": "WebSearch",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf56vGU817Re9URj1apvH",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6276,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 6276,
+      "cache_read_input_tokens": 130953,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 6276,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 6276,
+          "cache_read_input_tokens": 130953,
+          "input_tokens": 2,
+          "output_tokens": 1106,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1106,
+      "output_tokens_details": {
+        "thinking_tokens": 829
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "7f3e6d77-a7b8-45cd-9e2d-48c0775eca6f",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf56vFwcxmHhaKww6L7vW",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:55:36.187Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "3b5e3be9-2896-49a5-bdf5-51084c548569",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_019eRQ5FgThbwmus9EDZttB9": {
+      "query": "Netlify x-nf-request-id response header documentation"
+    }
+  }
+}

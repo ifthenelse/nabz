@@ -1,0 +1,79 @@
+{
+  "attachment": {
+    "entries": [
+      {
+        "defer_loading": true,
+        "description": "IMPORTANT: WebFetch WILL FAIL for authenticated or private URLs. Before using this tool, check if the URL points to an authenticated service (e.g. Google Docs, Confluence, Jira, GitHub). If so, look for a specialized MCP tool that provides authenticated access.\n- Exception: claude.ai artifact links (claude.ai/artifact/{id} or claude.ai/code/artifact/{uuid}, including preview.claude.ai) ARE fetchable — WebFetch uses your claude.ai login. Use WebFetch for these, not curl or a headless browser (those return the SPA shell or a Cloudflare 403, not the content).\n\n- Fetches content from a specified URL and processes it using an AI model\n- Takes a URL and a prompt as input\n- Fetches the URL content, converts HTML to markdown\n- Processes the content with the prompt using a small, fast model\n- Returns the model's response about the content\n- Use this tool when you need to retrieve and analyze web content\n\nUsage notes:\n  - IMPORTANT: If an MCP-provided web fetch tool is available, prefer using that tool instead of this one, as it may have fewer restrictions.\n  - The URL must be a fully-formed valid URL\n  - HTTP URLs will be automatically upgraded to HTTPS\n  - localhost and other hostnames without a dot are not supported; for a local server, use curl via Bash\n  - The prompt should describe what information you want to extract from the page\n  - This tool is read-only and does not modify any files\n  - Results may be summarized if the content is very large\n  - Includes a self-cleaning cache (entries expire after 15 minutes) for faster responses when repeatedly accessing the same URL\n  - When a URL redirects to a different host, the tool will inform you and provide the redirect URL in a special format. You should then make a new WebFetch request with the redirect URL to fetch the content.\n  - For GitHub URLs, prefer using the gh CLI via Bash instead (e.g., gh pr view, gh issue view, gh api).\n",
+        "eager_input_streaming": true,
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "additionalProperties": false,
+          "properties": {
+            "prompt": {
+              "description": "The prompt to run on the fetched content",
+              "type": "string"
+            },
+            "url": {
+              "description": "The URL to fetch content from",
+              "format": "uri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "prompt"
+          ],
+          "type": "object"
+        },
+        "name": "WebFetch"
+      },
+      {
+        "defer_loading": true,
+        "description": "\n- Allows Claude to search the web and use the results to inform responses\n- Provides up-to-date information for current events and recent data\n- Returns search result information formatted as search result blocks, including links as markdown hyperlinks\n- Use this tool for accessing information beyond Claude's knowledge cutoff\n- Searches are performed automatically within a single API call\n\nCRITICAL REQUIREMENT - You MUST follow this:\n  - After answering the user's question, you MUST include a \"Sources:\" section at the end of your response\n  - In the Sources section, list all relevant URLs from the search results as markdown hyperlinks: [Title](URL)\n  - This is MANDATORY - never skip including sources in your response\n  - Example format:\n\n    [Your answer here]\n\n    Sources:\n    - [Source Title 1](https://example.com/1)\n    - [Source Title 2](https://example.com/2)\n\nUsage notes:\n  - Domain filtering is supported to include or block specific websites\n  - Web search is only available in the US\n\nIMPORTANT - Use the correct year in search queries:\n  - The current month is September 2026. You MUST use this year when searching for recent information, documentation, or current events.\n  - Example: If the user asks for \"latest React docs\", search for \"React documentation\" with the current year, NOT last year\n",
+        "eager_input_streaming": true,
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "additionalProperties": false,
+          "properties": {
+            "allowed_domains": {
+              "description": "Only include search results from these domains",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "blocked_domains": {
+              "description": "Never include search results from these domains",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "query": {
+              "description": "The search query to use",
+              "minLength": 2,
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "WebSearch"
+      }
+    ],
+    "type": "deferred_tools_record"
+  },
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "parentUuid": "660c1c84-dfe9-48e3-9468-a4dbf34cdb3b",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:55:24.440Z",
+  "type": "attachment",
+  "userType": "external",
+  "uuid": "8df0d225-82b9-4961-8c71-932b423897a3",
+  "version": "2.1.270"
+}

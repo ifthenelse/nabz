@@ -1,0 +1,68 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "low",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "text": "Added an (i) info button to every documented row in the popup and DevTools panel (both use the same `render.ts`, so it's automatic in both surfaces):\n\n- **`src/parsers/docs.ts`** — new module holding short descriptions and, only where a genuine canonical public page exists (verified via web search just now — Cloudflare, MDN Server-Timing, Fastly, Vercel docs), a link. Fields like Shopify's serving node or CloudFront's `x-amz-cf-id`, which aren't publicly documented in detail, get a description with no fabricated link.\n- **`src/utils/render.ts`** — each `row()` call can pass a `docKey`; clicking the (i) button toggles a small popover (description + optional \"Learn more ↗\" link), positioned off the label side so it stays inside the 340px popup width. Only one tooltip is open at a time; click-outside or Escape closes it.\n- Styling for the button/tooltip added to the shared `theme.css` (light/dark aware, consistent with the rest of the UI).\n\nTypecheck, all 33 tests, and the build all still pass. Not committed — let me know if you'd like that.",
+        "type": "text"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf57B6HrurjmmYJdxrZ6U",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 786,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 786,
+      "cache_read_input_tokens": 162237,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 786,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 786,
+          "cache_read_input_tokens": 162237,
+          "input_tokens": 2,
+          "output_tokens": 379,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 379,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "44b3bd34-6d5e-41d9-8e5b-192a81e9dd6d",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf57B5m7NMucxYgvngDHw",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:58:51.204Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "021dc3c4-ed35-42fb-9850-fdde84ba0a78",
+  "version": "2.1.270"
+}

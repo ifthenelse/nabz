@@ -1,0 +1,56 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "The file /Users/andreacollet/Projects/nabz/README.md has been updated successfully. (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_014ipsKk3wq2e39aWeH8ssS7",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "2e943594-faf2-4fc3-831a-28629a5ef203",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "2e943594-faf2-4fc3-831a-28629a5ef203",
+  "timestamp": "2026-09-15T10:58:45.490Z",
+  "toolUseResult": {
+    "filePath": "/Users/andreacollet/Projects/nabz/README.md",
+    "newString": "It is a local, read-only diagnostic tool. It makes no network requests of\nits own, sends no data anywhere, and has no backend.\n\nEvery identifier has a copy button, and most rows have an (i) info button:\nclick it for a one-line explanation of what the value actually is and,\nwhen a genuine canonical public page exists for it, a link to that page.\nFields with no single authoritative public reference (e.g. a platform's\ninternal request ID) get an explanation but no link - see\n`src/parsers/docs.ts`, which is the one place all of that copy lives.",
+    "oldString": "It is a local, read-only diagnostic tool. It makes no network requests of\nits own, sends no data anywhere, and has no backend.",
+    "originalFile": null,
+    "replaceAll": false,
+    "structuredPatch": [
+      {
+        "lines": [
+          " It is a local, read-only diagnostic tool. It makes no network requests of",
+          " its own, sends no data anywhere, and has no backend.",
+          " ",
+          "+Every identifier has a copy button, and most rows have an (i) info button:",
+          "+click it for a one-line explanation of what the value actually is and,",
+          "+when a genuine canonical public page exists for it, a link to that page.",
+          "+Fields with no single authoritative public reference (e.g. a platform's",
+          "+internal request ID) get an explanation but no link - see",
+          "+`src/parsers/docs.ts`, which is the one place all of that copy lives.",
+          "+",
+          " ## 1. Architecture",
+          " ",
+          " ```"
+        ],
+        "newLines": 13,
+        "newStart": 8,
+        "oldLines": 6,
+        "oldStart": 8
+      }
+    ],
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "dd5c0854-8e48-4522-a698-385ba59924b1",
+  "version": "2.1.270"
+}

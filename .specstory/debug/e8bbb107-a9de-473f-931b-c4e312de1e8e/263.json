@@ -1,0 +1,42 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": [
+          {
+            "tool_name": "WebSearch",
+            "type": "tool_reference"
+          },
+          {
+            "tool_name": "WebFetch",
+            "type": "tool_reference"
+          }
+        ],
+        "tool_use_id": "toolu_01FZZ6zDVPFn85mWi7LnFrpK",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "e303ecd3-eed6-4881-89e5-58622d76747e",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "e303ecd3-eed6-4881-89e5-58622d76747e",
+  "timestamp": "2026-09-15T10:55:04.095Z",
+  "toolUseResult": {
+    "matches": [
+      "WebSearch",
+      "WebFetch"
+    ],
+    "query": "select:WebSearch,WebFetch",
+    "total_deferred_tools": 36
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "983d9adf-5987-4356-83d4-dc293923118f",
+  "version": "2.1.270"
+}

@@ -1,0 +1,80 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "low",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01Q6qjENzH89EQeocFFdeKmj",
+        "input": {
+          "file_path": "/Users/andreacollet/Projects/nabz/src/utils/render.ts"
+        },
+        "name": "Read",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf5746jhQky9eMj95j2kM",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 325,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 325,
+      "cache_read_input_tokens": 150676,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 325,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 325,
+          "cache_read_input_tokens": 150676,
+          "input_tokens": 2,
+          "output_tokens": 94,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 94,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "b343d959-579f-412e-b865-77bfd6c67a55",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf5746Dww43MEsaoBk6BL",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:57:12.657Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "b25c7fed-ef1b-4f25-9dea-f088c1c39fb5",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01Q6qjENzH89EQeocFFdeKmj": {
+      "file_path": "/Users/andreacollet/Projects/nabz/src/utils/render.ts"
+    }
+  }
+}

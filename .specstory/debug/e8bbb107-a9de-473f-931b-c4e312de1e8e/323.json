@@ -1,0 +1,85 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "low",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01UWjTW37sp6gTMWGZotzVGP",
+        "input": {
+          "file_path": "/Users/andreacollet/Projects/nabz/src/utils/render.ts",
+          "new_string": "      section(\"Server-Timing details\", [\n        row(\"Edge\", e.edge, { kind: \"observed\", docKey: \"timing.metric\" }),\n        row(\"Country\", e.country, { kind: \"observed\", docKey: \"timing.metric\" }),\n        row(\"ASN\", e.asn, { kind: \"observed\", docKey: \"timing.metric\" }),\n        row(\"Theme\", e.theme, { kind: \"observed\", docKey: \"timing.metric\" }),\n        row(\"Page type\", e.pageType, { kind: \"observed\", docKey: \"timing.metric\" }),\n      ]),",
+          "old_string": "      section(\"Server-Timing details\", [\n        row(\"Edge\", e.edge, { kind: \"observed\" }),\n        row(\"Country\", e.country, { kind: \"observed\" }),\n        row(\"ASN\", e.asn, { kind: \"observed\" }),\n        row(\"Theme\", e.theme, { kind: \"observed\" }),\n        row(\"Page type\", e.pageType, { kind: \"observed\" }),\n      ]),",
+          "replace_all": false
+        },
+        "name": "Edit",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf577mVBnjS8szDjHYXiC",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 633,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 633,
+      "cache_read_input_tokens": 158824,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 633,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 633,
+          "cache_read_input_tokens": 158824,
+          "input_tokens": 2,
+          "output_tokens": 436,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 436,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "56dff0f3-0791-47f7-b7cb-ba204b9ad746",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf577kww8AFE2GjE8UBE9",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:58:04.661Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "eecc2d81-1a8f-4daa-a5b5-4f20661deadd",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01UWjTW37sp6gTMWGZotzVGP": {
+      "file_path": "/Users/andreacollet/Projects/nabz/src/utils/render.ts",
+      "new_string": "      section(\"Server-Timing details\", [\n        row(\"Edge\", e.edge, { kind: \"observed\", docKey: \"timing.metric\" }),\n        row(\"Country\", e.country, { kind: \"observed\", docKey: \"timing.metric\" }),\n        row(\"ASN\", e.asn, { kind: \"observed\", docKey: \"timing.metric\" }),\n        row(\"Theme\", e.theme, { kind: \"observed\", docKey: \"timing.metric\" }),\n        row(\"Page type\", e.pageType, { kind: \"observed\", docKey: \"timing.metric\" }),\n      ]),",
+      "old_string": "      section(\"Server-Timing details\", [\n        row(\"Edge\", e.edge, { kind: \"observed\" }),\n        row(\"Country\", e.country, { kind: \"observed\" }),\n        row(\"ASN\", e.asn, { kind: \"observed\" }),\n        row(\"Theme\", e.theme, { kind: \"observed\" }),\n        row(\"Page type\", e.pageType, { kind: \"observed\" }),\n      ]),"
+    }
+  }
+}

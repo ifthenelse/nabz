@@ -3392,3 +3392,879 @@ Built the full extension. Summary of what's in `/Users/andreacollet/Projects/nab
 I removed one thing I'd initially added (a `fieldMeta.ts` label/provenance registry) after building the UI, because the popup mockup's labels are context-specific per section (e.g. "PoP" in the Cloudflare block vs "Edge location" in Overview for the same underlying field) — hand-curating labels directly in `render.ts` covered that better than a generic path→label map ever did, and the map ended up unused.
 
 README covers all 7 requested sections including how to test against a live Shopify/Cloudflare storefront. Nothing is committed to git — let me know if you'd like that done.
+
+---
+
+_**User (2026-09-15 10:54:31Z)**_
+
+Provide an info button for each item that displays a tooltip with a short description and possibly a link to a public documentation
+
+---
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:04Z)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ToolSearch"><details>
+<summary>Tool use: **ToolSearch**</summary>
+
+**Input:**
+
+- max_results: `5`
+- query: `select:WebSearch,WebFetch`
+
+**Result:**
+
+```
+
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:16Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `Cloudflare cf-ray header documentation "Ray ID"`
+
+```text
+Web search results for query: "Cloudflare cf-ray header documentation "Ray ID""
+
+Links: [{"title":"cloudflare-docs/src/content/docs/fundamentals/reference/cloudflare-ray-id.mdx at production · cloudflare/cloudflare-docs","url":"https://github.com/cloudflare/cloudflare-docs/blob/production/src/content/docs/fundamentals/reference/cloudflare-ray-id.mdx"},{"title":"What Is a Ray ID? | phoenixNAP IT Glossary","url":"https://phoenixnap.com/glossary/ray-id/"},{"title":"Cf-Ray - Expert Guide to HTTP headers","url":"https://http.dev/cf-ray"},{"title":"Cloudflare Ray ID · Cloudflare Fundamentals docs","url":"https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/"},{"title":"Documentation for cf-request-id/cf-ray - Feature Request Submitting & Feedback - Cloudflare Community","url":"https://community.cloudflare.com/t/documentation-for-cf-request-id-cf-ray/219653"},{"title":"What is a cf-ray header? How to read a Cloudflare Ray ID and trace one request | Stack Harbor Knowledge Base","url":"https://stackharbor.com/en/knowledge-base/cfops-reading-cf-ray-response-headers/"},{"title":"Cloudflare","url":"https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/index.md"},{"title":"HTTP Header » CF-RAY","url":"https://www.validbot.com/header/CF-RAY.html"},{"title":"feat: add support for adopting Cloudflare Ray-ID as correlation ID","url":"https://gitlab.com/gitlab-org/labkit/commit/6f6f5ef477ff3213366aea4ddc3bf882b6134634"},{"title":"Commits on Source 2","url":"https://gitlab.com/gitlab-org/labkit/compare/v1.28.1...v1.29.0"}]
+
+Here are the search results for Cloudflare cf-ray header documentation about Ray ID:
+
+## Overview
+
+A Cloudflare Ray ID is an identifier given to every request that goes through Cloudflare. Ray IDs are added as a request header, cf-ray, to the connection from Cloudflare to the origin web server.
+
+## Format and Structure
+
+The cf-ray header field contains the identifier, typically formatted as a 16-character hexadecimal string followed by a hyphen and a three-letter data center code. For example, cf-ray: 8b1c2d3e4f5g6h7i-SEA, where 8b1c2d3e4f5g6h7i represents the Ray ID and SEA denotes the data center that handled the request.
+
+## Accessing Ray IDs
+
+Ray IDs can be found using the Developer Tools in your browser or using curl with the -v option to show the headers.
+
+## Use Cases
+
+Ray IDs are particularly useful when evaluating Security Events for patterns or false positives or more generally understanding your application traffic. When troubleshooting, the ray ID is the value to provide to Cloudflare support or to search for in log files.
+
+## Important Notes
+
+Ray IDs are not guaranteed to be unique for every request. In some situations, different requests may have the same Ray ID.
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:18Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `Cloudflare cf-cache-status header values documentation`
+
+```text
+Web search results for query: "Cloudflare cf-cache-status header values documentation"
+
+Links: [{"title":"Cf-Cache-Status - Expert Guide to HTTP headers","url":"https://http.dev/cf-cache-status"},{"title":"Cloudflare's CF-Cache-Status Headers Explained | Fishtank","url":"https://www.getfishtank.com/insights/cloudflare-cdn-cf-cache-status-headers-explained"},{"title":"Cloudflare's cf-cache-status header explained | DebugBear","url":"https://www.debugbear.com/docs/cf-cache-status"},{"title":"Cf-Cache-Status HTTP Header | redirect.li","url":"https://redirect.li/http/headers/cf-cache-status/"},{"title":"Understanding Cloudflare's CF-Cache-Status Header","url":"https://kerkour.com/understanding-cloudflare-cdn-cf-cache-status-header"},{"title":"HTTP Header » CF-Cache-Status","url":"https://www.validbot.com/header/CF-Cache-Status.html"},{"title":"Interpreting X-Cache and CF-Cache-Status Headers | cache-control.com","url":"https://www.cache-control.com/core-caching-fundamentals-http-lifecycle/cache-debugging-and-observability/interpreting-x-cache-and-cf-cache-status-headers/"},{"title":"cf-cache-status explained: every Cloudflare cache status and how to fix it — warmup.rocks","url":"https://warmup.rocks/blog/cf-cache-status"},{"title":"cache responses","url":"https://developers.cloudflare.com/cache/concepts/cache-responses/"}]
+
+Based on the search results, here's a comprehensive overview of Cloudflare's cf-cache-status header values:
+
+## CF-Cache-Status Header Values
+
+The Cf-Cache-Status header is added by Cloudflare to every response served through its network. The value tells whether the response was served from cache, fetched from the origin, or skipped caching entirely.
+
+### Key Cache Status Values:
+
+**HIT** - The resource was found in Cloudflare's cache.
+
+**MISS** - The resource was not found in Cloudflare's cache and was served from the origin web server.
+
+**DYNAMIC** - Cloudflare decided at request time the resource is not eligible for caching based on default behavior and current configuration. Every request for this resource goes directly to the origin server.
+
+**BYPASS** - Cloudflare decided at response time to skip caching. Responses with Cache-Control no-store or private directives or Vary: * always produce BYPASS.
+
+**REVALIDATED** - The cached resource was confirmed as still valid through a conditional request to the origin. The origin responded the content was unchanged, and the cached version was served.
+
+**NONE/UNKNOWN** - Cloudflare generated the response internally without reaching the origin server or cache. This occurs when a Cloudflare Worker produces a response, when WAF rules block a request, or when a redirect fires before cache logic runs.
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:20Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `MDN Server-Timing header documentation`
+
+```text
+Web search results for query: "MDN Server-Timing header documentation"
+
+Links: [{"title":"Server-Timing header - HTTP | MDN","url":"https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing"},{"title":"Server-Timing header - HTTP - MDN Web Docs","url":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Server-Timing"},{"title":"content/files/en-us/web/http/reference/headers/server-timing/index.md at main · mdn/content","url":"https://github.com/mdn/content/blob/main/files/en-us/web/http/reference/headers/server-timing/index.md?plain=1"},{"title":"content/files/en-us/web/api/performanceservertiming/duration/index.md at main · mdn/content","url":"https://github.com/mdn/content/blob/main/files/en-us/web/api/performanceservertiming/duration/index.md?plain=1"},{"title":"PerformanceResourceTiming: serverTiming property - Web APIs | MDN","url":"https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/serverTiming"},{"title":"content/files/en-us/web/api/performance_api/server_timing/index.md at main · mdn/content","url":"https://github.com/mdn/content/blob/main/files/en-us/web/api/performance_api/server_timing/index.md"},{"title":"Server-Timing - Expert Guide to HTTP headers","url":"https://http.dev/server-timing"},{"title":"Server-Timing - HTTP | MDN","url":"https://mdn2.netlify.app/en-us/docs/web/http/headers/server-timing/"},{"title":"server timing","url":"https://webarchive.library.unt.edu/web/20170126111400mp_/http://wicg.github.io/server-timing"},{"title":"Server Timing","url":"https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Server-Timing"}]
+
+I found the MDN documentation on the Server-Timing header. Here's what it covers:
+
+## Overview
+
+The HTTP Server-Timing response header communicates one or more performance metrics about the request-response cycle to the user agent. It is used to surface backend server timing metrics (for example, database read/write, CPU time, file system access, etc.) in the developer tools in the user's browser or in the PerformanceServerTiming interface.
+
+## Syntax
+
+A timing-metric has a name, and may include an optional duration and an optional description. Here are some examples:
+
+- A metric with a name only: `Server-Timing: missedCache`
+- A metric with a duration: `Server-Timing: cpu;dur=2.4`
+- A metric with a description and duration: `Server-Timing: cache;desc="Cache Read";dur=23.2`
+- Multiple metrics: `Server-Timing: db;dur=53, app;dur=47.2`
+
+## Important Security Considerations
+
+The Server-Timing header may expose potentially sensitive application and infrastructure information. Decide which metrics to send, when to send them, and who should see them based on the use case.
+
+## Browser Compatibility Note
+
+Only the browser's DevTools can use the Server-Timing header as an HTTP trailer to display information in the Network -> Timings tab. The Fetch API cannot access HTTP trailers.
+
+The complete documentation is available at: https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:21Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `Shopify x-request-id header support documentation`
+
+```text
+Web search results for query: "Shopify x-request-id header support documentation"
+
+Links: [{"title":"Solved: Getting the x-request-id using the Ruby API gem - Shopify Community","url":"https://community.shopify.com:443/c/graphql-basics-and/getting-the-x-request-id-using-the-ruby-api-gem/td-p/1863312"},{"title":"X-ShopId - Expert Guide to HTTP headers","url":"https://http.dev/x-shopid"},{"title":"How to provide the X-Request-Id from the response headers · Issue #79 · gnikyt/Basic-Shopify-API","url":"https://github.com/gnikyt/Basic-Shopify-API/issues/79"},{"title":"Getting the x-request-id using the Ruby API gem","url":"https://community.shopify.com/t/getting-the-x-request-id-using-the-ruby-api-gem/176349"},{"title":"Unable to get x-request-id if response from Shopify is HTML · Issue #1091 · Shopify/shopify-api-ruby","url":"https://github.com/Shopify/shopify-api-ruby/issues/1091"},{"title":"Getting the x","url":"https://community.shopify.com/c/shopify-apis-and-sdks/getting-the-x-request-id-using-the-ruby-api-gem/m-p/1863312"},{"title":"Use network access","url":"https://shopify.dev/docs/apps/build/functions/network-access/use-network-access"},{"title":"API-related Information - Shopify – Cleo","url":"https://support.cleo.com/hc/en-us/articles/360052030133-API-related-Information-Shopify"},{"title":"What is an algorithm or formula between X-Request-Id and X-Request-Sign headers?","url":"https://community.shopify.com/t/what-is-an-algorithm-or-formula-between-x-request-id-and-x-request-sign-headers/132650/2"}]
+
+Based on the search results, here's what I found regarding Shopify's x-request-id header support:
+
+## Overview
+
+The X-Request-ID is a response header that Shopify includes in API responses, containing a unique identifier in UUID format.
+
+## Usage in Shopify APIs
+
+The x-shopify-request-id header is used in Shopify network access contexts and can be retrieved from request headers. Each request ID is unique and can be used as a measure to prevent replay attacks.
+
+## Ruby API Support
+
+The HTTP REST client built into the Shopify Ruby API gem offers functionality to allow you to retrieve headers associated with a response.
+
+## Common Use Cases
+
+The x-request-id header is useful for:
+- Debugging API issues
+- Request tracing
+- Error reporting and support tickets
+- Preventing replay attacks
+
+The search results indicate that while the x-request-id header is supported across Shopify's API responses, the specific implementation details may vary depending on the SDK or programming language you're using. For detailed documentation specific to your use case, you may want to check the official Shopify API documentation at shopify.dev or the relevant SDK repository.
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:24Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `Shopify theme Server-Timing header platform metrics shopify.dev`
+
+```text
+Web search results for query: "Shopify theme Server-Timing header platform metrics shopify.dev"
+
+Links: [{"title":"Performance best practices for Shopify themes","url":"https://shopify.dev/docs/storefronts/themes/best-practices/performance"},{"title":"Shopify Server-Timing (Help Center / Monitoring / Settings) | rumvision","url":"https://www.rumvision.com/help-center/monitoring/settings/server-timing-shopify/"},{"title":"Shopify Help Center | Improving your online store performance","url":"https://help.shopify.com/en/manual/online-store/web-performance/improving-web-performance"},{"title":"Master Shopify Performance: Top Monitoring Tools You Need","url":"https://www.blackbeltcommerce.com/master-shopify-performance-top-monitoring-tools-you-need/"},{"title":"[Updated 2026] Fastest Shopify Themes - Tested by PageSpeed Insights","url":"https://www.cueforgood.com/blog/fastest-shopify-themes-ranked-by-psi-scores/"},{"title":"Web Performance Tools for 2026 – Performance @ Shopify","url":"https://performance.shopify.com/blogs/blog/web-performance-tools-for-2026"},{"title":"How to check the speed of Shopify themes before you buy | DevCommerce Blog","url":"https://devcommerce-agency.com/blog/how-to-check-the-speed-of-shopify-themes-before-you-buy"},{"title":"Mastering Shopify’s Performance Reports","url":"https://performance.shopify.com/blogs/blog/mastering-web-performance-reports"},{"title":"TTFB Optimization Support – Liquid, Apps, and Store Setup Debugging","url":"https://community.shopify.com/t/ttfb-optimization-support-liquid-apps-and-store-setup-debugging/412648"},{"title":"server timing","url":"https://webarchive.library.unt.edu/web/20170126111400mp_/http://wicg.github.io/server-timing"}]
+
+Here are the search results for your query about Shopify theme Server-Timing header platform metrics:
+
+## Key Findings
+
+Shopify exposes information via Server-Timing response headers by default. This feature allows merchants and developers to access performance timing data from Shopify's platform.
+
+Shopify renders Liquid templates server-side on every page request, and the time Shopify spends executing your Liquid code directly determines Time to First Byte (TTFB), the foundation on which all other performance metrics are built.
+
+### Documentation and Tools
+
+Shopify recommends the Shopify Theme Inspector Chrome extension as a primary diagnostic tool, which provides flame charts showing Liquid code execution during HTML generation to help identify performance-draining loops or snippets.
+
+For developers interested in tracking these metrics, tools like RUMvision can automatically track interesting information from the Server-Timing headers and make them available via filters, group by dimensions, or custom metrics.
+
+### Official W3C Server-Timing Standard
+
+The Server-Timing header field is used to communicate one or more metrics and descriptions for the given request-response cycle.
+
+Note that the search results indicate there isn't extensive official documentation specifically about all the metrics Shopify exposes via Server-Timing headers on shopify.dev, though the platform does provide this data by default.
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:44Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `AWS CloudFront x-amz-cf-id x-amz-cf-pop response header documentation`
+
+```text
+Web search results for query: "AWS CloudFront x-amz-cf-id x-amz-cf-pop response header documentation"
+
+Links: [{"title":"X-Amz-Cf-Pop - Expert Guide to HTTP headers","url":"https://http.dev/x-amz-cf-pop"},{"title":"X-Amz-Cf-Id - Expert Guide to HTTP headers","url":"https://http.dev/x-amz-cf-id"},{"title":"Amazon CloudFront introduces Response Headers Policies | Networking & Content Delivery","url":"https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-cloudfront-introduces-response-headers-policies/"},{"title":"Add HTTP security headers to CloudFront responses | AWS re:Post","url":"https://repost.aws/knowledge-center/cloudfront-http-security-headers"},{"title":"X-Amz-Cf-Id HTTP response header","url":"https://webtechsurvey.com/response-header/x-amz-cf-id"},{"title":"Understand response headers policies - Amazon CloudFront","url":"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html"},{"title":"OriginRequestPolicyConfig - Amazon CloudFront","url":"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicyConfig.html"},{"title":"class CfnResponseHeadersPolicy (construct)","url":"https://docs.aws.amazon.com/cdk/api/v1/docs/@aws-cdk_aws-cloudfront.CfnResponseHeadersPolicy.html"},{"title":"Amazon CloudFront now supports configurable CORS, security, and custom HTTP response headers","url":"https://aws.amazon.com/about-aws/whats-new/2021/11/amazon-cloudfront-supports-cors-security-custom-http-response-headers/"}]
+
+Based on the search results, here's the documentation for these CloudFront response headers:
+
+## X-Amz-Cf-Id
+
+CloudFront assigns a unique request identifier to every request passing through its network, which is included in the X-Amz-Cf-Id response header sent back to the client and is also forwarded to the origin server as part of the origin request. The value is an opaque, Base64-encoded token with no end-user meaning, and its primary purpose is request tracing.
+
+When a delivery issue occurs, the request ID allows AWS Support to locate the specific request in CloudFront access logs, where the same value appears under the x-edge-request-id field. This header is added automatically by CloudFront and cannot be removed using response header policies.
+
+## X-Amz-Cf-Pop
+
+When a request is processed, CloudFront includes the X-Amz-Cf-Pop header in the response to indicate which specific edge location handled the request. The value follows a naming convention based on IATA airport codes, with each code mapping to a nearby geographic location, making the header a straightforward way to determine where content was served from.
+
+This is useful for verifying CDN routing behavior, diagnosing latency, and confirming requests reach the expected regional cache.
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:46Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `Fastly X-Served-By X-Cache response header documentation`
+
+```text
+Web search results for query: "Fastly X-Served-By X-Cache response header documentation"
+
+Links: [{"title":"X-Served-By | Fastly Documentation","url":"https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/"},{"title":"Shielding | Fastly Documentation","url":"https://www.fastly.com/documentation/guides/concepts/shielding/"},{"title":"X-Cache | Fastly Documentation","url":"https://www.fastly.com/documentation/reference/http/http-headers/X-Cache/"},{"title":"Debugging Response Headers - General - Fastly Community","url":"https://community.fastly.com/t/debugging-response-headers/2355"},{"title":"Checking cache | Fastly Documentation","url":"https://www.fastly.com/documentation/guides/full-site-delivery/caching/checking-cache/"},{"title":"X-Served-By - Expert Guide to HTTP headers","url":"https://http.dev/x-served-by"},{"title":"Understanding common cache-related HTTP response headers | DrupalEasy","url":"https://www.drupaleasy.com/blogs/ultimike/2021/01/understanding-common-cache-related-http-response-headers"},{"title":"X-Cache-Hits | Fastly Documentation","url":"https://www.fastly.com/documentation/reference/http/http-headers/X-Cache-Hits/"},{"title":"Preventing cache poisoning via HTTP X-headers | Fastly Documentation","url":"https://www.fastly.com/documentation/guides/full-site-delivery/caching/preventing-cache-poisoning/"},{"title":"Header reference | Fastly Documentation","url":"https://www.fastly.com/documentation/reference/http/http-headers/"}]
+
+Based on the search results, here's the documentation for Fastly's X-Served-By and X-Cache response headers:
+
+## X-Served-By Header
+
+This non-standard header is set by Fastly by default on all responses and contains the identity of the cache server acting as the delivery node. In services that use shielding or Next-gen WAF at Edge there may be more than one server identity listed, separated by commas.
+
+Cache nodes are moved in and out of service continually, and cache IDs may be reused, so constructing logic that acts on the cache ID is discouraged.
+
+## X-Cache Header
+
+Fastly appends this non-standard header to all responses by default using a simplified derivative of the fastly_info.state variable. If the value of fastly_info.state is HIT or any value that starts with HIT- then X-Cache will be set to HIT, otherwise MISS.
+
+Requests resulting in a PASS will be reported as MISS, while requests resulting in edge-generated synthetic content will be reported as HIT. Additionally all hits resulting from serving stale or background revalidations will also report as HIT.
+
+This header may contain reports from multiple servers, if shielding or Next-gen WAF at Edge is enabled, or if you use custom VCL code that invokes the restart statement.
+
+The official Fastly documentation can be found at:
+- [X-Served-By Documentation](https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/)
+- [X-Cache Documentation](https://www.fastly.com/documentation/reference/http/http-headers/X-Cache/)
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:46Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `Vercel x-vercel-id x-vercel-cache response header documentation`
+
+```text
+Web search results for query: "Vercel x-vercel-id x-vercel-cache response header documentation"
+
+Links: [{"title":"Response headers","url":"https://vercel.com/docs/headers/response-headers"},{"title":"Vercel CDN Cache","url":"https://vercel.com/docs/caching/cdn-cache"},{"title":"X-Vercel-Cache - Expert Guide to HTTP headers","url":"https://http.dev/x-vercel-cache"},{"title":"Caching on Vercel's Edge Network","url":"https://vercel.com/docs/edge-network/caching"},{"title":"System Headers","url":"https://vercel.com/docs/headers"},{"title":"Cache-Control headers","url":"https://vercel.com/docs/caching/cache-control-headers"},{"title":"X-Vercel-Cache HTTP Header | redirect.li","url":"https://redirect.li/http/headers/x-vercel-cache/"},{"title":"Request headers","url":"https://vercel.com/docs/headers/request-headers"}]
+
+I found documentation on both of these response headers from Vercel. Here's what they do:
+
+## x-vercel-cache
+
+The x-vercel-cache header indicates the cache status of static assets and responses from Vercel's CDN. The header returns one of the following values: HIT (the response was served from the cache), along with other possible values like REVALIDATED (the response was regenerated in the foreground after the cached entry was deleted) and BYPASS (Vercel skipped the cache and served fresh content from your function or origin).
+
+For dynamic routes and fetch requests that use the runtime cache, this header often shows MISS even if the data is served from the runtime cache.
+
+## x-vercel-id
+
+This header contains a list of Vercel regions your request hit, as well as the region the function was executed in (for both Edge and Serverless). It also allows Vercel to automatically prevent infinite loops.
+
+The official Vercel documentation on response headers can be found at: https://vercel.com/docs/headers/response-headers
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:55:48Z)**_
+
+<tool-use data-tool-type="search" data-tool-name="WebSearch"><details>
+<summary>Tool use: **WebSearch**</summary>
+ `Netlify x-nf-request-id response header documentation`
+
+```text
+Web search results for query: "Netlify x-nf-request-id response header documentation"
+
+Links: [{"title":"X-Nf-Request-Id - Expert Guide to HTTP headers","url":"https://http.dev/x-nf-request-id"},{"title":"[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - #45 by Julian.Dumitrascu - Support Guides - Netlify Support Forums","url":"https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385/45"},{"title":"[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - Support Guides - Netlify Support Forums","url":"https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385"},{"title":"[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - Page 2 - Support Guides - Netlify Support Forums","url":"https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385?page=2"},{"title":"Netlify Support (@NetlifySupport) on X","url":"https://twitter.com/NetlifySupport/status/1063864759139717120"},{"title":"Custom headers | Netlify Docs","url":"https://docs.netlify.com/manage/routing/headers/"},{"title":"X-nf-sign header missing - Support - Netlify Support Forums","url":"https://answers.netlify.com/t/x-nf-sign-header-missing/46615"},{"title":"How to configure netlify.toml redirects, headers, and env vars | Netlify Knowledge Base","url":"https://www.netlify.com/knowledge-base/how-to-configure-netlifytoml-redirects-headers-and-env-vars/"},{"title":"How to configure redirects, headers, and env vars in netlify.toml | Netlify Knowledge Base","url":"https://www.netlify.com/knowledge-base/how-to-configure-redirects-headers-and-env-vars-in-netlifyto/"},{"title":"[Support Guide] Understanding and debugging prerendering - #35 by luke - Support Guides - Netlify Support Forums","url":"https://answers.netlify.com/t/support-guide-understanding-and-debugging-prerendering/150/35"}]
+
+Based on the search results, here's what I found about the `x-nf-request-id` response header:
+
+## Overview
+
+The X-Nf-Request-Id header carries a unique request identifier assigned by Netlify's edge network to every response. The value uniquely identifies each request and enables log correlation when debugging issues in Netlify's dashboard or when working with Netlify support.
+
+## Purpose
+
+The header serves a similar purpose to X-Request-Id in general infrastructure and X-Vercel-Id on Vercel deployments. The X-Nf-Request-Id value pinpoints the exact request in the platform's logging infrastructure.
+
+## Support Usage
+
+When working with Netlify Support, you may be asked to provide the `x-nf-request-id` value from your HTTP response headers to help troubleshoot issues. This allows the support team to trace your specific request through Netlify's infrastructure.
+
+The search results also reference a support guide on Netlify's forums that provides more detailed information about how to locate and use this header, though the full documentation wasn't completely captured in these results. You can visit the Netlify Support Forums directly for additional details.
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:06Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Write"><details>
+<summary>Tool use: **Write**</summary>
+
+```typescript
+/**
+ * Short, human-written explanations (and, where a genuine canonical public
+ * page exists, a link to it) for values the UI displays. Kept separate
+ * from the parsers themselves and from render.ts: this is presentation
+ * copy, not parsing logic, and having it in one place makes it easy to
+ * audit which links are real vs. omitted on purpose.
+ *
+ * A missing `href` is deliberate, not an oversight - some fields (a
+ * platform's internal request ID, a proprietary complexity score) have no
+ * single authoritative public page describing that exact field, and this
+ * extension does not fabricate links.
+ */
+export interface DocEntry {
+  description: string;
+  href?: string;
+}
+
+export const FIELD_DOCS: Record<string, DocEntry> = {
+  "cdn.provider": {
+    description:
+      "Inferred from a combination of response headers (e.g. cf-ray, cf-cache-status, or the value of the server header) rather than one single field.",
+  },
+  "cdn.edgeLocation": {
+    description:
+      "The Cloudflare PoP (point of presence) that handled this request, parsed out of the cf-ray header's trailing airport code - it is not sent as its own header.",
+    href: "https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/",
+  },
+  "cdn.rayId": {
+    description:
+      "A per-request identifier Cloudflare assigns as it passes through their network. Useful when contacting Cloudflare or origin support, but not guaranteed to be globally unique.",
+    href: "https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/",
+  },
+  "cdn.cacheStatus": {
+    description:
+      "Whether Cloudflare served this response from cache, from the origin, or skipped caching - e.g. HIT, MISS, DYNAMIC, BYPASS, REVALIDATED.",
+    href: "https://developers.cloudflare.com/cache/concepts/cache-responses/",
+  },
+
+  "platform.provider": {
+    description:
+      "Inferred from platform-specific response headers (e.g. powered-by: Shopify or a shopify-complexity-score header).",
+  },
+  "platform.servingNode": {
+    description:
+      "An identifier for the process or cache node that served the request, read from a Server-Timing entry. It is not necessarily a physical server - it may be a container, worker, or cache node - and Shopify does not publicly document its exact meaning.",
+  },
+  "platform.datacenter": {
+    description:
+      "The x-dc response header, naming the datacenter/region that handled this request. Not documented in detail publicly; the cloud-provider prefix (gcp-, aws-, azure-) is parsed out where recognized.",
+  },
+  "platform.requestId": {
+    description:
+      "A per-request identifier from the x-request-id response header, useful for correlating a request with platform/support logs.",
+  },
+
+  "timing.metric": {
+    description:
+      "One named metric from the Server-Timing response header. Metric names and meanings are defined by whichever backend sent them, not by the Server-Timing spec itself.",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing",
+  },
+
+  "servertiming.cf": {
+    description:
+      "A Server-Timing entry whose name starts with \"cf\", suggesting it was added by Cloudflare. Cloudflare does not publish a full reference for these metric names.",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing",
+  },
+
+  "generic.Fastly": {
+    description:
+      "Fastly identifies the cache node that served a request via X-Served-By, and whether it was a cache hit via X-Cache.",
+    href: "https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/",
+  },
+  "generic.Akamai": {
+    description:
+      "Headers Akamai's edge network adds to indicate caching behavior and request handling. Akamai does not publish a full public reference for these specific header names.",
+  },
+  "generic.Amazon CloudFront": {
+    description:
+      "x-amz-cf-id is an opaque per-request trace ID; x-amz-cf-pop names the edge location (PoP) that handled the request, using an airport-code-style naming convention.",
+  },
+  "generic.Vercel": {
+    description:
+      "x-vercel-id identifies the region(s) the request was routed through; x-vercel-cache reports cache status (HIT, MISS, BYPASS, REVALIDATED).",
+    href: "https://vercel.com/docs/headers/response-headers",
+  },
+  "generic.Netlify": {
+    description:
+      "x-nf-request-id is a per-request identifier used for correlating a request with Netlify's own logs, primarily when contacting Netlify support.",
+  },
+  "generic.Google Cloud (Cloud Run / GFE)": {
+    description:
+      "x-cloud-trace-context is Google's request-tracing header, used to correlate a request across Google Cloud services (e.g. Cloud Run, Google Front End).",
+  },
+};
+
+export function docFor(key: string): DocEntry | undefined {
+  return FIELD_DOCS[key];
+}
+
+```
+
+```text
+File created successfully at: /Users/andreacollet/Projects/nabz/src/parsers/docs.ts (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:08Z)**_
+
+Now export it from the parsers index, then wire it into `render.ts`.
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:10Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/parsers/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:12Z)**_
+
+Now let's view the current render.ts to edit it precisely.
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:12Z)**_
+
+<tool-use data-tool-type="read" data-tool-name="Read"><details>
+<summary>Tool use: **Read**</summary>
+ `./src/utils/render.ts`
+
+```text
+1	import type { Capture, ValueKind } from "../parsers/types.js";
+2	import { copyToClipboard } from "./clipboard.js";
+3	import { formatMs } from "./format.js";
+4	
+5	function el<K extends keyof HTMLElementTagNameMap>(
+6	  tag: K,
+7	  className?: string,
+8	  text?: string,
+9	): HTMLElementTagNameMap[K] {
+10	  const node = document.createElement(tag);
+11	  if (className) node.className = className;
+12	  if (text !== undefined) node.textContent = text;
+13	  return node;
+14	}
+15	
+16	function copyButton(value: string): HTMLButtonElement {
+17	  const btn = el("button", "copy-btn", "⧉");
+18	  btn.type = "button";
+19	  btn.title = "Copy to clipboard";
+20	  btn.addEventListener("click", () => {
+21	    void copyToClipboard(value).then((ok) => {
+22	      if (!ok) return;
+23	      const original = btn.textContent;
+24	      btn.textContent = "✓";
+25	      btn.classList.add("copied");
+26	      setTimeout(() => {
+27	        btn.textContent = original;
+28	        btn.classList.remove("copied");
+29	      }, 1000);
+30	    });
+31	  });
+32	  return btn;
+33	}
+34	
+35	interface RowOptions {
+36	  kind?: ValueKind;
+37	  title?: string;
+38	  copyable?: boolean;
+39	}
+40	
+41	/** Renders one "label: value" row, or null when the value is absent. */
+42	function row(label: string, value: string | undefined, opts: RowOptions = {}): HTMLElement | null {
+43	  if (value === undefined || value === "") return null;
+44	
+45	  const wrapper = el("div", "row");
+46	  const labelEl = el("span", "row-label", label);
+47	  const group = el("div", "row-value-group");
+48	  const valueEl = el("span", "row-value", value);
+49	  if (opts.title) valueEl.title = opts.title;
+50	
+51	  group.append(valueEl);
+52	
+53	  if (opts.kind) {
+54	    group.append(el("span", `badge badge-${opts.kind}`, opts.kind));
+55	  }
+56	  if (opts.copyable !== false) {
+57	    group.append(copyButton(value));
+58	  }
+59	
+60	  wrapper.append(labelEl, group);
+61	  return wrapper;
+62	}
+63	
+64	function section(title: string, rows: Array<HTMLElement | null>): HTMLElement | null {
+65	  const present = rows.filter((r): r is HTMLElement => r !== null);
+66	  if (present.length === 0) return null;
+67	
+68	  const wrapper = el("div", "section");
+69	  wrapper.append(el("div", "section-title", title));
+70	  wrapper.append(...present);
+71	  return wrapper;
+72	}
+73	
+74	function rawHeadersSection(headers: Record<string, string>): HTMLElement | null {
+75	  const entries = Object.entries(headers).sort(([a], [b]) => a.localeCompare(b));
+76	  if (entries.length === 0) return null;
+77	
+78	  const details = el("details", "raw-headers");
+79	  const summary = el("summary", undefined, `Raw headers (${entries.length})`);
+80	  const pre = el("pre");
+81	  pre.textContent = entries.map(([k, v]) => `${k}: ${v}`).join("\n");
+82	  details.append(summary, pre);
+83	  return details;
+84	}
+85	
+86	/**
+87	 * Renders a full Capture into `container`. Shared by the popup and the
+88	 * DevTools panel so both surfaces stay visually and behaviorally identical.
+89	 */
+90	export function renderCapture(container: HTMLElement, capture: Capture | undefined): void {
+91	  container.replaceChildren();
+92	
+93	  if (!capture) {
+94	    container.append(
+95	      el(
+96	        "div",
+97	        "empty-state",
+98	        "No main document response captured yet for this tab. Reload the page and reopen this view.",
+99	      ),
+100	    );
+101	    return;
+102	  }
+103	
+104	  const { info } = capture;
+105	  const sections: Array<HTMLElement | null> = [];
+106	
+107	  sections.push(
+108	    section("Overview", [
+109	      row("Provider", info.cdn?.provider, { kind: "inferred" }),
+110	      row("Edge location", info.cdn?.edgeLocation, { kind: "parsed" }),
+111	      row("Cache", info.cdn?.cacheStatus, { kind: "observed" }),
+112	      row("Platform", info.platform?.provider, { kind: "inferred" }),
+113	    ]),
+114	  );
+115	
+116	  if (info.cdn?.provider === "Cloudflare") {
+117	    sections.push(
+118	      section("Cloudflare", [
+119	        row("Ray ID", stripPop(info.cdn.rayId, info.cdn.edgeLocation), { kind: "observed" }),
+120	        row("PoP", info.cdn.edgeLocation, {
+121	          kind: "parsed",
+122	          title: "Parsed from the cf-ray header - not sent as its own header.",
+123	        }),
+124	        row("Cache status", info.cdn.cacheStatus, { kind: "observed" }),
+125	      ]),
+126	    );
+127	
+128	    const cfServerTiming = info.serverTimingRaw.filter((m) => /^cf/i.test(m.name));
+129	    if (cfServerTiming.length > 0) {
+130	      sections.push(
+131	        section(
+132	          "Cloudflare — Server-Timing",
+133	          cfServerTiming.map((m) =>
+134	            row(m.name, m.description ?? (m.duration !== undefined ? formatMs(m.duration) : undefined), {
+135	              kind: "observed",
+136	            }),
+137	          ),
+138	        ),
+139	      );
+140	    }
+141	  }
+142	
+143	  sections.push(
+144	    section("Application / Origin", [
+145	      row("Platform", info.platform?.provider, { kind: "inferred" }),
+146	      row("Serving node", info.platform?.servingNode, {
+147	        kind: "observed",
+148	        title: "Identifier for the process/node that served the request - not necessarily a physical server.",
+149	      }),
+150	      row("Datacenter", info.platform?.datacenters?.join(", "), { kind: "observed" }),
+151	      row("Request ID", info.platform?.requestId, { kind: "observed" }),
+152	    ]),
+153	  );
+154	
+155	  sections.push(
+156	    section("Performance", [
+157	      row("Processing", formatMs(info.timing?.processing), { kind: "parsed" }),
+158	      row("Database", formatMs(info.timing?.database), { kind: "parsed" }),
+159	      row("Async DB", formatMs(info.timing?.asyncDatabase), { kind: "parsed" }),
+160	      row("Render", formatMs(info.timing?.render), { kind: "parsed" }),
+161	      row("Compression", formatMs(info.timing?.compression), { kind: "parsed" }),
+162	    ]),
+163	  );
+164	
+165	  if (info.serverTimingExtras) {
+166	    const e = info.serverTimingExtras;
+167	    sections.push(
+168	      section("Server-Timing details", [
+169	        row("Edge", e.edge, { kind: "observed" }),
+170	        row("Country", e.country, { kind: "observed" }),
+171	        row("ASN", e.asn, { kind: "observed" }),
+172	        row("Theme", e.theme, { kind: "observed" }),
+173	        row("Page type", e.pageType, { kind: "observed" }),
+174	      ]),
+175	    );
+176	  }
+177	
+178	  if (info.genericProviders.length > 0) {
+179	    for (const provider of info.genericProviders) {
+180	      if (provider.provider === info.cdn?.provider) continue;
+181	      sections.push(
+182	        section(provider.provider, [
+183	          ...Object.entries(provider.details).map(([k, v]) => row(k, v, { kind: "observed" })),
+184	        ]),
+185	      );
+186	    }
+187	  }
+188	
+189	  sections.push(rawHeadersSection(info.rawHeaders));
+190	
+191	  const present = sections.filter((s): s is HTMLElement => s !== null);
+192	  if (present.length === 0) {
+193	    container.append(el("div", "empty-state", "No known infrastructure headers were found on this response."));
+194	    return;
+195	  }
+196	  container.append(...present);
+197	}
+198	
+199	/** Cosmetic only: drops the trailing "-POP" suffix already shown in its own row. */
+200	function stripPop(rayId: string | undefined, pop: string | undefined): string | undefined {
+201	  if (!rayId) return undefined;
+202	  if (!pop) return rayId;
+203	  const suffix = `-${pop}`;
+204	  return rayId.toUpperCase().endsWith(suffix.toUpperCase()) ? rayId.slice(0, -suffix.length) : rayId;
+205	}
+206
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:14Z)**_
+
+Now rewrite render.ts with the info-button/tooltip feature wired in throughout.
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:17Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:30Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:32Z)**_
+
+Now wire `docKey` into every relevant row call, and reset `openTooltip` at the start of `renderCapture`:
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:34Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:39Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:47Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:57:53Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:00Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:05Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:08Z)**_
+
+Now the generic providers loop:
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:11Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/utils/render.ts has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:19Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/src/styles/theme.css has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:28Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Type-check after adding info button/tooltip feature
+
+`npx tsc --noEmit 2>&1 | tail -60`
+
+```text
+npm notice run infra-inspector@0.1.0 npx
+npm notice run 'tsc' --noEmit
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:34Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="Bash"><details>
+<summary>Tool use: **Bash**</summary>
+Run tests and rebuild extension
+
+`npx vitest run 2>&1 | tail -30 && npm run build 2>&1 | tail -20 && find dist -type f | sort`
+
+```text
+npm notice run infra-inspector@0.1.0 npx
+npm notice run 'vitest' run
+
+ RUN  v5.0.1 /Users/andreacollet/Projects/nabz
+
+
+ Test Files  5 passed (5)
+      Tests  33 passed (33)
+   Start at  12:58:33
+   Duration  126ms (transform 72%, import 16%, tests 7%, worker 4%)
+
+npm notice run infra-inspector@0.1.0 build
+npm notice run node build.mjs
+dist/background/service-worker.js
+dist/background/service-worker.js.map
+dist/devtools/devtools.html
+dist/devtools/devtools.js
+dist/devtools/devtools.js.map
+dist/devtools/panel.css
+dist/devtools/panel.html
+dist/devtools/panel.js
+dist/devtools/panel.js.map
+dist/manifest.json
+dist/popup/popup.css
+dist/popup/popup.html
+dist/popup/popup.js
+dist/popup/popup.js.map
+dist/styles/theme.css
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:45Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="Edit"><details>
+<summary>Tool use: **Edit**</summary>
+
+```text
+The file /Users/andreacollet/Projects/nabz/README.md has been updated successfully. (file state is current in your context — no need to Read it back)
+```
+</details></tool-use>
+
+_**Agent (claude-sonnet-5 2026-09-15 10:58:51Z)**_
+
+Added an (i) info button to every documented row in the popup and DevTools panel (both use the same `render.ts`, so it's automatic in both surfaces):
+
+- **`src/parsers/docs.ts`** — new module holding short descriptions and, only where a genuine canonical public page exists (verified via web search just now — Cloudflare, MDN Server-Timing, Fastly, Vercel docs), a link. Fields like Shopify's serving node or CloudFront's `x-amz-cf-id`, which aren't publicly documented in detail, get a description with no fabricated link.
+- **`src/utils/render.ts`** — each `row()` call can pass a `docKey`; clicking the (i) button toggles a small popover (description + optional "Learn more ↗" link), positioned off the label side so it stays inside the 340px popup width. Only one tooltip is open at a time; click-outside or Escape closes it.
+- Styling for the button/tooltip added to the shared `theme.css` (light/dark aware, consistent with the rest of the UI).
+
+Typecheck, all 33 tests, and the build all still pass. Not committed — let me know if you'd like that.

@@ -1,0 +1,74 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "Web search results for query: \"Shopify x-request-id header support documentation\"\n\nLinks: [{\"title\":\"Solved: Getting the x-request-id using the Ruby API gem - Shopify Community\",\"url\":\"https://community.shopify.com:443/c/graphql-basics-and/getting-the-x-request-id-using-the-ruby-api-gem/td-p/1863312\"},{\"title\":\"X-ShopId - Expert Guide to HTTP headers\",\"url\":\"https://http.dev/x-shopid\"},{\"title\":\"How to provide the X-Request-Id from the response headers · Issue #79 · gnikyt/Basic-Shopify-API\",\"url\":\"https://github.com/gnikyt/Basic-Shopify-API/issues/79\"},{\"title\":\"Getting the x-request-id using the Ruby API gem\",\"url\":\"https://community.shopify.com/t/getting-the-x-request-id-using-the-ruby-api-gem/176349\"},{\"title\":\"Unable to get x-request-id if response from Shopify is HTML · Issue #1091 · Shopify/shopify-api-ruby\",\"url\":\"https://github.com/Shopify/shopify-api-ruby/issues/1091\"},{\"title\":\"Getting the x\",\"url\":\"https://community.shopify.com/c/shopify-apis-and-sdks/getting-the-x-request-id-using-the-ruby-api-gem/m-p/1863312\"},{\"title\":\"Use network access\",\"url\":\"https://shopify.dev/docs/apps/build/functions/network-access/use-network-access\"},{\"title\":\"API-related Information - Shopify – Cleo\",\"url\":\"https://support.cleo.com/hc/en-us/articles/360052030133-API-related-Information-Shopify\"},{\"title\":\"What is an algorithm or formula between X-Request-Id and X-Request-Sign headers?\",\"url\":\"https://community.shopify.com/t/what-is-an-algorithm-or-formula-between-x-request-id-and-x-request-sign-headers/132650/2\"}]\n\nBased on the search results, here's what I found regarding Shopify's x-request-id header support:\n\n## Overview\n\nThe X-Request-ID is a response header that Shopify includes in API responses, containing a unique identifier in UUID format.\n\n## Usage in Shopify APIs\n\nThe x-shopify-request-id header is used in Shopify network access contexts and can be retrieved from request headers. Each request ID is unique and can be used as a measure to prevent replay attacks.\n\n## Ruby API Support\n\nThe HTTP REST client built into the Shopify Ruby API gem offers functionality to allow you to retrieve headers associated with a response.\n\n## Common Use Cases\n\nThe x-request-id header is useful for:\n- Debugging API issues\n- Request tracing\n- Error reporting and support tickets\n- Preventing replay attacks\n\nThe search results indicate that while the x-request-id header is supported across Shopify's API responses, the specific implementation details may vary depending on the SDK or programming language you're using. For detailed documentation specific to your use case, you may want to check the official Shopify API documentation at shopify.dev or the relevant SDK repository.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.",
+        "tool_use_id": "toolu_01DTMVQm62MbRvJWxVWinCLR",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "0f33f5ac-0515-47f9-9b4d-9d8fb41e61c5",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "0f33f5ac-0515-47f9-9b4d-9d8fb41e61c5",
+  "timestamp": "2026-09-15T10:55:21.155Z",
+  "toolUseResult": {
+    "durationSeconds": 5.525879124999977,
+    "query": "Shopify x-request-id header support documentation",
+    "results": [
+      {
+        "content": [
+          {
+            "title": "Solved: Getting the x-request-id using the Ruby API gem - Shopify Community",
+            "url": "https://community.shopify.com:443/c/graphql-basics-and/getting-the-x-request-id-using-the-ruby-api-gem/td-p/1863312"
+          },
+          {
+            "title": "X-ShopId - Expert Guide to HTTP headers",
+            "url": "https://http.dev/x-shopid"
+          },
+          {
+            "title": "How to provide the X-Request-Id from the response headers · Issue #79 · gnikyt/Basic-Shopify-API",
+            "url": "https://github.com/gnikyt/Basic-Shopify-API/issues/79"
+          },
+          {
+            "title": "Getting the x-request-id using the Ruby API gem",
+            "url": "https://community.shopify.com/t/getting-the-x-request-id-using-the-ruby-api-gem/176349"
+          },
+          {
+            "title": "Unable to get x-request-id if response from Shopify is HTML · Issue #1091 · Shopify/shopify-api-ruby",
+            "url": "https://github.com/Shopify/shopify-api-ruby/issues/1091"
+          },
+          {
+            "title": "Getting the x",
+            "url": "https://community.shopify.com/c/shopify-apis-and-sdks/getting-the-x-request-id-using-the-ruby-api-gem/m-p/1863312"
+          },
+          {
+            "title": "Use network access",
+            "url": "https://shopify.dev/docs/apps/build/functions/network-access/use-network-access"
+          },
+          {
+            "title": "API-related Information - Shopify – Cleo",
+            "url": "https://support.cleo.com/hc/en-us/articles/360052030133-API-related-Information-Shopify"
+          },
+          {
+            "title": "What is an algorithm or formula between X-Request-Id and X-Request-Sign headers?",
+            "url": "https://community.shopify.com/t/what-is-an-algorithm-or-formula-between-x-request-id-and-x-request-sign-headers/132650/2"
+          }
+        ],
+        "tool_use_id": "srvtoolu_01KNCnQQwLkQak9nYXtxJUQ2"
+      },
+      "Based on the search results, here's what I found regarding Shopify's x-request-id header support:\n\n## Overview\n\nThe X-Request-ID is a response header that Shopify includes in API responses, containing a unique identifier in UUID format.\n\n## Usage in Shopify APIs\n\nThe x-shopify-request-id header is used in Shopify network access contexts and can be retrieved from request headers. Each request ID is unique and can be used as a measure to prevent replay attacks.\n\n## Ruby API Support\n\nThe HTTP REST client built into the Shopify Ruby API gem offers functionality to allow you to retrieve headers associated with a response.\n\n## Common Use Cases\n\nThe x-request-id header is useful for:\n- Debugging API issues\n- Request tracing\n- Error reporting and support tickets\n- Preventing replay attacks\n\nThe search results indicate that while the x-request-id header is supported across Shopify's API responses, the specific implementation details may vary depending on the SDK or programming language you're using. For detailed documentation specific to your use case, you may want to check the official Shopify API documentation at shopify.dev or the relevant SDK repository."
+    ],
+    "searchCount": 1
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "48c85adb-b44c-4264-91a7-88db15961863",
+  "version": "2.1.270"
+}

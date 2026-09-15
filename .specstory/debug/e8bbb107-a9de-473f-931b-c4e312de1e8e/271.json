@@ -1,0 +1,78 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "Web search results for query: \"Cloudflare cf-ray header documentation \"Ray ID\"\"\n\nLinks: [{\"title\":\"cloudflare-docs/src/content/docs/fundamentals/reference/cloudflare-ray-id.mdx at production · cloudflare/cloudflare-docs\",\"url\":\"https://github.com/cloudflare/cloudflare-docs/blob/production/src/content/docs/fundamentals/reference/cloudflare-ray-id.mdx\"},{\"title\":\"What Is a Ray ID? | phoenixNAP IT Glossary\",\"url\":\"https://phoenixnap.com/glossary/ray-id/\"},{\"title\":\"Cf-Ray - Expert Guide to HTTP headers\",\"url\":\"https://http.dev/cf-ray\"},{\"title\":\"Cloudflare Ray ID · Cloudflare Fundamentals docs\",\"url\":\"https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/\"},{\"title\":\"Documentation for cf-request-id/cf-ray - Feature Request Submitting \u0026 Feedback - Cloudflare Community\",\"url\":\"https://community.cloudflare.com/t/documentation-for-cf-request-id-cf-ray/219653\"},{\"title\":\"What is a cf-ray header? How to read a Cloudflare Ray ID and trace one request | Stack Harbor Knowledge Base\",\"url\":\"https://stackharbor.com/en/knowledge-base/cfops-reading-cf-ray-response-headers/\"},{\"title\":\"Cloudflare\",\"url\":\"https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/index.md\"},{\"title\":\"HTTP Header » CF-RAY\",\"url\":\"https://www.validbot.com/header/CF-RAY.html\"},{\"title\":\"feat: add support for adopting Cloudflare Ray-ID as correlation ID\",\"url\":\"https://gitlab.com/gitlab-org/labkit/commit/6f6f5ef477ff3213366aea4ddc3bf882b6134634\"},{\"title\":\"Commits on Source 2\",\"url\":\"https://gitlab.com/gitlab-org/labkit/compare/v1.28.1...v1.29.0\"}]\n\nHere are the search results for Cloudflare cf-ray header documentation about Ray ID:\n\n## Overview\n\nA Cloudflare Ray ID is an identifier given to every request that goes through Cloudflare. Ray IDs are added as a request header, cf-ray, to the connection from Cloudflare to the origin web server.\n\n## Format and Structure\n\nThe cf-ray header field contains the identifier, typically formatted as a 16-character hexadecimal string followed by a hyphen and a three-letter data center code. For example, cf-ray: 8b1c2d3e4f5g6h7i-SEA, where 8b1c2d3e4f5g6h7i represents the Ray ID and SEA denotes the data center that handled the request.\n\n## Accessing Ray IDs\n\nRay IDs can be found using the Developer Tools in your browser or using curl with the -v option to show the headers.\n\n## Use Cases\n\nRay IDs are particularly useful when evaluating Security Events for patterns or false positives or more generally understanding your application traffic. When troubleshooting, the ray ID is the value to provide to Cloudflare support or to search for in log files.\n\n## Important Notes\n\nRay IDs are not guaranteed to be unique for every request. In some situations, different requests may have the same Ray ID.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.",
+        "tool_use_id": "toolu_01Ano38RRAhAYJm43wfHBtuz",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "fde86a61-39a3-488b-a1e1-1e8f5c1f8b0e",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "fde86a61-39a3-488b-a1e1-1e8f5c1f8b0e",
+  "timestamp": "2026-09-15T10:55:16.370Z",
+  "toolUseResult": {
+    "durationSeconds": 7.022463874999899,
+    "query": "Cloudflare cf-ray header documentation \"Ray ID\"",
+    "results": [
+      {
+        "content": [
+          {
+            "title": "cloudflare-docs/src/content/docs/fundamentals/reference/cloudflare-ray-id.mdx at production · cloudflare/cloudflare-docs",
+            "url": "https://github.com/cloudflare/cloudflare-docs/blob/production/src/content/docs/fundamentals/reference/cloudflare-ray-id.mdx"
+          },
+          {
+            "title": "What Is a Ray ID? | phoenixNAP IT Glossary",
+            "url": "https://phoenixnap.com/glossary/ray-id/"
+          },
+          {
+            "title": "Cf-Ray - Expert Guide to HTTP headers",
+            "url": "https://http.dev/cf-ray"
+          },
+          {
+            "title": "Cloudflare Ray ID · Cloudflare Fundamentals docs",
+            "url": "https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/"
+          },
+          {
+            "title": "Documentation for cf-request-id/cf-ray - Feature Request Submitting \u0026 Feedback - Cloudflare Community",
+            "url": "https://community.cloudflare.com/t/documentation-for-cf-request-id-cf-ray/219653"
+          },
+          {
+            "title": "What is a cf-ray header? How to read a Cloudflare Ray ID and trace one request | Stack Harbor Knowledge Base",
+            "url": "https://stackharbor.com/en/knowledge-base/cfops-reading-cf-ray-response-headers/"
+          },
+          {
+            "title": "Cloudflare",
+            "url": "https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/index.md"
+          },
+          {
+            "title": "HTTP Header » CF-RAY",
+            "url": "https://www.validbot.com/header/CF-RAY.html"
+          },
+          {
+            "title": "feat: add support for adopting Cloudflare Ray-ID as correlation ID",
+            "url": "https://gitlab.com/gitlab-org/labkit/commit/6f6f5ef477ff3213366aea4ddc3bf882b6134634"
+          },
+          {
+            "title": "Commits on Source 2",
+            "url": "https://gitlab.com/gitlab-org/labkit/compare/v1.28.1...v1.29.0"
+          }
+        ],
+        "tool_use_id": "srvtoolu_01KpLtRM761TiEp4hjsrzySe"
+      },
+      "Here are the search results for Cloudflare cf-ray header documentation about Ray ID:\n\n## Overview\n\nA Cloudflare Ray ID is an identifier given to every request that goes through Cloudflare. Ray IDs are added as a request header, cf-ray, to the connection from Cloudflare to the origin web server.\n\n## Format and Structure\n\nThe cf-ray header field contains the identifier, typically formatted as a 16-character hexadecimal string followed by a hyphen and a three-letter data center code. For example, cf-ray: 8b1c2d3e4f5g6h7i-SEA, where 8b1c2d3e4f5g6h7i represents the Ray ID and SEA denotes the data center that handled the request.\n\n## Accessing Ray IDs\n\nRay IDs can be found using the Developer Tools in your browser or using curl with the -v option to show the headers.\n\n## Use Cases\n\nRay IDs are particularly useful when evaluating Security Events for patterns or false positives or more generally understanding your application traffic. When troubleshooting, the ray ID is the value to provide to Cloudflare support or to search for in log files.\n\n## Important Notes\n\nRay IDs are not guaranteed to be unique for every request. In some situations, different requests may have the same Ray ID."
+    ],
+    "searchCount": 1
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "2c71a891-060f-458b-8df2-2cf0c7b160aa",
+  "version": "2.1.270"
+}

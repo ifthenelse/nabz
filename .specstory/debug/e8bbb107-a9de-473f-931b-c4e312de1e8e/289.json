@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "low",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_0142bPyFMX8uKHFoBCyjG6Du",
+        "input": {
+          "content": "/**\n * Short, human-written explanations (and, where a genuine canonical public\n * page exists, a link to it) for values the UI displays. Kept separate\n * from the parsers themselves and from render.ts: this is presentation\n * copy, not parsing logic, and having it in one place makes it easy to\n * audit which links are real vs. omitted on purpose.\n *\n * A missing `href` is deliberate, not an oversight - some fields (a\n * platform's internal request ID, a proprietary complexity score) have no\n * single authoritative public page describing that exact field, and this\n * extension does not fabricate links.\n */\nexport interface DocEntry {\n  description: string;\n  href?: string;\n}\n\nexport const FIELD_DOCS: Record\u003cstring, DocEntry\u003e = {\n  \"cdn.provider\": {\n    description:\n      \"Inferred from a combination of response headers (e.g. cf-ray, cf-cache-status, or the value of the server header) rather than one single field.\",\n  },\n  \"cdn.edgeLocation\": {\n    description:\n      \"The Cloudflare PoP (point of presence) that handled this request, parsed out of the cf-ray header's trailing airport code - it is not sent as its own header.\",\n    href: \"https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/\",\n  },\n  \"cdn.rayId\": {\n    description:\n      \"A per-request identifier Cloudflare assigns as it passes through their network. Useful when contacting Cloudflare or origin support, but not guaranteed to be globally unique.\",\n    href: \"https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/\",\n  },\n  \"cdn.cacheStatus\": {\n    description:\n      \"Whether Cloudflare served this response from cache, from the origin, or skipped caching - e.g. HIT, MISS, DYNAMIC, BYPASS, REVALIDATED.\",\n    href: \"https://developers.cloudflare.com/cache/concepts/cache-responses/\",\n  },\n\n  \"platform.provider\": {\n    description:\n      \"Inferred from platform-specific response headers (e.g. powered-by: Shopify or a shopify-complexity-score header).\",\n  },\n  \"platform.servingNode\": {\n    description:\n      \"An identifier for the process or cache node that served the request, read from a Server-Timing entry. It is not necessarily a physical server - it may be a container, worker, or cache node - and Shopify does not publicly document its exact meaning.\",\n  },\n  \"platform.datacenter\": {\n    description:\n      \"The x-dc response header, naming the datacenter/region that handled this request. Not documented in detail publicly; the cloud-provider prefix (gcp-, aws-, azure-) is parsed out where recognized.\",\n  },\n  \"platform.requestId\": {\n    description:\n      \"A per-request identifier from the x-request-id response header, useful for correlating a request with platform/support logs.\",\n  },\n\n  \"timing.metric\": {\n    description:\n      \"One named metric from the Server-Timing response header. Metric names and meanings are defined by whichever backend sent them, not by the Server-Timing spec itself.\",\n    href: \"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing\",\n  },\n\n  \"servertiming.cf\": {\n    description:\n      \"A Server-Timing entry whose name starts with \\\"cf\\\", suggesting it was added by Cloudflare. Cloudflare does not publish a full reference for these metric names.\",\n    href: \"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing\",\n  },\n\n  \"generic.Fastly\": {\n    description:\n      \"Fastly identifies the cache node that served a request via X-Served-By, and whether it was a cache hit via X-Cache.\",\n    href: \"https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/\",\n  },\n  \"generic.Akamai\": {\n    description:\n      \"Headers Akamai's edge network adds to indicate caching behavior and request handling. Akamai does not publish a full public reference for these specific header names.\",\n  },\n  \"generic.Amazon CloudFront\": {\n    description:\n      \"x-amz-cf-id is an opaque per-request trace ID; x-amz-cf-pop names the edge location (PoP) that handled the request, using an airport-code-style naming convention.\",\n  },\n  \"generic.Vercel\": {\n    description:\n      \"x-vercel-id identifies the region(s) the request was routed through; x-vercel-cache reports cache status (HIT, MISS, BYPASS, REVALIDATED).\",\n    href: \"https://vercel.com/docs/headers/response-headers\",\n  },\n  \"generic.Netlify\": {\n    description:\n      \"x-nf-request-id is a per-request identifier used for correlating a request with Netlify's own logs, primarily when contacting Netlify support.\",\n  },\n  \"generic.Google Cloud (Cloud Run / GFE)\": {\n    description:\n      \"x-cloud-trace-context is Google's request-tracing header, used to correlate a request across Google Cloud services (e.g. Cloud Run, Google Front End).\",\n  },\n};\n\nexport function docFor(key: string): DocEntry | undefined {\n  return FIELD_DOCS[key];\n}\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/docs.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf56x59Y6qQ9BZvowk2AG",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5578,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 5578,
+      "cache_read_input_tokens": 137229,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 5578,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 5578,
+          "cache_read_input_tokens": 137229,
+          "input_tokens": 2,
+          "output_tokens": 7771,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 7771,
+      "output_tokens_details": {
+        "thinking_tokens": 5890
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "7b5a7a73-5257-4b3e-91a2-d9943021b6cb",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf56x4eXMMfh9GmpPfnnF",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:57:05.529Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "91d9f055-5c7e-485f-8f23-ec9460b339c5",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_0142bPyFMX8uKHFoBCyjG6Du": {
+      "content": "/**\n * Short, human-written explanations (and, where a genuine canonical public\n * page exists, a link to it) for values the UI displays. Kept separate\n * from the parsers themselves and from render.ts: this is presentation\n * copy, not parsing logic, and having it in one place makes it easy to\n * audit which links are real vs. omitted on purpose.\n *\n * A missing `href` is deliberate, not an oversight - some fields (a\n * platform's internal request ID, a proprietary complexity score) have no\n * single authoritative public page describing that exact field, and this\n * extension does not fabricate links.\n */\nexport interface DocEntry {\n  description: string;\n  href?: string;\n}\n\nexport const FIELD_DOCS: Record\u003cstring, DocEntry\u003e = {\n  \"cdn.provider\": {\n    description:\n      \"Inferred from a combination of response headers (e.g. cf-ray, cf-cache-status, or the value of the server header) rather than one single field.\",\n  },\n  \"cdn.edgeLocation\": {\n    description:\n      \"The Cloudflare PoP (point of presence) that handled this request, parsed out of the cf-ray header's trailing airport code - it is not sent as its own header.\",\n    href: \"https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/\",\n  },\n  \"cdn.rayId\": {\n    description:\n      \"A per-request identifier Cloudflare assigns as it passes through their network. Useful when contacting Cloudflare or origin support, but not guaranteed to be globally unique.\",\n    href: \"https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/\",\n  },\n  \"cdn.cacheStatus\": {\n    description:\n      \"Whether Cloudflare served this response from cache, from the origin, or skipped caching - e.g. HIT, MISS, DYNAMIC, BYPASS, REVALIDATED.\",\n    href: \"https://developers.cloudflare.com/cache/concepts/cache-responses/\",\n  },\n\n  \"platform.provider\": {\n    description:\n      \"Inferred from platform-specific response headers (e.g. powered-by: Shopify or a shopify-complexity-score header).\",\n  },\n  \"platform.servingNode\": {\n    description:\n      \"An identifier for the process or cache node that served the request, read from a Server-Timing entry. It is not necessarily a physical server - it may be a container, worker, or cache node - and Shopify does not publicly document its exact meaning.\",\n  },\n  \"platform.datacenter\": {\n    description:\n      \"The x-dc response header, naming the datacenter/region that handled this request. Not documented in detail publicly; the cloud-provider prefix (gcp-, aws-, azure-) is parsed out where recognized.\",\n  },\n  \"platform.requestId\": {\n    description:\n      \"A per-request identifier from the x-request-id response header, useful for correlating a request with platform/support logs.\",\n  },\n\n  \"timing.metric\": {\n    description:\n      \"One named metric from the Server-Timing response header. Metric names and meanings are defined by whichever backend sent them, not by the Server-Timing spec itself.\",\n    href: \"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing\",\n  },\n\n  \"servertiming.cf\": {\n    description:\n      \"A Server-Timing entry whose name starts with \\\"cf\\\", suggesting it was added by Cloudflare. Cloudflare does not publish a full reference for these metric names.\",\n    href: \"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing\",\n  },\n\n  \"generic.Fastly\": {\n    description:\n      \"Fastly identifies the cache node that served a request via X-Served-By, and whether it was a cache hit via X-Cache.\",\n    href: \"https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/\",\n  },\n  \"generic.Akamai\": {\n    description:\n      \"Headers Akamai's edge network adds to indicate caching behavior and request handling. Akamai does not publish a full public reference for these specific header names.\",\n  },\n  \"generic.Amazon CloudFront\": {\n    description:\n      \"x-amz-cf-id is an opaque per-request trace ID; x-amz-cf-pop names the edge location (PoP) that handled the request, using an airport-code-style naming convention.\",\n  },\n  \"generic.Vercel\": {\n    description:\n      \"x-vercel-id identifies the region(s) the request was routed through; x-vercel-cache reports cache status (HIT, MISS, BYPASS, REVALIDATED).\",\n    href: \"https://vercel.com/docs/headers/response-headers\",\n  },\n  \"generic.Netlify\": {\n    description:\n      \"x-nf-request-id is a per-request identifier used for correlating a request with Netlify's own logs, primarily when contacting Netlify support.\",\n  },\n  \"generic.Google Cloud (Cloud Run / GFE)\": {\n    description:\n      \"x-cloud-trace-context is Google's request-tracing header, used to correlate a request across Google Cloud services (e.g. Cloud Run, Google Front End).\",\n  },\n};\n\nexport function docFor(key: string): DocEntry | undefined {\n  return FIELD_DOCS[key];\n}\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/docs.ts"
+    }
+  }
+}

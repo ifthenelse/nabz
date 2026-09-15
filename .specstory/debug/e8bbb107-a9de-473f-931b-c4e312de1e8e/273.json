@@ -1,0 +1,78 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "Web search results for query: \"MDN Server-Timing header documentation\"\n\nLinks: [{\"title\":\"Server-Timing header - HTTP | MDN\",\"url\":\"https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing\"},{\"title\":\"Server-Timing header - HTTP - MDN Web Docs\",\"url\":\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Server-Timing\"},{\"title\":\"content/files/en-us/web/http/reference/headers/server-timing/index.md at main · mdn/content\",\"url\":\"https://github.com/mdn/content/blob/main/files/en-us/web/http/reference/headers/server-timing/index.md?plain=1\"},{\"title\":\"content/files/en-us/web/api/performanceservertiming/duration/index.md at main · mdn/content\",\"url\":\"https://github.com/mdn/content/blob/main/files/en-us/web/api/performanceservertiming/duration/index.md?plain=1\"},{\"title\":\"PerformanceResourceTiming: serverTiming property - Web APIs | MDN\",\"url\":\"https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/serverTiming\"},{\"title\":\"content/files/en-us/web/api/performance_api/server_timing/index.md at main · mdn/content\",\"url\":\"https://github.com/mdn/content/blob/main/files/en-us/web/api/performance_api/server_timing/index.md\"},{\"title\":\"Server-Timing - Expert Guide to HTTP headers\",\"url\":\"https://http.dev/server-timing\"},{\"title\":\"Server-Timing - HTTP | MDN\",\"url\":\"https://mdn2.netlify.app/en-us/docs/web/http/headers/server-timing/\"},{\"title\":\"server timing\",\"url\":\"https://webarchive.library.unt.edu/web/20170126111400mp_/http://wicg.github.io/server-timing\"},{\"title\":\"Server Timing\",\"url\":\"https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Server-Timing\"}]\n\nI found the MDN documentation on the Server-Timing header. Here's what it covers:\n\n## Overview\n\nThe HTTP Server-Timing response header communicates one or more performance metrics about the request-response cycle to the user agent. It is used to surface backend server timing metrics (for example, database read/write, CPU time, file system access, etc.) in the developer tools in the user's browser or in the PerformanceServerTiming interface.\n\n## Syntax\n\nA timing-metric has a name, and may include an optional duration and an optional description. Here are some examples:\n\n- A metric with a name only: `Server-Timing: missedCache`\n- A metric with a duration: `Server-Timing: cpu;dur=2.4`\n- A metric with a description and duration: `Server-Timing: cache;desc=\"Cache Read\";dur=23.2`\n- Multiple metrics: `Server-Timing: db;dur=53, app;dur=47.2`\n\n## Important Security Considerations\n\nThe Server-Timing header may expose potentially sensitive application and infrastructure information. Decide which metrics to send, when to send them, and who should see them based on the use case.\n\n## Browser Compatibility Note\n\nOnly the browser's DevTools can use the Server-Timing header as an HTTP trailer to display information in the Network -\u003e Timings tab. The Fetch API cannot access HTTP trailers.\n\nThe complete documentation is available at: https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.",
+        "tool_use_id": "toolu_01Sh2EAsvazPmsHdWrbbKE3K",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "b7bfa964-b4ee-49e6-8126-864f5a6f2b3d",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "b7bfa964-b4ee-49e6-8126-864f5a6f2b3d",
+  "timestamp": "2026-09-15T10:55:20.812Z",
+  "toolUseResult": {
+    "durationSeconds": 7.21175074999989,
+    "query": "MDN Server-Timing header documentation",
+    "results": [
+      {
+        "content": [
+          {
+            "title": "Server-Timing header - HTTP | MDN",
+            "url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing"
+          },
+          {
+            "title": "Server-Timing header - HTTP - MDN Web Docs",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Server-Timing"
+          },
+          {
+            "title": "content/files/en-us/web/http/reference/headers/server-timing/index.md at main · mdn/content",
+            "url": "https://github.com/mdn/content/blob/main/files/en-us/web/http/reference/headers/server-timing/index.md?plain=1"
+          },
+          {
+            "title": "content/files/en-us/web/api/performanceservertiming/duration/index.md at main · mdn/content",
+            "url": "https://github.com/mdn/content/blob/main/files/en-us/web/api/performanceservertiming/duration/index.md?plain=1"
+          },
+          {
+            "title": "PerformanceResourceTiming: serverTiming property - Web APIs | MDN",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/serverTiming"
+          },
+          {
+            "title": "content/files/en-us/web/api/performance_api/server_timing/index.md at main · mdn/content",
+            "url": "https://github.com/mdn/content/blob/main/files/en-us/web/api/performance_api/server_timing/index.md"
+          },
+          {
+            "title": "Server-Timing - Expert Guide to HTTP headers",
+            "url": "https://http.dev/server-timing"
+          },
+          {
+            "title": "Server-Timing - HTTP | MDN",
+            "url": "https://mdn2.netlify.app/en-us/docs/web/http/headers/server-timing/"
+          },
+          {
+            "title": "server timing",
+            "url": "https://webarchive.library.unt.edu/web/20170126111400mp_/http://wicg.github.io/server-timing"
+          },
+          {
+            "title": "Server Timing",
+            "url": "https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Server-Timing"
+          }
+        ],
+        "tool_use_id": "srvtoolu_013vpP5Kstb5B2btbyYcjGme"
+      },
+      "I found the MDN documentation on the Server-Timing header. Here's what it covers:\n\n## Overview\n\nThe HTTP Server-Timing response header communicates one or more performance metrics about the request-response cycle to the user agent. It is used to surface backend server timing metrics (for example, database read/write, CPU time, file system access, etc.) in the developer tools in the user's browser or in the PerformanceServerTiming interface.\n\n## Syntax\n\nA timing-metric has a name, and may include an optional duration and an optional description. Here are some examples:\n\n- A metric with a name only: `Server-Timing: missedCache`\n- A metric with a duration: `Server-Timing: cpu;dur=2.4`\n- A metric with a description and duration: `Server-Timing: cache;desc=\"Cache Read\";dur=23.2`\n- Multiple metrics: `Server-Timing: db;dur=53, app;dur=47.2`\n\n## Important Security Considerations\n\nThe Server-Timing header may expose potentially sensitive application and infrastructure information. Decide which metrics to send, when to send them, and who should see them based on the use case.\n\n## Browser Compatibility Note\n\nOnly the browser's DevTools can use the Server-Timing header as an HTTP trailer to display information in the Network -\u003e Timings tab. The Fetch API cannot access HTTP trailers.\n\nThe complete documentation is available at: https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing"
+    ],
+    "searchCount": 1
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "8991e07f-68ba-49d5-a7a6-d313d0309d77",
+  "version": "2.1.270"
+}

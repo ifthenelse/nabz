@@ -1,0 +1,74 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "Web search results for query: \"Cloudflare cf-cache-status header values documentation\"\n\nLinks: [{\"title\":\"Cf-Cache-Status - Expert Guide to HTTP headers\",\"url\":\"https://http.dev/cf-cache-status\"},{\"title\":\"Cloudflare's CF-Cache-Status Headers Explained | Fishtank\",\"url\":\"https://www.getfishtank.com/insights/cloudflare-cdn-cf-cache-status-headers-explained\"},{\"title\":\"Cloudflare's cf-cache-status header explained | DebugBear\",\"url\":\"https://www.debugbear.com/docs/cf-cache-status\"},{\"title\":\"Cf-Cache-Status HTTP Header | redirect.li\",\"url\":\"https://redirect.li/http/headers/cf-cache-status/\"},{\"title\":\"Understanding Cloudflare's CF-Cache-Status Header\",\"url\":\"https://kerkour.com/understanding-cloudflare-cdn-cf-cache-status-header\"},{\"title\":\"HTTP Header » CF-Cache-Status\",\"url\":\"https://www.validbot.com/header/CF-Cache-Status.html\"},{\"title\":\"Interpreting X-Cache and CF-Cache-Status Headers | cache-control.com\",\"url\":\"https://www.cache-control.com/core-caching-fundamentals-http-lifecycle/cache-debugging-and-observability/interpreting-x-cache-and-cf-cache-status-headers/\"},{\"title\":\"cf-cache-status explained: every Cloudflare cache status and how to fix it — warmup.rocks\",\"url\":\"https://warmup.rocks/blog/cf-cache-status\"},{\"title\":\"cache responses\",\"url\":\"https://developers.cloudflare.com/cache/concepts/cache-responses/\"}]\n\nBased on the search results, here's a comprehensive overview of Cloudflare's cf-cache-status header values:\n\n## CF-Cache-Status Header Values\n\nThe Cf-Cache-Status header is added by Cloudflare to every response served through its network. The value tells whether the response was served from cache, fetched from the origin, or skipped caching entirely.\n\n### Key Cache Status Values:\n\n**HIT** - The resource was found in Cloudflare's cache.\n\n**MISS** - The resource was not found in Cloudflare's cache and was served from the origin web server.\n\n**DYNAMIC** - Cloudflare decided at request time the resource is not eligible for caching based on default behavior and current configuration. Every request for this resource goes directly to the origin server.\n\n**BYPASS** - Cloudflare decided at response time to skip caching. Responses with Cache-Control no-store or private directives or Vary: * always produce BYPASS.\n\n**REVALIDATED** - The cached resource was confirmed as still valid through a conditional request to the origin. The origin responded the content was unchanged, and the cached version was served.\n\n**NONE/UNKNOWN** - Cloudflare generated the response internally without reaching the origin server or cache. This occurs when a Cloudflare Worker produces a response, when WAF rules block a request, or when a redirect fires before cache logic runs.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.",
+        "tool_use_id": "toolu_01WDd1JsFJcunkJMwQGUXHcM",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "54d923f5-1717-41fc-8791-34e42179624d",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "54d923f5-1717-41fc-8791-34e42179624d",
+  "timestamp": "2026-09-15T10:55:18.568Z",
+  "toolUseResult": {
+    "durationSeconds": 7.046939999999944,
+    "query": "Cloudflare cf-cache-status header values documentation",
+    "results": [
+      {
+        "content": [
+          {
+            "title": "Cf-Cache-Status - Expert Guide to HTTP headers",
+            "url": "https://http.dev/cf-cache-status"
+          },
+          {
+            "title": "Cloudflare's CF-Cache-Status Headers Explained | Fishtank",
+            "url": "https://www.getfishtank.com/insights/cloudflare-cdn-cf-cache-status-headers-explained"
+          },
+          {
+            "title": "Cloudflare's cf-cache-status header explained | DebugBear",
+            "url": "https://www.debugbear.com/docs/cf-cache-status"
+          },
+          {
+            "title": "Cf-Cache-Status HTTP Header | redirect.li",
+            "url": "https://redirect.li/http/headers/cf-cache-status/"
+          },
+          {
+            "title": "Understanding Cloudflare's CF-Cache-Status Header",
+            "url": "https://kerkour.com/understanding-cloudflare-cdn-cf-cache-status-header"
+          },
+          {
+            "title": "HTTP Header » CF-Cache-Status",
+            "url": "https://www.validbot.com/header/CF-Cache-Status.html"
+          },
+          {
+            "title": "Interpreting X-Cache and CF-Cache-Status Headers | cache-control.com",
+            "url": "https://www.cache-control.com/core-caching-fundamentals-http-lifecycle/cache-debugging-and-observability/interpreting-x-cache-and-cf-cache-status-headers/"
+          },
+          {
+            "title": "cf-cache-status explained: every Cloudflare cache status and how to fix it — warmup.rocks",
+            "url": "https://warmup.rocks/blog/cf-cache-status"
+          },
+          {
+            "title": "cache responses",
+            "url": "https://developers.cloudflare.com/cache/concepts/cache-responses/"
+          }
+        ],
+        "tool_use_id": "srvtoolu_01CKYgnNCM7dj3CMVGdpq732"
+      },
+      "Based on the search results, here's a comprehensive overview of Cloudflare's cf-cache-status header values:\n\n## CF-Cache-Status Header Values\n\nThe Cf-Cache-Status header is added by Cloudflare to every response served through its network. The value tells whether the response was served from cache, fetched from the origin, or skipped caching entirely.\n\n### Key Cache Status Values:\n\n**HIT** - The resource was found in Cloudflare's cache.\n\n**MISS** - The resource was not found in Cloudflare's cache and was served from the origin web server.\n\n**DYNAMIC** - Cloudflare decided at request time the resource is not eligible for caching based on default behavior and current configuration. Every request for this resource goes directly to the origin server.\n\n**BYPASS** - Cloudflare decided at response time to skip caching. Responses with Cache-Control no-store or private directives or Vary: * always produce BYPASS.\n\n**REVALIDATED** - The cached resource was confirmed as still valid through a conditional request to the origin. The origin responded the content was unchanged, and the cached version was served.\n\n**NONE/UNKNOWN** - Cloudflare generated the response internally without reaching the origin server or cache. This occurs when a Cloudflare Worker produces a response, when WAF rules block a request, or when a redirect fires before cache logic runs."
+    ],
+    "searchCount": 1
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "636fb15d-c655-43f5-b6f8-cab636554779",
+  "version": "2.1.270"
+}

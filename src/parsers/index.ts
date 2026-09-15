@@ -9,6 +9,8 @@ export { parseServerTimingHeader, findMetric } from "./serverTiming.js";
 export { parseCloudflare } from "./cloudflare.js";
 export { parseShopify, parseDatacenterRegion } from "./shopify.js";
 export { detectGenericProviders } from "./generic.js";
+export { docFor, FIELD_DOCS } from "./docs.js";
+export type { DocEntry } from "./docs.js";
 
 /** Lower-cases header names so lookups are case-insensitive and consistent. */
 export function normalizeHeaders(headers: Record<string, string>): Record<string, string> {

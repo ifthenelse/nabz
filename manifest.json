@@ -3,7 +3,7 @@
   "name": "Infra Inspector",
   "short_name": "Infra Inspector",
   "description": "Shows CDN, edge, and backend infrastructure identifiers exposed by the current page's HTTP response headers.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "minimum_chrome_version": "116",
   "action": {
     "default_popup": "popup/popup.html",

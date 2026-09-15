@@ -1,0 +1,78 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "Web search results for query: \"Fastly X-Served-By X-Cache response header documentation\"\n\nLinks: [{\"title\":\"X-Served-By | Fastly Documentation\",\"url\":\"https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/\"},{\"title\":\"Shielding | Fastly Documentation\",\"url\":\"https://www.fastly.com/documentation/guides/concepts/shielding/\"},{\"title\":\"X-Cache | Fastly Documentation\",\"url\":\"https://www.fastly.com/documentation/reference/http/http-headers/X-Cache/\"},{\"title\":\"Debugging Response Headers - General - Fastly Community\",\"url\":\"https://community.fastly.com/t/debugging-response-headers/2355\"},{\"title\":\"Checking cache | Fastly Documentation\",\"url\":\"https://www.fastly.com/documentation/guides/full-site-delivery/caching/checking-cache/\"},{\"title\":\"X-Served-By - Expert Guide to HTTP headers\",\"url\":\"https://http.dev/x-served-by\"},{\"title\":\"Understanding common cache-related HTTP response headers | DrupalEasy\",\"url\":\"https://www.drupaleasy.com/blogs/ultimike/2021/01/understanding-common-cache-related-http-response-headers\"},{\"title\":\"X-Cache-Hits | Fastly Documentation\",\"url\":\"https://www.fastly.com/documentation/reference/http/http-headers/X-Cache-Hits/\"},{\"title\":\"Preventing cache poisoning via HTTP X-headers | Fastly Documentation\",\"url\":\"https://www.fastly.com/documentation/guides/full-site-delivery/caching/preventing-cache-poisoning/\"},{\"title\":\"Header reference | Fastly Documentation\",\"url\":\"https://www.fastly.com/documentation/reference/http/http-headers/\"}]\n\nBased on the search results, here's the documentation for Fastly's X-Served-By and X-Cache response headers:\n\n## X-Served-By Header\n\nThis non-standard header is set by Fastly by default on all responses and contains the identity of the cache server acting as the delivery node. In services that use shielding or Next-gen WAF at Edge there may be more than one server identity listed, separated by commas.\n\nCache nodes are moved in and out of service continually, and cache IDs may be reused, so constructing logic that acts on the cache ID is discouraged.\n\n## X-Cache Header\n\nFastly appends this non-standard header to all responses by default using a simplified derivative of the fastly_info.state variable. If the value of fastly_info.state is HIT or any value that starts with HIT- then X-Cache will be set to HIT, otherwise MISS.\n\nRequests resulting in a PASS will be reported as MISS, while requests resulting in edge-generated synthetic content will be reported as HIT. Additionally all hits resulting from serving stale or background revalidations will also report as HIT.\n\nThis header may contain reports from multiple servers, if shielding or Next-gen WAF at Edge is enabled, or if you use custom VCL code that invokes the restart statement.\n\nThe official Fastly documentation can be found at:\n- [X-Served-By Documentation](https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/)\n- [X-Cache Documentation](https://www.fastly.com/documentation/reference/http/http-headers/X-Cache/)\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.",
+        "tool_use_id": "toolu_012yg9DnvKqMADWpvFTNBnuZ",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "adbb74d9-ec2a-479f-9c09-475a28b2c152",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "adbb74d9-ec2a-479f-9c09-475a28b2c152",
+  "timestamp": "2026-09-15T10:55:46.854Z",
+  "toolUseResult": {
+    "durationSeconds": 7.531475624999962,
+    "query": "Fastly X-Served-By X-Cache response header documentation",
+    "results": [
+      {
+        "content": [
+          {
+            "title": "X-Served-By | Fastly Documentation",
+            "url": "https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/"
+          },
+          {
+            "title": "Shielding | Fastly Documentation",
+            "url": "https://www.fastly.com/documentation/guides/concepts/shielding/"
+          },
+          {
+            "title": "X-Cache | Fastly Documentation",
+            "url": "https://www.fastly.com/documentation/reference/http/http-headers/X-Cache/"
+          },
+          {
+            "title": "Debugging Response Headers - General - Fastly Community",
+            "url": "https://community.fastly.com/t/debugging-response-headers/2355"
+          },
+          {
+            "title": "Checking cache | Fastly Documentation",
+            "url": "https://www.fastly.com/documentation/guides/full-site-delivery/caching/checking-cache/"
+          },
+          {
+            "title": "X-Served-By - Expert Guide to HTTP headers",
+            "url": "https://http.dev/x-served-by"
+          },
+          {
+            "title": "Understanding common cache-related HTTP response headers | DrupalEasy",
+            "url": "https://www.drupaleasy.com/blogs/ultimike/2021/01/understanding-common-cache-related-http-response-headers"
+          },
+          {
+            "title": "X-Cache-Hits | Fastly Documentation",
+            "url": "https://www.fastly.com/documentation/reference/http/http-headers/X-Cache-Hits/"
+          },
+          {
+            "title": "Preventing cache poisoning via HTTP X-headers | Fastly Documentation",
+            "url": "https://www.fastly.com/documentation/guides/full-site-delivery/caching/preventing-cache-poisoning/"
+          },
+          {
+            "title": "Header reference | Fastly Documentation",
+            "url": "https://www.fastly.com/documentation/reference/http/http-headers/"
+          }
+        ],
+        "tool_use_id": "srvtoolu_01CnuJ4zv1PhmrsawZ4wa292"
+      },
+      "Based on the search results, here's the documentation for Fastly's X-Served-By and X-Cache response headers:\n\n## X-Served-By Header\n\nThis non-standard header is set by Fastly by default on all responses and contains the identity of the cache server acting as the delivery node. In services that use shielding or Next-gen WAF at Edge there may be more than one server identity listed, separated by commas.\n\nCache nodes are moved in and out of service continually, and cache IDs may be reused, so constructing logic that acts on the cache ID is discouraged.\n\n## X-Cache Header\n\nFastly appends this non-standard header to all responses by default using a simplified derivative of the fastly_info.state variable. If the value of fastly_info.state is HIT or any value that starts with HIT- then X-Cache will be set to HIT, otherwise MISS.\n\nRequests resulting in a PASS will be reported as MISS, while requests resulting in edge-generated synthetic content will be reported as HIT. Additionally all hits resulting from serving stale or background revalidations will also report as HIT.\n\nThis header may contain reports from multiple servers, if shielding or Next-gen WAF at Edge is enabled, or if you use custom VCL code that invokes the restart statement.\n\nThe official Fastly documentation can be found at:\n- [X-Served-By Documentation](https://www.fastly.com/documentation/reference/http/http-headers/X-Served-By/)\n- [X-Cache Documentation](https://www.fastly.com/documentation/reference/http/http-headers/X-Cache/)"
+    ],
+    "searchCount": 1
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "2b2af802-728e-40f2-9ce8-e0796396d138",
+  "version": "2.1.270"
+}

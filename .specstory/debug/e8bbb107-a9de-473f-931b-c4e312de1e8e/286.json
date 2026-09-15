@@ -1,0 +1,78 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "Web search results for query: \"Netlify x-nf-request-id response header documentation\"\n\nLinks: [{\"title\":\"X-Nf-Request-Id - Expert Guide to HTTP headers\",\"url\":\"https://http.dev/x-nf-request-id\"},{\"title\":\"[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - #45 by Julian.Dumitrascu - Support Guides - Netlify Support Forums\",\"url\":\"https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385/45\"},{\"title\":\"[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - Support Guides - Netlify Support Forums\",\"url\":\"https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385\"},{\"title\":\"[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - Page 2 - Support Guides - Netlify Support Forums\",\"url\":\"https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385?page=2\"},{\"title\":\"Netlify Support (@NetlifySupport) on X\",\"url\":\"https://twitter.com/NetlifySupport/status/1063864759139717120\"},{\"title\":\"Custom headers | Netlify Docs\",\"url\":\"https://docs.netlify.com/manage/routing/headers/\"},{\"title\":\"X-nf-sign header missing - Support - Netlify Support Forums\",\"url\":\"https://answers.netlify.com/t/x-nf-sign-header-missing/46615\"},{\"title\":\"How to configure netlify.toml redirects, headers, and env vars | Netlify Knowledge Base\",\"url\":\"https://www.netlify.com/knowledge-base/how-to-configure-netlifytoml-redirects-headers-and-env-vars/\"},{\"title\":\"How to configure redirects, headers, and env vars in netlify.toml | Netlify Knowledge Base\",\"url\":\"https://www.netlify.com/knowledge-base/how-to-configure-redirects-headers-and-env-vars-in-netlifyto/\"},{\"title\":\"[Support Guide] Understanding and debugging prerendering - #35 by luke - Support Guides - Netlify Support Forums\",\"url\":\"https://answers.netlify.com/t/support-guide-understanding-and-debugging-prerendering/150/35\"}]\n\nBased on the search results, here's what I found about the `x-nf-request-id` response header:\n\n## Overview\n\nThe X-Nf-Request-Id header carries a unique request identifier assigned by Netlify's edge network to every response. The value uniquely identifies each request and enables log correlation when debugging issues in Netlify's dashboard or when working with Netlify support.\n\n## Purpose\n\nThe header serves a similar purpose to X-Request-Id in general infrastructure and X-Vercel-Id on Vercel deployments. The X-Nf-Request-Id value pinpoints the exact request in the platform's logging infrastructure.\n\n## Support Usage\n\nWhen working with Netlify Support, you may be asked to provide the `x-nf-request-id` value from your HTTP response headers to help troubleshoot issues. This allows the support team to trace your specific request through Netlify's infrastructure.\n\nThe search results also reference a support guide on Netlify's forums that provides more detailed information about how to locate and use this header, though the full documentation wasn't completely captured in these results. You can visit the Netlify Support Forums directly for additional details.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.",
+        "tool_use_id": "toolu_019eRQ5FgThbwmus9EDZttB9",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "3b5e3be9-2896-49a5-bdf5-51084c548569",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "3b5e3be9-2896-49a5-bdf5-51084c548569",
+  "timestamp": "2026-09-15T10:55:48.911Z",
+  "toolUseResult": {
+    "durationSeconds": 5.735553707999876,
+    "query": "Netlify x-nf-request-id response header documentation",
+    "results": [
+      {
+        "content": [
+          {
+            "title": "X-Nf-Request-Id - Expert Guide to HTTP headers",
+            "url": "https://http.dev/x-nf-request-id"
+          },
+          {
+            "title": "[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - #45 by Julian.Dumitrascu - Support Guides - Netlify Support Forums",
+            "url": "https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385/45"
+          },
+          {
+            "title": "[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - Support Guides - Netlify Support Forums",
+            "url": "https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385"
+          },
+          {
+            "title": "[Support Guide] Netlify Support asked for the 'x-nf-request-id' header? What is it and how do I find it? - Page 2 - Support Guides - Netlify Support Forums",
+            "url": "https://answers.netlify.com/t/support-guide-netlify-support-asked-for-the-x-nf-request-id-header-what-is-it-and-how-do-i-find-it/4385?page=2"
+          },
+          {
+            "title": "Netlify Support (@NetlifySupport) on X",
+            "url": "https://twitter.com/NetlifySupport/status/1063864759139717120"
+          },
+          {
+            "title": "Custom headers | Netlify Docs",
+            "url": "https://docs.netlify.com/manage/routing/headers/"
+          },
+          {
+            "title": "X-nf-sign header missing - Support - Netlify Support Forums",
+            "url": "https://answers.netlify.com/t/x-nf-sign-header-missing/46615"
+          },
+          {
+            "title": "How to configure netlify.toml redirects, headers, and env vars | Netlify Knowledge Base",
+            "url": "https://www.netlify.com/knowledge-base/how-to-configure-netlifytoml-redirects-headers-and-env-vars/"
+          },
+          {
+            "title": "How to configure redirects, headers, and env vars in netlify.toml | Netlify Knowledge Base",
+            "url": "https://www.netlify.com/knowledge-base/how-to-configure-redirects-headers-and-env-vars-in-netlifyto/"
+          },
+          {
+            "title": "[Support Guide] Understanding and debugging prerendering - #35 by luke - Support Guides - Netlify Support Forums",
+            "url": "https://answers.netlify.com/t/support-guide-understanding-and-debugging-prerendering/150/35"
+          }
+        ],
+        "tool_use_id": "srvtoolu_01FjWM5gnJM9cBENG2zogUJZ"
+      },
+      "Based on the search results, here's what I found about the `x-nf-request-id` response header:\n\n## Overview\n\nThe X-Nf-Request-Id header carries a unique request identifier assigned by Netlify's edge network to every response. The value uniquely identifies each request and enables log correlation when debugging issues in Netlify's dashboard or when working with Netlify support.\n\n## Purpose\n\nThe header serves a similar purpose to X-Request-Id in general infrastructure and X-Vercel-Id on Vercel deployments. The X-Nf-Request-Id value pinpoints the exact request in the platform's logging infrastructure.\n\n## Support Usage\n\nWhen working with Netlify Support, you may be asked to provide the `x-nf-request-id` value from your HTTP response headers to help troubleshoot issues. This allows the support team to trace your specific request through Netlify's infrastructure.\n\nThe search results also reference a support guide on Netlify's forums that provides more detailed information about how to locate and use this header, though the full documentation wasn't completely captured in these results. You can visit the Netlify Support Forums directly for additional details."
+    ],
+    "searchCount": 1
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "b77472f6-0f47-4732-9b2c-8493904a152e",
+  "version": "2.1.270"
+}

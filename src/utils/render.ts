@@ -1,4 +1,5 @@
 import type { Capture, ValueKind } from "../parsers/types.js";
+import { docFor } from "../parsers/docs.js";
 import { copyToClipboard } from "./clipboard.js";
 import { formatMs } from "./format.js";
 
@@ -32,10 +33,69 @@ function copyButton(value: string): HTMLButtonElement {
   return btn;
 }
 
+// Only one tooltip may be open at a time, across the whole page.
+let openTooltip: HTMLElement | null = null;
+
+function closeOpenTooltip(): void {
+  if (openTooltip) {
+    openTooltip.hidden = true;
+    openTooltip = null;
+  }
+}
+
+document.addEventListener("click", (e) => {
+  if (!openTooltip) return;
+  const target = e.target as HTMLElement;
+  if (openTooltip.contains(target) || target.closest(".info-btn")) return;
+  closeOpenTooltip();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeOpenTooltip();
+});
+
+/** Builds the (i) button + popover tooltip shown next to a row's label. */
+function infoButton(label: string, docKey: string): HTMLElement | null {
+  const doc = docFor(docKey);
+  if (!doc) return null;
+
+  const wrap = el("span", "info-wrap");
+  const btn = el("button", "info-btn", "i");
+  btn.type = "button";
+  btn.setAttribute("aria-label", `About ${label}`);
+
+  const tooltip = el("div", "tooltip");
+  tooltip.setAttribute("role", "tooltip");
+  tooltip.hidden = true;
+  tooltip.append(el("p", "tooltip-text", doc.description));
+  if (doc.href) {
+    const link = el("a", "tooltip-link", "Learn more ↗");
+    link.href = doc.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    tooltip.append(link);
+  }
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const wasOpen = !tooltip.hidden;
+    closeOpenTooltip();
+    if (!wasOpen) {
+      tooltip.hidden = false;
+      openTooltip = tooltip;
+    }
+  });
+
+  wrap.append(btn, tooltip);
+  return wrap;
+}
+
 interface RowOptions {
   kind?: ValueKind;
   title?: string;
   copyable?: boolean;
+  /** Key into FIELD_DOCS (src/parsers/docs.ts); adds an (i) info button when present. */
+  docKey?: string;
 }
 
 /** Renders one "label: value" row, or null when the value is absent. */
@@ -43,7 +103,13 @@ function row(label: string, value: string | undefined, opts: RowOptions = {}): H
   if (value === undefined || value === "") return null;
 
   const wrapper = el("div", "row");
-  const labelEl = el("span", "row-label", label);
+  const labelEl = el("span", "row-label");
+  labelEl.append(document.createTextNode(label));
+  if (opts.docKey) {
+    const info = infoButton(label, opts.docKey);
+    if (info) labelEl.append(info);
+  }
+
   const group = el("div", "row-value-group");
   const valueEl = el("span", "row-value", value);
   if (opts.title) valueEl.title = opts.title;
@@ -89,6 +155,7 @@ function rawHeadersSection(headers: Record<string, string>): HTMLElement | null 
  */
 export function renderCapture(container: HTMLElement, capture: Capture | undefined): void {
   container.replaceChildren();
+  openTooltip = null;
 
   if (!capture) {
     container.append(
@@ -106,22 +173,26 @@ export function renderCapture(container: HTMLElement, capture: Capture | undefin
 
   sections.push(
     section("Overview", [
-      row("Provider", info.cdn?.provider, { kind: "inferred" }),
-      row("Edge location", info.cdn?.edgeLocation, { kind: "parsed" }),
-      row("Cache", info.cdn?.cacheStatus, { kind: "observed" }),
-      row("Platform", info.platform?.provider, { kind: "inferred" }),
+      row("Provider", info.cdn?.provider, { kind: "inferred", docKey: "cdn.provider" }),
+      row("Edge location", info.cdn?.edgeLocation, { kind: "parsed", docKey: "cdn.edgeLocation" }),
+      row("Cache", info.cdn?.cacheStatus, { kind: "observed", docKey: "cdn.cacheStatus" }),
+      row("Platform", info.platform?.provider, { kind: "inferred", docKey: "platform.provider" }),
     ]),
   );
 
   if (info.cdn?.provider === "Cloudflare") {
     sections.push(
       section("Cloudflare", [
-        row("Ray ID", stripPop(info.cdn.rayId, info.cdn.edgeLocation), { kind: "observed" }),
+        row("Ray ID", stripPop(info.cdn.rayId, info.cdn.edgeLocation), {
+          kind: "observed",
+          docKey: "cdn.rayId",
+        }),
         row("PoP", info.cdn.edgeLocation, {
           kind: "parsed",
           title: "Parsed from the cf-ray header - not sent as its own header.",
+          docKey: "cdn.edgeLocation",
         }),
-        row("Cache status", info.cdn.cacheStatus, { kind: "observed" }),
+        row("Cache status", info.cdn.cacheStatus, { kind: "observed", docKey: "cdn.cacheStatus" }),
       ]),
     );
 
@@ -133,6 +204,7 @@ export function renderCapture(container: HTMLElement, capture: Capture | undefin
           cfServerTiming.map((m) =>
             row(m.name, m.description ?? (m.duration !== undefined ? formatMs(m.duration) : undefined), {
               kind: "observed",
+              docKey: "servertiming.cf",
             }),
           ),
         ),
@@ -142,23 +214,27 @@ export function renderCapture(container: HTMLElement, capture: Capture | undefin
 
   sections.push(
     section("Application / Origin", [
-      row("Platform", info.platform?.provider, { kind: "inferred" }),
+      row("Platform", info.platform?.provider, { kind: "inferred", docKey: "platform.provider" }),
       row("Serving node", info.platform?.servingNode, {
         kind: "observed",
         title: "Identifier for the process/node that served the request - not necessarily a physical server.",
+        docKey: "platform.servingNode",
       }),
-      row("Datacenter", info.platform?.datacenters?.join(", "), { kind: "observed" }),
-      row("Request ID", info.platform?.requestId, { kind: "observed" }),
+      row("Datacenter", info.platform?.datacenters?.join(", "), {
+        kind: "observed",
+        docKey: "platform.datacenter",
+      }),
+      row("Request ID", info.platform?.requestId, { kind: "observed", docKey: "platform.requestId" }),
     ]),
   );
 
   sections.push(
     section("Performance", [
-      row("Processing", formatMs(info.timing?.processing), { kind: "parsed" }),
-      row("Database", formatMs(info.timing?.database), { kind: "parsed" }),
-      row("Async DB", formatMs(info.timing?.asyncDatabase), { kind: "parsed" }),
-      row("Render", formatMs(info.timing?.render), { kind: "parsed" }),
-      row("Compression", formatMs(info.timing?.compression), { kind: "parsed" }),
+      row("Processing", formatMs(info.timing?.processing), { kind: "parsed", docKey: "timing.metric" }),
+      row("Database", formatMs(info.timing?.database), { kind: "parsed", docKey: "timing.metric" }),
+      row("Async DB", formatMs(info.timing?.asyncDatabase), { kind: "parsed", docKey: "timing.metric" }),
+      row("Render", formatMs(info.timing?.render), { kind: "parsed", docKey: "timing.metric" }),
+      row("Compression", formatMs(info.timing?.compression), { kind: "parsed", docKey: "timing.metric" }),
     ]),
   );
 
@@ -166,11 +242,11 @@ export function renderCapture(container: HTMLElement, capture: Capture | undefin
     const e = info.serverTimingExtras;
     sections.push(
       section("Server-Timing details", [
-        row("Edge", e.edge, { kind: "observed" }),
-        row("Country", e.country, { kind: "observed" }),
-        row("ASN", e.asn, { kind: "observed" }),
-        row("Theme", e.theme, { kind: "observed" }),
-        row("Page type", e.pageType, { kind: "observed" }),
+        row("Edge", e.edge, { kind: "observed", docKey: "timing.metric" }),
+        row("Country", e.country, { kind: "observed", docKey: "timing.metric" }),
+        row("ASN", e.asn, { kind: "observed", docKey: "timing.metric" }),
+        row("Theme", e.theme, { kind: "observed", docKey: "timing.metric" }),
+        row("Page type", e.pageType, { kind: "observed", docKey: "timing.metric" }),
       ]),
     );
   }
@@ -178,9 +254,10 @@ export function renderCapture(container: HTMLElement, capture: Capture | undefin
   if (info.genericProviders.length > 0) {
     for (const provider of info.genericProviders) {
       if (provider.provider === info.cdn?.provider) continue;
+      const docKey = `generic.${provider.provider}`;
       sections.push(
         section(provider.provider, [
-          ...Object.entries(provider.details).map(([k, v]) => row(k, v, { kind: "observed" })),
+          ...Object.entries(provider.details).map(([k, v]) => row(k, v, { kind: "observed", docKey })),
         ]),
       );
     }

@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "npm notice run infra-inspector@0.1.0 npx\nnpm notice run 'tsc' --noEmit",
+        "is_error": false,
+        "tool_use_id": "toolu_015LTz663sgAiWqdS8X3sxTR",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "2a01b7dc-1b44-44d5-8fb9-32492cb6fd8c",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "2a01b7dc-1b44-44d5-8fb9-32492cb6fd8c",
+  "timestamp": "2026-09-15T10:58:28.650Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "npm notice run infra-inspector@0.1.0 npx\nnpm notice run 'tsc' --noEmit"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "434cad67-4292-479b-95ac-509a88729420",
+  "version": "2.1.270"
+}

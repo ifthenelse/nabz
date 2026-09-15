@@ -1,0 +1,74 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "main",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "Web search results for query: \"AWS CloudFront x-amz-cf-id x-amz-cf-pop response header documentation\"\n\nLinks: [{\"title\":\"X-Amz-Cf-Pop - Expert Guide to HTTP headers\",\"url\":\"https://http.dev/x-amz-cf-pop\"},{\"title\":\"X-Amz-Cf-Id - Expert Guide to HTTP headers\",\"url\":\"https://http.dev/x-amz-cf-id\"},{\"title\":\"Amazon CloudFront introduces Response Headers Policies | Networking \u0026 Content Delivery\",\"url\":\"https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-cloudfront-introduces-response-headers-policies/\"},{\"title\":\"Add HTTP security headers to CloudFront responses | AWS re:Post\",\"url\":\"https://repost.aws/knowledge-center/cloudfront-http-security-headers\"},{\"title\":\"X-Amz-Cf-Id HTTP response header\",\"url\":\"https://webtechsurvey.com/response-header/x-amz-cf-id\"},{\"title\":\"Understand response headers policies - Amazon CloudFront\",\"url\":\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html\"},{\"title\":\"OriginRequestPolicyConfig - Amazon CloudFront\",\"url\":\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicyConfig.html\"},{\"title\":\"class CfnResponseHeadersPolicy (construct)\",\"url\":\"https://docs.aws.amazon.com/cdk/api/v1/docs/@aws-cdk_aws-cloudfront.CfnResponseHeadersPolicy.html\"},{\"title\":\"Amazon CloudFront now supports configurable CORS, security, and custom HTTP response headers\",\"url\":\"https://aws.amazon.com/about-aws/whats-new/2021/11/amazon-cloudfront-supports-cors-security-custom-http-response-headers/\"}]\n\nBased on the search results, here's the documentation for these CloudFront response headers:\n\n## X-Amz-Cf-Id\n\nCloudFront assigns a unique request identifier to every request passing through its network, which is included in the X-Amz-Cf-Id response header sent back to the client and is also forwarded to the origin server as part of the origin request. The value is an opaque, Base64-encoded token with no end-user meaning, and its primary purpose is request tracing.\n\nWhen a delivery issue occurs, the request ID allows AWS Support to locate the specific request in CloudFront access logs, where the same value appears under the x-edge-request-id field. This header is added automatically by CloudFront and cannot be removed using response header policies.\n\n## X-Amz-Cf-Pop\n\nWhen a request is processed, CloudFront includes the X-Amz-Cf-Pop header in the response to indicate which specific edge location handled the request. The value follows a naming convention based on IATA airport codes, with each code mapping to a nearby geographic location, making the header a straightforward way to determine where content was served from.\n\nThis is useful for verifying CDN routing behavior, diagnosing latency, and confirming requests reach the expected regional cache.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.",
+        "tool_use_id": "toolu_01BDbLZ5qH8DxcNprZCYzScw",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "e971438b-e306-4bc8-b845-f22964356b15",
+  "promptId": "2441f0ad-02c0-475f-98e4-af3f36fb6455",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "e971438b-e306-4bc8-b845-f22964356b15",
+  "timestamp": "2026-09-15T10:55:44.475Z",
+  "toolUseResult": {
+    "durationSeconds": 7.105940375000006,
+    "query": "AWS CloudFront x-amz-cf-id x-amz-cf-pop response header documentation",
+    "results": [
+      {
+        "content": [
+          {
+            "title": "X-Amz-Cf-Pop - Expert Guide to HTTP headers",
+            "url": "https://http.dev/x-amz-cf-pop"
+          },
+          {
+            "title": "X-Amz-Cf-Id - Expert Guide to HTTP headers",
+            "url": "https://http.dev/x-amz-cf-id"
+          },
+          {
+            "title": "Amazon CloudFront introduces Response Headers Policies | Networking \u0026 Content Delivery",
+            "url": "https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-cloudfront-introduces-response-headers-policies/"
+          },
+          {
+            "title": "Add HTTP security headers to CloudFront responses | AWS re:Post",
+            "url": "https://repost.aws/knowledge-center/cloudfront-http-security-headers"
+          },
+          {
+            "title": "X-Amz-Cf-Id HTTP response header",
+            "url": "https://webtechsurvey.com/response-header/x-amz-cf-id"
+          },
+          {
+            "title": "Understand response headers policies - Amazon CloudFront",
+            "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html"
+          },
+          {
+            "title": "OriginRequestPolicyConfig - Amazon CloudFront",
+            "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicyConfig.html"
+          },
+          {
+            "title": "class CfnResponseHeadersPolicy (construct)",
+            "url": "https://docs.aws.amazon.com/cdk/api/v1/docs/@aws-cdk_aws-cloudfront.CfnResponseHeadersPolicy.html"
+          },
+          {
+            "title": "Amazon CloudFront now supports configurable CORS, security, and custom HTTP response headers",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2021/11/amazon-cloudfront-supports-cors-security-custom-http-response-headers/"
+          }
+        ],
+        "tool_use_id": "srvtoolu_01BGBQF8uEXJrsNc1cfWmGRJ"
+      },
+      "Based on the search results, here's the documentation for these CloudFront response headers:\n\n## X-Amz-Cf-Id\n\nCloudFront assigns a unique request identifier to every request passing through its network, which is included in the X-Amz-Cf-Id response header sent back to the client and is also forwarded to the origin server as part of the origin request. The value is an opaque, Base64-encoded token with no end-user meaning, and its primary purpose is request tracing.\n\nWhen a delivery issue occurs, the request ID allows AWS Support to locate the specific request in CloudFront access logs, where the same value appears under the x-edge-request-id field. This header is added automatically by CloudFront and cannot be removed using response header policies.\n\n## X-Amz-Cf-Pop\n\nWhen a request is processed, CloudFront includes the X-Amz-Cf-Pop header in the response to indicate which specific edge location handled the request. The value follows a naming convention based on IATA airport codes, with each code mapping to a nearby geographic location, making the header a straightforward way to determine where content was served from.\n\nThis is useful for verifying CDN routing behavior, diagnosing latency, and confirming requests reach the expected regional cache."
+    ],
+    "searchCount": 1
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "1de14af0-c518-403b-b28b-c05186c8f335",
+  "version": "2.1.270"
+}
