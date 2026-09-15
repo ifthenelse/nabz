@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "(Bash completed with no output)",
+        "is_error": false,
+        "tool_use_id": "toolu_01TAMRQM2x5gSfACvp82Wz8p",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "32ac832e-cb19-4e8a-ac95-4e0ffad1c914",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "32ac832e-cb19-4e8a-ac95-4e0ffad1c914",
+  "timestamp": "2026-09-15T10:08:44.657Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": true,
+    "stderr": "",
+    "stdout": ""
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "5449a43a-22ee-4b5a-8c35-54615e2ba2fb",
+  "version": "2.1.270"
+}

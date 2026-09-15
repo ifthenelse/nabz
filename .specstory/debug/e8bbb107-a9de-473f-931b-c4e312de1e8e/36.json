@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/.gitignore (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01BCnvrS1vAeAdGCHW6gHNfK",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "dece2322-7f3d-410b-bc8e-af5b578c780c",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "dece2322-7f3d-410b-bc8e-af5b578c780c",
+  "timestamp": "2026-09-15T10:00:07.092Z",
+  "toolUseResult": {
+    "content": "node_modules/\ndist/\n*.log\n.DS_Store\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/.gitignore",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "2ecf49ed-dcbf-454f-9cec-35d097eb1569",
+  "version": "2.1.270"
+}

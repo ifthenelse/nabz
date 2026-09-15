@@ -1,0 +1,87 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01X1K1sM1TaNqAYk7jZYCPn8",
+        "input": {
+          "command": "npx tsc --noEmit 2\u003e\u00261 | tail -40 \u0026\u0026 npm run build 2\u003e\u00261 | tail -10",
+          "description": "Re-typecheck and rebuild after simplification"
+        },
+        "name": "Bash",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf53HMc41pGBViWCY5Xk4",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1517,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 1517,
+      "cache_read_input_tokens": 116756,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1517,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 1517,
+          "cache_read_input_tokens": 116756,
+          "input_tokens": 2,
+          "output_tokens": 140,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 140,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "bb8e44c9-3fef-4f36-8ec6-5ab12edc0e0e",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf53HM2aK41Vc6xvg1u95",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:07:44.974Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "999b8074-b19c-4e32-ae2a-754bef061cdc",
+  "version": "2.1.270",
+  "wireIngestContext": {
+    "toolu_01X1K1sM1TaNqAYk7jZYCPn8": {
+      "cwd": "/Users/andreacollet/Projects/nabz"
+    }
+  },
+  "wireToolInputs": {
+    "toolu_01X1K1sM1TaNqAYk7jZYCPn8": {
+      "command": "cd /Users/andreacollet/Projects/nabz \u0026\u0026 npx tsc --noEmit 2\u003e\u00261 | tail -40 \u0026\u0026 npm run build 2\u003e\u00261 | tail -10",
+      "description": "Re-typecheck and rebuild after simplification"
+    }
+  }
+}

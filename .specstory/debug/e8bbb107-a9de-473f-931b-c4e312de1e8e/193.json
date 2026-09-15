@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "added 44 packages, and audited 45 packages in 2s\n\n12 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities\nfound 0 vulnerabilities",
+        "is_error": false,
+        "tool_use_id": "toolu_01Xmf5Rcvyc9z3B92YPS6R9T",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "663368c3-56d8-4705-ae22-7cf093a6ad18",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "663368c3-56d8-4705-ae22-7cf093a6ad18",
+  "timestamp": "2026-09-15T10:06:45.940Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "added 44 packages, and audited 45 packages in 2s\n\n12 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities\nfound 0 vulnerabilities"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "cf766a43-c0e6-42a4-a7d0-c231cdfe938f",
+  "version": "2.1.270"
+}

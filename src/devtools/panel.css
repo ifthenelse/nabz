@@ -1,0 +1,71 @@
+html, body {
+  height: 100%;
+}
+
+.panel-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.history-pane {
+  width: 220px;
+  flex: 0 0 auto;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+}
+
+.history-list {
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: var(--bg-subtle);
+}
+
+.history-item.selected {
+  background: var(--bg-subtle);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.history-item-title {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.history-item-line {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detail-pane {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}

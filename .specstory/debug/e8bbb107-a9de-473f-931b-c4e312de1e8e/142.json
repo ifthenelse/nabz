@@ -1,0 +1,85 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_012J4ztxZJ6yRGWsKypdKnUL",
+        "input": {
+          "file_path": "/Users/andreacollet/Projects/nabz/src/background/service-worker.ts",
+          "new_string": "import { buildInfrastructureInfo } from \"../parsers/index.js\";\nimport type { Capture } from \"../parsers/types.js\";\nimport { clearCapture, saveCapture } from \"../utils/storage.js\";\nimport { mergeHeaderPairs } from \"../utils/headers.js\";\n\nchrome.webRequest.onResponseStarted.addListener(",
+          "old_string": "import { buildInfrastructureInfo } from \"../parsers/index.js\";\nimport type { Capture } from \"../parsers/types.js\";\nimport { clearCapture, saveCapture } from \"../utils/storage.js\";\n\n/**\n * Merges chrome.webRequest's HttpHeader[] into a plain header map. Multiple\n * headers with the same name (legal for Server-Timing, Set-Cookie, etc.)\n * are joined with \", \" to match how the Fetch API's Headers object behaves,\n * so the parsing layer sees the same shape either way.\n */\nfunction toHeaderMap(headers: chrome.webRequest.HttpHeader[] | undefined): Record\u003cstring, string\u003e {\n  const map: Record\u003cstring, string\u003e = {};\n  for (const h of headers ?? []) {\n    if (h.value === undefined) continue;\n    const name = h.name.toLowerCase();\n    map[name] = name in map ? `${map[name]}, ${h.value}` : h.value;\n  }\n  return map;\n}\n\nchrome.webRequest.onResponseStarted.addListener(",
+          "replace_all": false
+        },
+        "name": "Edit",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf535mqzgWd3kaaJfwdgc",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1787,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 1787,
+      "cache_read_input_tokens": 101646,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1787,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 1787,
+          "cache_read_input_tokens": 101646,
+          "input_tokens": 2,
+          "output_tokens": 595,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 595,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "a7b74128-b382-4398-aa32-1e03b699074e",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf535kugRaHaZhe8aMsU3",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:05:10.438Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "0641bddd-69cc-43e4-9772-20051f0a3391",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_012J4ztxZJ6yRGWsKypdKnUL": {
+      "file_path": "/Users/andreacollet/Projects/nabz/src/background/service-worker.ts",
+      "new_string": "import { buildInfrastructureInfo } from \"../parsers/index.js\";\nimport type { Capture } from \"../parsers/types.js\";\nimport { clearCapture, saveCapture } from \"../utils/storage.js\";\nimport { mergeHeaderPairs } from \"../utils/headers.js\";\n\nchrome.webRequest.onResponseStarted.addListener(",
+      "old_string": "import { buildInfrastructureInfo } from \"../parsers/index.js\";\nimport type { Capture } from \"../parsers/types.js\";\nimport { clearCapture, saveCapture } from \"../utils/storage.js\";\n\n/**\n * Merges chrome.webRequest's HttpHeader[] into a plain header map. Multiple\n * headers with the same name (legal for Server-Timing, Set-Cookie, etc.)\n * are joined with \", \" to match how the Fetch API's Headers object behaves,\n * so the parsing layer sees the same shape either way.\n */\nfunction toHeaderMap(headers: chrome.webRequest.HttpHeader[] | undefined): Record\u003cstring, string\u003e {\n  const map: Record\u003cstring, string\u003e = {};\n  for (const h of headers ?? []) {\n    if (h.value === undefined) continue;\n    const name = h.name.toLowerCase();\n    map[name] = name in map ? `${map[name]}, ${h.value}` : h.value;\n  }\n  return map;\n}\n\nchrome.webRequest.onResponseStarted.addListener("
+    }
+  }
+}

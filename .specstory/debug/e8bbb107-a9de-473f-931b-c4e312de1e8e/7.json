@@ -1,0 +1,25 @@
+{
+  "attachment": {
+    "autoModeConsentFlow": false,
+    "bashFirst": false,
+    "bypass": false,
+    "steerOnly": false,
+    "type": "auto_mode"
+  },
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "parentUuid": "20ebf39b-c54e-47a0-86ae-9756669241a2",
+  "rendered": [
+    {
+      "content": "\u003csystem-reminder\u003e\n## Auto Mode Active\n\nBias toward working without stopping for clarifying questions — when you'd normally pause to check, make the reasonable call and keep going; they'll redirect you if needed. If the user, a skill, or the shape of the task suggests they want you to ask (with AskUserQuestion or otherwise), do so. And even absent that signal, it's still fine to stop when you're genuinely blocked — unclear direction, missing input, a decision only they can make.\n\nBefore any command that could discard uncommitted work — `git checkout`/`restore`/`reset`/`clean`, `rm -rf` in the repo, restoring from a snapshot — run `git status` first and stash (with `-u` for untracked) or commit anything that's there. When staging or committing, review what's included (`git status` after a broad `git add`), and if you see anything suspicious that might reveal secrets — even if the filename looks innocuous — double-check the file's contents before pushing.\n\u003c/system-reminder\u003e"
+    }
+  ],
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T09:51:36.047Z",
+  "type": "attachment",
+  "userType": "external",
+  "uuid": "a63f7acb-0f23-42db-9a9c-c17697038a39",
+  "version": "2.1.270"
+}

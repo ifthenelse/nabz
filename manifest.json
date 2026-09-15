@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Infra Inspector",
+  "short_name": "Infra Inspector",
+  "description": "Shows CDN, edge, and backend infrastructure identifiers exposed by the current page's HTTP response headers.",
+  "version": "0.1.0",
+  "minimum_chrome_version": "116",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Infra Inspector"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "devtools_page": "devtools/devtools.html",
+  "permissions": ["webRequest", "storage"],
+  "host_permissions": ["http://*/*", "https://*/*"]
+}

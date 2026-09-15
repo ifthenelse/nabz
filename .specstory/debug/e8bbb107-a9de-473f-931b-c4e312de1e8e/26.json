@@ -1,0 +1,69 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "signature": "EqICCqgBCBEYAipA/BPuZLPgVHWOWFqNM6gbDbtUzqVPclGKqL4S+AJKQmSqnzF+99kGg9FcwMkSFyd0u0zAiASk5YjAbcw5dLEukTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1ZTk1MTZlYy0xN2Y1LTRlZmYtYmQxZC1kNmFkOTRhYzNiMDNyEE1AdPfp/9YdA8k7/bLusiyIAQGoAcGrpNUGsAECEgwmctRlQEC3etlyIKUaDKuoxz2/hVlwwE7sZyIwbqtQPL8s6wUxoy0T+YCBIlFo3VviI5D76VOiyN0K0XLFME68yefxlz3jLGAZc7jSKidsLqgytD6FPFGJE4qqIrHlMlFOmI/KbEyzZbt4HUUNpRgcJnoKPawYAQ==",
+        "thinking": "",
+        "type": "thinking"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52FH5n2roVjyWMjEHcC",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8797,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 8797,
+      "cache_read_input_tokens": 60363,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 8797,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 8797,
+          "cache_read_input_tokens": 60363,
+          "input_tokens": 2,
+          "output_tokens": 353,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 353,
+      "output_tokens_details": {
+        "thinking_tokens": 9
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "6256bee7-76a9-40ea-aec2-edd172eb261e",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52FGaGbnBduMAufvG9M",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T09:54:09.735Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "9dd7143a-78b4-49c2-9bc7-9fbffd482286",
+  "version": "2.1.270"
+}

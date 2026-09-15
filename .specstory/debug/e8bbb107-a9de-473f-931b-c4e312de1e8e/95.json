@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_019DGPFzFgEqBdD2kJgiM1Qg",
+        "input": {
+          "content": "export function formatMs(value: number | undefined): string | undefined {\n  if (value === undefined) return undefined;\n  const rounded = Number.isInteger(value) ? value : Math.round(value * 1000) / 1000;\n  return `${rounded} ms`;\n}\n\nexport function truncateMiddle(value: string, max = 28): string {\n  if (value.length \u003c= max) return value;\n  const half = Math.floor((max - 1) / 2);\n  return `${value.slice(0, half)}…${value.slice(value.length - half)}`;\n}\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/utils/format.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52tFMPJLmqdRLDgScec",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 751,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 751,
+      "cache_read_input_tokens": 86708,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 751,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 751,
+          "cache_read_input_tokens": 86708,
+          "input_tokens": 2,
+          "output_tokens": 272,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 272,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "65565b41-e4e3-4acc-ae9b-700717fae228",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52tErMsitKdNXSiTBFd",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:02:32.823Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "1a9d7161-42de-42ab-8f66-abe5ce7df057",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_019DGPFzFgEqBdD2kJgiM1Qg": {
+      "content": "export function formatMs(value: number | undefined): string | undefined {\n  if (value === undefined) return undefined;\n  const rounded = Number.isInteger(value) ? value : Math.round(value * 1000) / 1000;\n  return `${rounded} ms`;\n}\n\nexport function truncateMiddle(value: string, max = 28): string {\n  if (value.length \u003c= max) return value;\n  const half = Math.floor((max - 1) / 2);\n  return `${value.slice(0, half)}…${value.slice(value.length - half)}`;\n}\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/utils/format.ts"
+    }
+  }
+}

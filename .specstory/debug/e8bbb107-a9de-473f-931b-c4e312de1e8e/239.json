@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "src/parsers/index.ts:12:export { fieldLabel, fieldKind, FIELD_LABELS, FIELD_KIND } from \"./fieldMeta.js\";",
+        "is_error": false,
+        "tool_use_id": "toolu_01NFXTEpuoHm5T1uPPjP6beW",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "c9301ce5-5660-485f-829b-fcfaf8b86e20",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "c9301ce5-5660-485f-829b-fcfaf8b86e20",
+  "timestamp": "2026-09-15T10:08:42.779Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "src/parsers/index.ts:12:export { fieldLabel, fieldKind, FIELD_LABELS, FIELD_KIND } from \"./fieldMeta.js\";"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "41de5a21-7daf-42dc-a68a-dca21529858c",
+  "version": "2.1.270"
+}

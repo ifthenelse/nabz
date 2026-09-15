@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "added 57 packages, and audited 58 packages in 2s\n\n15 packages are looking for funding\n  run `npm fund` for details\n\n2 moderate severity vulnerabilities\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\nnode_modules/@vitest/mocker\n  vitest  2.1.0-beta.1 - 4.1.10\n  Depends on vulnerable versions of @vitest/mocker\n  node_modules/vitest\n\n\n2 moderate severity vulnerabilities\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force",
+        "is_error": false,
+        "tool_use_id": "toolu_01CK1xBnEJmimi2oQEZhaRjn",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "106a701a-6ec4-4d7e-a0ed-800e1f907b20",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "106a701a-6ec4-4d7e-a0ed-800e1f907b20",
+  "timestamp": "2026-09-15T10:06:28.672Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "added 57 packages, and audited 58 packages in 2s\n\n15 packages are looking for funding\n  run `npm fund` for details\n\n2 moderate severity vulnerabilities\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\nnode_modules/@vitest/mocker\n  vitest  2.1.0-beta.1 - 4.1.10\n  Depends on vulnerable versions of @vitest/mocker\n  node_modules/vitest\n\n\n2 moderate severity vulnerabilities\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "f245c50d-707a-489f-ad39-6fde887e005e",
+  "version": "2.1.270"
+}

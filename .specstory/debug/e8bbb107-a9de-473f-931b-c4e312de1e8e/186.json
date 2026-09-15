@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "npm error peerOptional esbuild@\"^0.27.0 || ^0.28.0\" from vite@8.3.0\nnpm error node_modules/vite\nnpm error   peer vite@\"^6.4.0 || ^7.0.0 || ^8.0.0\" from vitest@5.0.1\nnpm error   node_modules/vitest\nnpm error     dev vitest@\"^5.0.0\" from the root project\nnpm error\nnpm error Conflicting peer dependency: esbuild@0.28.2\nnpm error node_modules/esbuild\nnpm error   peerOptional esbuild@\"^0.27.0 || ^0.28.0\" from vite@8.3.0\nnpm error   node_modules/vite\nnpm error     peer vite@\"^6.4.0 || ^7.0.0 || ^8.0.0\" from vitest@5.0.1\nnpm error     node_modules/vitest\nnpm error       dev vitest@\"^5.0.0\" from the root project\nnpm error\nnpm error Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.\nnpm error\nnpm error\nnpm error For a full report see:\nnpm error /Users/andreacollet/.npm/_logs/2026-09-15T10_06_35_613Z-eresolve-report.txt\nnpm error A complete log of this run can be found in: /Users/andreacollet/.npm/_logs/2026-09-15T10_06_35_613Z-debug-0.log\nnpm error code ENOLOCK\nnpm error audit This command requires an existing lockfile.\nnpm error audit Try creating one first with: npm i --package-lock-only\nnpm error audit Original error: loadVirtual requires existing package-lock.json file\nnpm error A complete log of this run can be found in: /Users/andreacollet/.npm/_logs/2026-09-15T10_06_37_073Z-debug-0.log",
+        "is_error": false,
+        "tool_use_id": "toolu_01JSNNpy7L75iYp6mqfukCX1",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "1cbd89b7-61b2-43dd-acb9-9bb55791ae98",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "1cbd89b7-61b2-43dd-acb9-9bb55791ae98",
+  "timestamp": "2026-09-15T10:06:37.166Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "npm error peerOptional esbuild@\"^0.27.0 || ^0.28.0\" from vite@8.3.0\nnpm error node_modules/vite\nnpm error   peer vite@\"^6.4.0 || ^7.0.0 || ^8.0.0\" from vitest@5.0.1\nnpm error   node_modules/vitest\nnpm error     dev vitest@\"^5.0.0\" from the root project\nnpm error\nnpm error Conflicting peer dependency: esbuild@0.28.2\nnpm error node_modules/esbuild\nnpm error   peerOptional esbuild@\"^0.27.0 || ^0.28.0\" from vite@8.3.0\nnpm error   node_modules/vite\nnpm error     peer vite@\"^6.4.0 || ^7.0.0 || ^8.0.0\" from vitest@5.0.1\nnpm error     node_modules/vitest\nnpm error       dev vitest@\"^5.0.0\" from the root project\nnpm error\nnpm error Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.\nnpm error\nnpm error\nnpm error For a full report see:\nnpm error /Users/andreacollet/.npm/_logs/2026-09-15T10_06_35_613Z-eresolve-report.txt\nnpm error A complete log of this run can be found in: /Users/andreacollet/.npm/_logs/2026-09-15T10_06_35_613Z-debug-0.log\nnpm error code ENOLOCK\nnpm error audit This command requires an existing lockfile.\nnpm error audit Try creating one first with: npm i --package-lock-only\nnpm error audit Original error: loadVirtual requires existing package-lock.json file\nnpm error A complete log of this run can be found in: /Users/andreacollet/.npm/_logs/2026-09-15T10_06_37_073Z-debug-0.log"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "17a80e01-2d8a-441c-b5af-e88a6e748332",
+  "version": "2.1.270"
+}

@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "# npm audit report\n\n@vitest/mocker  \u003c=4.1.10\nSeverity: moderate\nVitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock - https://github.com/advisories/GHSA-82fw-gwwq-j7x9\nDepends on vulnerable versions of vite\nfix available via `npm audit fix --force`\nWill install vitest@5.0.1, which is a breaking change\nnode_modules/@vitest/mocker\n  vitest  \u003c=4.1.10\n  Depends on vulnerable versions of @vitest/mocker\n  Depends on vulnerable versions of vite\n  Depends on vulnerable versions of vite-node\n  node_modules/vitest\n\nesbuild  \u003c=0.24.2\nSeverity: moderate\nesbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99\nfix available via `npm audit fix --force`\nWill install esbuild@0.28.2, which is a breaking change\nnode_modules/esbuild\nnode_modules/vite/node_modules/esbuild\n  vite  \u003c=6.4.2\n  Depends on vulnerable versions of esbuild\n  node_modules/vite\n    vite-node  \u003c=2.2.0-beta.2\n    Depends on vulnerable versions of vite\n    node_modules/vite-node\n\n\n\n5 vulnerabilities (3 moderate, 1 high, 1 critical)\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force",
+        "is_error": false,
+        "tool_use_id": "toolu_01NAd8dGHmpuJRXosDkHVNB6",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "6bf7db98-d154-458e-875c-3b381c5c615a",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "6bf7db98-d154-458e-875c-3b381c5c615a",
+  "timestamp": "2026-09-15T10:06:15.938Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "# npm audit report\n\n@vitest/mocker  \u003c=4.1.10\nSeverity: moderate\nVitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock - https://github.com/advisories/GHSA-82fw-gwwq-j7x9\nDepends on vulnerable versions of vite\nfix available via `npm audit fix --force`\nWill install vitest@5.0.1, which is a breaking change\nnode_modules/@vitest/mocker\n  vitest  \u003c=4.1.10\n  Depends on vulnerable versions of @vitest/mocker\n  Depends on vulnerable versions of vite\n  Depends on vulnerable versions of vite-node\n  node_modules/vitest\n\nesbuild  \u003c=0.24.2\nSeverity: moderate\nesbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99\nfix available via `npm audit fix --force`\nWill install esbuild@0.28.2, which is a breaking change\nnode_modules/esbuild\nnode_modules/vite/node_modules/esbuild\n  vite  \u003c=6.4.2\n  Depends on vulnerable versions of esbuild\n  node_modules/vite\n    vite-node  \u003c=2.2.0-beta.2\n    Depends on vulnerable versions of vite\n    node_modules/vite-node\n\n\n\n5 vulnerabilities (3 moderate, 1 high, 1 critical)\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "e85dad85-6a8c-4fc7-8c3a-d3fa2a677b63",
+  "version": "2.1.270"
+}

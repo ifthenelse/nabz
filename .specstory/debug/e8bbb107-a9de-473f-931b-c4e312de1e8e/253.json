@@ -1,0 +1,87 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01Hd8yJwK9djzWDQQKksGaKT",
+        "input": {
+          "command": "npx tsc --noEmit 2\u003e\u00261 | tail -40 \u0026\u0026 echo \"--typecheck ok--\" \u0026\u0026 npx vitest run 2\u003e\u00261 | tail -20 \u0026\u0026 echo \"--tests ok--\" \u0026\u0026 npm run build 2\u003e\u00261 | tail -20 \u0026\u0026 echo \"--build ok--\" \u0026\u0026 find dist -type f | sort",
+          "description": "Full verification: typecheck, tests, and build after cleanup"
+        },
+        "name": "Bash",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf53NQGShTGu6pCfxUwPD",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 352,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 352,
+      "cache_read_input_tokens": 124509,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 352,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 352,
+          "cache_read_input_tokens": 124509,
+          "input_tokens": 2,
+          "output_tokens": 240,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 240,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "b44539b8-0a73-4060-8125-b1311f703ae0",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf53NPhCqku3XTBVtAW2y",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:08:54.136Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "139ee716-74c8-4ee0-8571-e7b5f0ff331f",
+  "version": "2.1.270",
+  "wireIngestContext": {
+    "toolu_01Hd8yJwK9djzWDQQKksGaKT": {
+      "cwd": "/Users/andreacollet/Projects/nabz"
+    }
+  },
+  "wireToolInputs": {
+    "toolu_01Hd8yJwK9djzWDQQKksGaKT": {
+      "command": "cd /Users/andreacollet/Projects/nabz \u0026\u0026 npx tsc --noEmit 2\u003e\u00261 | tail -40 \u0026\u0026 echo \"--typecheck ok--\" \u0026\u0026 npx vitest run 2\u003e\u00261 | tail -20 \u0026\u0026 echo \"--tests ok--\" \u0026\u0026 npm run build 2\u003e\u00261 | tail -20 \u0026\u0026 echo \"--build ok--\" \u0026\u0026 find dist -type f | sort",
+      "description": "Full verification: typecheck, tests, and build after cleanup"
+    }
+  }
+}

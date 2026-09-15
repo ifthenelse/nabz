@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01JVsQPH7Rxtbvf4FappQEvT",
+        "input": {
+          "content": "export async function copyToClipboard(text: string): Promise\u003cboolean\u003e {\n  try {\n    await navigator.clipboard.writeText(text);\n    return true;\n  } catch {\n    return false;\n  }\n}\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/utils/clipboard.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52tZ6yXoMZHhwDrebWz",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 368,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 368,
+      "cache_read_input_tokens": 87459,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 368,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 368,
+          "cache_read_input_tokens": 87459,
+          "input_tokens": 2,
+          "output_tokens": 479,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 479,
+      "output_tokens_details": {
+        "thinking_tokens": 313
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "a1be681f-339e-4727-91d4-a409436b8e72",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52tYWFYUQLbHsaFVRmj",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:02:39.639Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "b639e4a8-2c82-436b-a076-4419e5ff245d",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01JVsQPH7Rxtbvf4FappQEvT": {
+      "content": "export async function copyToClipboard(text: string): Promise\u003cboolean\u003e {\n  try {\n    await navigator.clipboard.writeText(text);\n    return true;\n  } catch {\n    return false;\n  }\n}\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/utils/clipboard.ts"
+    }
+  }
+}

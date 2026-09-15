@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/src/parsers/generic.ts (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_013WWnN7ZUGAMYuX7YW4rGo2",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "995a2fb5-dae6-47f4-9341-40772551aeb2",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "995a2fb5-dae6-47f4-9341-40772551aeb2",
+  "timestamp": "2026-09-15T10:01:22.418Z",
+  "toolUseResult": {
+    "content": "import type { GenericProviderMatch } from \"./types.js\";\n\ninterface Detector {\n  provider: string;\n  /** Header names (lower-case) that, if present, are evidence for this provider. */\n  signals: string[];\n  /** Extra check beyond header presence, e.g. matching a `server`/`via` value. */\n  extra?: (headers: Record\u003cstring, string\u003e) =\u003e boolean;\n  /** Header names worth surfacing verbatim when this provider is detected. */\n  detailHeaders: string[];\n}\n\nconst DETECTORS: Detector[] = [\n  {\n    provider: \"Fastly\",\n    signals: [\"x-served-by\", \"x-fastly-request-id\", \"fastly-debug-digest\"],\n    detailHeaders: [\"x-served-by\", \"x-cache\", \"x-cache-hits\", \"x-fastly-request-id\"],\n  },\n  {\n    provider: \"Akamai\",\n    signals: [\"akamai-x-cache\", \"akamai-x-cache-on\", \"x-akamai-transformed\", \"akamai-grn\"],\n    extra: (h) =\u003e /akamai/i.test(h[\"server\"] ?? \"\"),\n    detailHeaders: [\"akamai-x-cache\", \"x-akamai-transformed\", \"akamai-grn\"],\n  },\n  {\n    provider: \"Amazon CloudFront\",\n    signals: [\"x-amz-cf-id\", \"x-amz-cf-pop\"],\n    extra: (h) =\u003e /cloudfront/i.test(h[\"via\"] ?? \"\"),\n    detailHeaders: [\"x-amz-cf-id\", \"x-amz-cf-pop\", \"x-cache\"],\n  },\n  {\n    provider: \"Vercel\",\n    signals: [\"x-vercel-id\", \"x-vercel-cache\"],\n    extra: (h) =\u003e /vercel/i.test(h[\"server\"] ?? \"\"),\n    detailHeaders: [\"x-vercel-id\", \"x-vercel-cache\"],\n  },\n  {\n    provider: \"Netlify\",\n    signals: [\"x-nf-request-id\"],\n    extra: (h) =\u003e /netlify/i.test(h[\"server\"] ?? \"\"),\n    detailHeaders: [\"x-nf-request-id\"],\n  },\n  {\n    provider: \"Google Cloud (Cloud Run / GFE)\",\n    signals: [\"x-cloud-trace-context\"],\n    extra: (h) =\u003e /google frontend|gfe/i.test(h[\"server\"] ?? \"\"),\n    detailHeaders: [\"x-cloud-trace-context\"],\n  },\n];\n\n/**\n * Detects generic CDN/hosting signatures beyond Cloudflare and Shopify.\n * Detection is signature-based only - if a provider adds/removes headers,\n * this simply stops (or starts) matching. Nothing is inferred beyond what\n * the response headers literally contain.\n */\nexport function detectGenericProviders(headers: Record\u003cstring, string\u003e): GenericProviderMatch[] {\n  const matches: GenericProviderMatch[] = [];\n\n  for (const detector of DETECTORS) {\n    const evidence = detector.signals.filter((s) =\u003e headers[s] !== undefined);\n    const extraMatch = detector.extra?.(headers) ?? false;\n\n    if (evidence.length === 0 \u0026\u0026 !extraMatch) continue;\n\n    const details: Record\u003cstring, string\u003e = {};\n    for (const h of detector.detailHeaders) {\n      const value = headers[h];\n      if (value !== undefined) details[h] = value;\n    }\n\n    matches.push({ provider: detector.provider, evidence, details });\n  }\n\n  return matches;\n}\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/src/parsers/generic.ts",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "cb844b10-05a1-4464-8b80-68290f1d47a3",
+  "version": "2.1.270"
+}

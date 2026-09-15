@@ -1,0 +1,53 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "The file /Users/andreacollet/Projects/nabz/package.json has been updated successfully. (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01KEeja3DJr2g8fPrXhnibH8",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "f36598f8-eae8-4544-bfcc-aaf0c2b871c5",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "f36598f8-eae8-4544-bfcc-aaf0c2b871c5",
+  "timestamp": "2026-09-15T10:06:22.363Z",
+  "toolUseResult": {
+    "filePath": "/Users/andreacollet/Projects/nabz/package.json",
+    "newString": "    \"@types/chrome\": \"^0.0.280\",\n    \"esbuild\": \"^0.25.0\",\n    \"typescript\": \"^5.6.0\",\n    \"vitest\": \"^3.0.0\"",
+    "oldString": "    \"@types/chrome\": \"^0.0.280\",\n    \"esbuild\": \"^0.24.0\",\n    \"typescript\": \"^5.6.0\",\n    \"vitest\": \"^2.1.0\"",
+    "originalFile": "{\n  \"name\": \"infra-inspector\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"description\": \"Chrome extension (Manifest V3) that surfaces CDN / edge / backend infrastructure headers for the currently inspected page.\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"node build.mjs\",\n    \"watch\": \"node build.mjs --watch\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest run\",\n    \"test:watch\": \"vitest\"\n  },\n  \"devDependencies\": {\n    \"@types/chrome\": \"^0.0.280\",\n    \"esbuild\": \"^0.24.0\",\n    \"typescript\": \"^5.6.0\",\n    \"vitest\": \"^2.1.0\"\n  }\n}\n",
+    "replaceAll": false,
+    "structuredPatch": [
+      {
+        "lines": [
+          "   },",
+          "   \"devDependencies\": {",
+          "     \"@types/chrome\": \"^0.0.280\",",
+          "-    \"esbuild\": \"^0.24.0\",",
+          "+    \"esbuild\": \"^0.25.0\",",
+          "     \"typescript\": \"^5.6.0\",",
+          "-    \"vitest\": \"^2.1.0\"",
+          "+    \"vitest\": \"^3.0.0\"",
+          "   }",
+          " }"
+        ],
+        "newLines": 8,
+        "newStart": 13,
+        "oldLines": 8,
+        "oldStart": 13
+      }
+    ],
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "185766a7-bac4-4482-b18d-2cc838efdf22",
+  "version": "2.1.270"
+}

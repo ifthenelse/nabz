@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01YJ7zTC6oZqcrWeW2KRN1d3",
+        "input": {
+          "content": "\u003c!doctype html\u003e\n\u003chtml\u003e\n  \u003chead\u003e\n    \u003cmeta charset=\"utf-8\" /\u003e\n  \u003c/head\u003e\n  \u003cbody\u003e\n    \u003cscript type=\"module\" src=\"./devtools.js\"\u003e\u003c/script\u003e\n  \u003c/body\u003e\n\u003c/html\u003e\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/devtools/devtools.html"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf5338tCAtNrjayEoGxxL",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 591,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 591,
+      "cache_read_input_tokens": 99662,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 591,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 591,
+          "cache_read_input_tokens": 99662,
+          "input_tokens": 2,
+          "output_tokens": 1069,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1069,
+      "output_tokens_details": {
+        "thinking_tokens": 902
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "82168f44-a7b7-4a1e-a336-a309ea4b11eb",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf5338QAdUJsCDn5hquT7",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:04:43.067Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "7d52ea4a-7422-4f84-8904-486b7329c588",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01YJ7zTC6oZqcrWeW2KRN1d3": {
+      "content": "\u003c!doctype html\u003e\n\u003chtml\u003e\n  \u003chead\u003e\n    \u003cmeta charset=\"utf-8\" /\u003e\n  \u003c/head\u003e\n  \u003cbody\u003e\n    \u003cscript type=\"module\" src=\"./devtools.js\"\u003e\u003c/script\u003e\n  \u003c/body\u003e\n\u003c/html\u003e\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/devtools/devtools.html"
+    }
+  }
+}

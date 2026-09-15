@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "npm notice run infra-inspector@0.1.0 npx\nnpm notice run 'vitest' run\n\n RUN  v5.0.1 /Users/andreacollet/Projects/nabz\n\n\n Test Files  5 passed (5)\n      Tests  33 passed (33)\n   Start at  12:06:53\n   Duration  104ms (transform 67%, import 19%, worker 7%, tests 7%)",
+        "is_error": false,
+        "tool_use_id": "toolu_018giuJ1ZdvQBysL4rE4qy4M",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "1ff76249-1878-4e0c-8d75-fd3f778cd0a3",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "1ff76249-1878-4e0c-8d75-fd3f778cd0a3",
+  "timestamp": "2026-09-15T10:06:53.996Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "npm notice run infra-inspector@0.1.0 npx\nnpm notice run 'vitest' run\n\n RUN  v5.0.1 /Users/andreacollet/Projects/nabz\n\n\n Test Files  5 passed (5)\n      Tests  33 passed (33)\n   Start at  12:06:53\n   Duration  104ms (transform 67%, import 19%, worker 7%, tests 7%)"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "a8032250-5d63-417d-ae1b-a9475dfd8b9d",
+  "version": "2.1.270"
+}

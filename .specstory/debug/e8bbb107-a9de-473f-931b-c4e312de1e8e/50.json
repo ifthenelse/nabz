@@ -1,0 +1,69 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "signature": "Eq0CCqgBCBEYAipAu86l/HpZUPN+MFrjjaiOSeWpAJM9Pnaes7IFa3p/LFRYDVNY1drdJwaZPXaJaIJarpLDDmSzsskYDoFiHJbvnDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1ZTk1MTZlYy0xN2Y1LTRlZmYtYmQxZC1kNmFkOTRhYzNiMDNyEE1AdPfp/9YdA8k7/bLusiyIAQGoAcCupNUGsAECEgwuzlsGBfrwBGm/1IEaDIG/dsW3JZu8o0JcqSIwi76lNGUEDJphVKUPfB5g82kjfwSh9gcdYwE0oqHPQ3gtGckQysMLx8jItkl8Ok3hKjImXuog+3QKvYMgBOzot7de54N6LVBC5scOnAcAxreFrGcE9vDdIf/n2rsD+xe8/p4cDRgB",
+        "thinking": "",
+        "type": "thinking"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52jVRTtEmwsFPAs9fS1",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1252,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 1252,
+      "cache_read_input_tokens": 71741,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1252,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 1252,
+          "cache_read_input_tokens": 71741,
+          "input_tokens": 2,
+          "output_tokens": 1019,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1019,
+      "output_tokens_details": {
+        "thinking_tokens": 21
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "58e45be7-55a3-4be5-bd1d-ce5c0a8b6a14",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52jUwC5aKtWGWXLBRqi",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:00:32.238Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "91f1a664-fe28-48f0-9673-92acb6e868b2",
+  "version": "2.1.270"
+}

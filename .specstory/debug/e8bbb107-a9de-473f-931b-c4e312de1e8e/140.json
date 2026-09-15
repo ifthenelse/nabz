@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/src/utils/headers.ts (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01SzWNjZYxVqwJrDSEKXmNQX",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "c2a426d9-21b6-4dc4-8894-fa2942dcf151",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "c2a426d9-21b6-4dc4-8894-fa2942dcf151",
+  "timestamp": "2026-09-15T10:05:05.988Z",
+  "toolUseResult": {
+    "content": "export interface NameValuePair {\n  name: string;\n  value?: string;\n}\n\n/**\n * Merges a name/value header list (the shape used by both\n * chrome.webRequest.HttpHeader[] and DevTools HAR entry headers) into a\n * plain map. Duplicate names (legal for Server-Timing, Set-Cookie, etc.)\n * are joined with \", \" to match the Fetch API's Headers behavior.\n */\nexport function mergeHeaderPairs(pairs: NameValuePair[] | undefined): Record\u003cstring, string\u003e {\n  const map: Record\u003cstring, string\u003e = {};\n  for (const h of pairs ?? []) {\n    if (h.value === undefined) continue;\n    const name = h.name.toLowerCase();\n    map[name] = name in map ? `${map[name]}, ${h.value}` : h.value;\n  }\n  return map;\n}\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/src/utils/headers.ts",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "707bdf90-9640-4004-958b-634a63e61975",
+  "version": "2.1.270"
+}

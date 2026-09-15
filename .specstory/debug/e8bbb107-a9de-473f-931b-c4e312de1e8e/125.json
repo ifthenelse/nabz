@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01WKo3yfJ5YRmixw7mU8KHzQ",
+        "input": {
+          "content": "body {\n  width: 340px;\n  max-height: 560px;\n  overflow-y: auto;\n}\n\n.popup-header {\n  position: sticky;\n  top: 0;\n  background: var(--bg);\n  border-bottom: 1px solid var(--border);\n  padding: 10px 14px;\n  z-index: 1;\n}\n\n.popup-header h1 {\n  font-size: 13px;\n}\n\n.popup-host {\n  font-family: var(--mono);\n  font-size: 11px;\n  color: var(--text-muted);\n  margin-top: 2px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/popup/popup.css"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf532T6HsjeGWPZVpdQkz",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 677,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 677,
+      "cache_read_input_tokens": 98577,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 677,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 677,
+          "cache_read_input_tokens": 98577,
+          "input_tokens": 2,
+          "output_tokens": 312,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 312,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "d8752276-cab2-49d3-900c-77e6d78ecf51",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf532SZY4bLAYzzRyRB6j",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:04:24.015Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "311e4807-b8df-476c-ac84-b5faedc7581e",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01WKo3yfJ5YRmixw7mU8KHzQ": {
+      "content": "body {\n  width: 340px;\n  max-height: 560px;\n  overflow-y: auto;\n}\n\n.popup-header {\n  position: sticky;\n  top: 0;\n  background: var(--bg);\n  border-bottom: 1px solid var(--border);\n  padding: 10px 14px;\n  z-index: 1;\n}\n\n.popup-header h1 {\n  font-size: 13px;\n}\n\n.popup-host {\n  font-family: var(--mono);\n  font-size: 11px;\n  color: var(--text-muted);\n  margin-top: 2px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/popup/popup.css"
+    }
+  }
+}

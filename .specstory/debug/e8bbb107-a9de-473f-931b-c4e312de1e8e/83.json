@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/src/parsers/shopify.test.ts (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01LQBtFJ6pbxaeXtkFQ3TigN",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "d113dbc1-bd9d-48e9-9cfa-7716bc0df8ec",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "d113dbc1-bd9d-48e9-9cfa-7716bc0df8ec",
+  "timestamp": "2026-09-15T10:02:05.175Z",
+  "toolUseResult": {
+    "content": "import { describe, expect, it } from \"vitest\";\nimport { parseShopify } from \"./shopify.js\";\nimport { parseServerTimingHeader } from \"./serverTiming.js\";\n\ndescribe(\"parseShopify\", () =\u003e {\n  it(\"reports not detected when no Shopify headers are present\", () =\u003e {\n    const result = parseShopify({}, []);\n    expect(result.detected).toBe(false);\n  });\n\n  it(\"detects via powered-by: Shopify\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.poweredBy).toBe(\"Shopify\");\n  });\n\n  it(\"detects via a complexity score header even without powered-by\", () =\u003e {\n    const result = parseShopify({ \"shopify-complexity-score\": \"12\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.complexityScore).toBe(\"12\");\n  });\n\n  it(\"extracts request id and datacenter, parsing a known cloud region\", () =\u003e {\n    const result = parseShopify(\n      {\n        \"powered-by\": \"Shopify\",\n        \"x-request-id\": \"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\",\n        \"x-dc\": \"gcp-europe-west1\",\n      },\n      [],\n    );\n    expect(result.requestId).toBe(\"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\");\n    expect(result.datacenter).toBe(\"gcp-europe-west1\");\n    expect(result.datacenterRegion).toBe(\"europe-west1\");\n  });\n\n  it(\"does not guess a region from an unrecognized x-dc prefix\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\", \"x-dc\": \"unknown-region-1\" }, []);\n    expect(result.datacenterRegion).toBeUndefined();\n  });\n\n  it(\"reads the serving node from a servedBy Server-Timing entry\", () =\u003e {\n    const metrics = parseServerTimingHeader('servedBy;desc=\"2plk\"');\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, metrics);\n    expect(result.servingNode).toBe(\"2plk\");\n  });\n\n  it(\"leaves servingNode undefined when no servedBy entry exists\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, []);\n    expect(result.servingNode).toBeUndefined();\n  });\n});\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/src/parsers/shopify.test.ts",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "e75974b1-4e64-4844-88b9-774ba60c0c80",
+  "version": "2.1.270"
+}

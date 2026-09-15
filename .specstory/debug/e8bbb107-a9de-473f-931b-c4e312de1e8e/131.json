@@ -1,0 +1,69 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "signature": "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",
+        "thinking": "",
+        "type": "thinking"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf5338tCAtNrjayEoGxxL",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 591,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 591,
+      "cache_read_input_tokens": 99662,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 591,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 591,
+          "cache_read_input_tokens": 99662,
+          "input_tokens": 2,
+          "output_tokens": 1069,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1069,
+      "output_tokens_details": {
+        "thinking_tokens": 902
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "9b8a3eef-6546-411e-b343-eac2a793f507",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf5338QAdUJsCDn5hquT7",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:04:41.886Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "82168f44-a7b7-4a1e-a336-a309ea4b11eb",
+  "version": "2.1.270"
+}

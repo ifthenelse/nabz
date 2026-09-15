@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "dist/background/service-worker.js\ndist/background/service-worker.js.map\ndist/devtools/devtools.html\ndist/devtools/devtools.js\ndist/devtools/devtools.js.map\ndist/devtools/panel.css\ndist/devtools/panel.html\ndist/devtools/panel.js\ndist/devtools/panel.js.map\ndist/manifest.json\ndist/popup/popup.css\ndist/popup/popup.html\ndist/popup/popup.js\ndist/popup/popup.js.map",
+        "is_error": false,
+        "tool_use_id": "toolu_01U3jou7xVoL3nPXkhKthkFi",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "84ed556c-9401-4a2a-8618-bd44a0ae08db",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "84ed556c-9401-4a2a-8618-bd44a0ae08db",
+  "timestamp": "2026-09-15T10:06:59.601Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "dist/background/service-worker.js\ndist/background/service-worker.js.map\ndist/devtools/devtools.html\ndist/devtools/devtools.js\ndist/devtools/devtools.js.map\ndist/devtools/panel.css\ndist/devtools/panel.html\ndist/devtools/panel.js\ndist/devtools/panel.js.map\ndist/manifest.json\ndist/popup/popup.css\ndist/popup/popup.html\ndist/popup/popup.js\ndist/popup/popup.js.map"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "ba835e59-8a89-4ca7-b388-2f54ffb81b13",
+  "version": "2.1.270"
+}

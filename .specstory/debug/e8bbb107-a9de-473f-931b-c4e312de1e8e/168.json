@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "added 50 packages, and audited 51 packages in 6s\n\n12 packages are looking for funding\n  run `npm fund` for details\n\n5 vulnerabilities (3 moderate, 1 high, 1 critical)\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.",
+        "is_error": false,
+        "tool_use_id": "toolu_01QF8pDsYdaJ6SS7SSkpqnNv",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "cc4aaa54-efd7-4981-81bb-d061aaa8365d",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "cc4aaa54-efd7-4981-81bb-d061aaa8365d",
+  "timestamp": "2026-09-15T10:06:09.361Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "added 50 packages, and audited 51 packages in 6s\n\n12 packages are looking for funding\n  run `npm fund` for details\n\n5 vulnerabilities (3 moderate, 1 high, 1 critical)\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details."
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "e7080e9a-7a32-4bcb-a1b9-1dad94062d4f",
+  "version": "2.1.270"
+}

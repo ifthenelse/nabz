@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01LQBtFJ6pbxaeXtkFQ3TigN",
+        "input": {
+          "content": "import { describe, expect, it } from \"vitest\";\nimport { parseShopify } from \"./shopify.js\";\nimport { parseServerTimingHeader } from \"./serverTiming.js\";\n\ndescribe(\"parseShopify\", () =\u003e {\n  it(\"reports not detected when no Shopify headers are present\", () =\u003e {\n    const result = parseShopify({}, []);\n    expect(result.detected).toBe(false);\n  });\n\n  it(\"detects via powered-by: Shopify\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.poweredBy).toBe(\"Shopify\");\n  });\n\n  it(\"detects via a complexity score header even without powered-by\", () =\u003e {\n    const result = parseShopify({ \"shopify-complexity-score\": \"12\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.complexityScore).toBe(\"12\");\n  });\n\n  it(\"extracts request id and datacenter, parsing a known cloud region\", () =\u003e {\n    const result = parseShopify(\n      {\n        \"powered-by\": \"Shopify\",\n        \"x-request-id\": \"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\",\n        \"x-dc\": \"gcp-europe-west1\",\n      },\n      [],\n    );\n    expect(result.requestId).toBe(\"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\");\n    expect(result.datacenter).toBe(\"gcp-europe-west1\");\n    expect(result.datacenterRegion).toBe(\"europe-west1\");\n  });\n\n  it(\"does not guess a region from an unrecognized x-dc prefix\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\", \"x-dc\": \"unknown-region-1\" }, []);\n    expect(result.datacenterRegion).toBeUndefined();\n  });\n\n  it(\"reads the serving node from a servedBy Server-Timing entry\", () =\u003e {\n    const metrics = parseServerTimingHeader('servedBy;desc=\"2plk\"');\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, metrics);\n    expect(result.servingNode).toBe(\"2plk\");\n  });\n\n  it(\"leaves servingNode undefined when no servedBy entry exists\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, []);\n    expect(result.servingNode).toBeUndefined();\n  });\n});\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/shopify.test.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52qbkPi79HsXWNhSGZ7",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 972,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 972,
+      "cache_read_input_tokens": 82279,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 972,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 972,
+          "cache_read_input_tokens": 82279,
+          "input_tokens": 2,
+          "output_tokens": 1253,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1253,
+      "output_tokens_details": {
+        "thinking_tokens": 327
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "585f5c23-b647-45b7-b1da-d9f84f692e68",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52qbCPkqWbCQUcpbmFk",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:02:04.159Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "d113dbc1-bd9d-48e9-9cfa-7716bc0df8ec",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01LQBtFJ6pbxaeXtkFQ3TigN": {
+      "content": "import { describe, expect, it } from \"vitest\";\nimport { parseShopify } from \"./shopify.js\";\nimport { parseServerTimingHeader } from \"./serverTiming.js\";\n\ndescribe(\"parseShopify\", () =\u003e {\n  it(\"reports not detected when no Shopify headers are present\", () =\u003e {\n    const result = parseShopify({}, []);\n    expect(result.detected).toBe(false);\n  });\n\n  it(\"detects via powered-by: Shopify\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.poweredBy).toBe(\"Shopify\");\n  });\n\n  it(\"detects via a complexity score header even without powered-by\", () =\u003e {\n    const result = parseShopify({ \"shopify-complexity-score\": \"12\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.complexityScore).toBe(\"12\");\n  });\n\n  it(\"extracts request id and datacenter, parsing a known cloud region\", () =\u003e {\n    const result = parseShopify(\n      {\n        \"powered-by\": \"Shopify\",\n        \"x-request-id\": \"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\",\n        \"x-dc\": \"gcp-europe-west1\",\n      },\n      [],\n    );\n    expect(result.requestId).toBe(\"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\");\n    expect(result.datacenter).toBe(\"gcp-europe-west1\");\n    expect(result.datacenterRegion).toBe(\"europe-west1\");\n  });\n\n  it(\"does not guess a region from an unrecognized x-dc prefix\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\", \"x-dc\": \"unknown-region-1\" }, []);\n    expect(result.datacenterRegion).toBeUndefined();\n  });\n\n  it(\"reads the serving node from a servedBy Server-Timing entry\", () =\u003e {\n    const metrics = parseServerTimingHeader('servedBy;desc=\"2plk\"');\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, metrics);\n    expect(result.servingNode).toBe(\"2plk\");\n  });\n\n  it(\"leaves servingNode undefined when no servedBy entry exists\", () =\u003e {\n    const result = parseShopify({ \"powered-by\": \"Shopify\" }, []);\n    expect(result.servingNode).toBeUndefined();\n  });\n});\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/shopify.test.ts"
+    }
+  }
+}

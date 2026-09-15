@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01D9RrecdiS86bQv62foyR57",
+        "input": {
+          "command": "ls -la /Users/andreacollet/Projects/nabz 2\u003e/dev/null \u0026\u0026 echo \"---\" \u0026\u0026 find /Users/andreacollet/Projects/nabz -maxdepth 2 2\u003e/dev/null",
+          "description": "Inspect current project directory contents"
+        },
+        "name": "Bash",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf5244oJ3sGEGrGdbGJg7",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 17931,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 17931,
+      "cache_read_input_tokens": 35208,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 17931,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 17931,
+          "cache_read_input_tokens": 35208,
+          "input_tokens": 2,
+          "output_tokens": 4791,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 4791,
+      "output_tokens_details": {
+        "thinking_tokens": 4644
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "93bb7089-cdd5-44eb-97c5-a83dd97830fa",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52445spagNFdHauirue",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T09:52:33.146Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "c0650ab1-c89c-4b44-936a-0dc9078df8ca",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01D9RrecdiS86bQv62foyR57": {
+      "command": "ls -la /Users/andreacollet/Projects/nabz 2\u003e/dev/null \u0026\u0026 echo \"---\" \u0026\u0026 find /Users/andreacollet/Projects/nabz -maxdepth 2 2\u003e/dev/null",
+      "description": "Inspect current project directory contents"
+    }
+  }
+}

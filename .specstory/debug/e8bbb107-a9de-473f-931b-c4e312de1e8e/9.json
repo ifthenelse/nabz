@@ -1,0 +1,24 @@
+{
+  "attachment": {
+    "context": {
+      "userEmail": "The user's email address is collet.andrea@gmail.com. Use it only to identify the user, such as for authorship, attribution, or filtering their own work. Never send it to an unrelated service, such as in a request header, URL, or payload, unless the user explicitly asks."
+    },
+    "type": "session_context"
+  },
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "parentUuid": "b02f7845-abd6-45c9-8fa4-c663887b9d19",
+  "rendered": [
+    {
+      "content": "\u003csystem-reminder\u003e\nAs you answer the user's questions, you can use the following context:\n# userEmail\nThe user's email address is collet.andrea@gmail.com. Use it only to identify the user, such as for authorship, attribution, or filtering their own work. Never send it to an unrelated service, such as in a request header, URL, or payload, unless the user explicitly asks.\n\nIMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is highly relevant to your task.\n\u003c/system-reminder\u003e"
+    }
+  ],
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T09:51:36.059Z",
+  "type": "attachment",
+  "userType": "external",
+  "uuid": "9d44e542-1d67-457e-aec1-ac142819e045",
+  "version": "2.1.270"
+}

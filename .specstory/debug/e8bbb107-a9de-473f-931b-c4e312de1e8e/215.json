@@ -1,0 +1,87 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_015b2dpnfg68uqrTpsfHrdYP",
+        "input": {
+          "command": "npm run build 2\u003e\u00261 | tail -60 \u0026\u0026 echo \"---\" \u0026\u0026 find dist -type f | sort",
+          "description": "Rebuild and verify all static files are present"
+        },
+        "name": "Bash",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf53EV6vrQFz511dQWXmB",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 408,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 408,
+      "cache_read_input_tokens": 114205,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 408,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 408,
+          "cache_read_input_tokens": 114205,
+          "input_tokens": 2,
+          "output_tokens": 131,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 131,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "065db733-1907-4d27-ab8b-419784245b13",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf53EUZfzwz6K43t1Y6Yr",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:07:06.038Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "e72c5466-634d-40c6-afa6-71e497878cf2",
+  "version": "2.1.270",
+  "wireIngestContext": {
+    "toolu_015b2dpnfg68uqrTpsfHrdYP": {
+      "cwd": "/Users/andreacollet/Projects/nabz"
+    }
+  },
+  "wireToolInputs": {
+    "toolu_015b2dpnfg68uqrTpsfHrdYP": {
+      "command": "cd /Users/andreacollet/Projects/nabz \u0026\u0026 npm run build 2\u003e\u00261 | tail -60 \u0026\u0026 echo \"---\" \u0026\u0026 find dist -type f | sort",
+      "description": "Rebuild and verify all static files are present"
+    }
+  }
+}

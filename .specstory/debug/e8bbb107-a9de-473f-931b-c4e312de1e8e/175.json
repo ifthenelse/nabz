@@ -1,0 +1,85 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01KEeja3DJr2g8fPrXhnibH8",
+        "input": {
+          "file_path": "/Users/andreacollet/Projects/nabz/package.json",
+          "new_string": "    \"@types/chrome\": \"^0.0.280\",\n    \"esbuild\": \"^0.25.0\",\n    \"typescript\": \"^5.6.0\",\n    \"vitest\": \"^3.0.0\"",
+          "old_string": "    \"@types/chrome\": \"^0.0.280\",\n    \"esbuild\": \"^0.24.0\",\n    \"typescript\": \"^5.6.0\",\n    \"vitest\": \"^2.1.0\"",
+          "replace_all": false
+        },
+        "name": "Edit",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf53AvdiSaMLWz24GuM2h",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 724,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 724,
+      "cache_read_input_tokens": 109833,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 724,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 724,
+          "cache_read_input_tokens": 109833,
+          "input_tokens": 2,
+          "output_tokens": 473,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 473,
+      "output_tokens_details": {
+        "thinking_tokens": 233
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "e3fa5162-ee68-4232-9b7a-11d2e71eb0a2",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf53AuwYcBwni2tDuXYt7",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:06:21.332Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "f36598f8-eae8-4544-bfcc-aaf0c2b871c5",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01KEeja3DJr2g8fPrXhnibH8": {
+      "file_path": "/Users/andreacollet/Projects/nabz/package.json",
+      "new_string": "    \"@types/chrome\": \"^0.0.280\",\n    \"esbuild\": \"^0.25.0\",\n    \"typescript\": \"^5.6.0\",\n    \"vitest\": \"^3.0.0\"",
+      "old_string": "    \"@types/chrome\": \"^0.0.280\",\n    \"esbuild\": \"^0.24.0\",\n    \"typescript\": \"^5.6.0\",\n    \"vitest\": \"^2.1.0\""
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01J2Fw6b8eEzVnuodXQJKj5y",
+        "input": {
+          "content": "/**\n * Normalized, provider-agnostic representation of what a document response's\n * headers reveal about the serving infrastructure. UI code must depend only\n * on these shapes, never on raw Cloudflare/Shopify/etc. header names.\n */\n\nexport interface ServerTimingMetric {\n  /** Metric name exactly as sent, e.g. \"db_async\" */\n  name: string;\n  /** Duration in milliseconds, if the metric carried a `dur` param. */\n  duration?: number;\n  /** Free-text description from the `desc` param, if present. */\n  description?: string;\n}\n\nexport interface CdnInfo {\n  provider?: string;\n  requestId?: string;\n  /** Parsed PoP / edge location code (e.g. \"MXP\"), not the raw ray/id string. */\n  edgeLocation?: string;\n  cacheStatus?: string;\n  /** Cloudflare-specific: the raw `cf-ray` value (hash-pop). */\n  rayId?: string;\n}\n\nexport interface PlatformInfo {\n  provider?: string;\n  requestId?: string;\n  /**\n   * An identifier for the process/node that served the request. This is\n   * explicitly NOT guaranteed to be a physical server - it may be a\n   * container, worker, or cache node. Never label it \"Server\" in the UI.\n   */\n  servingNode?: string;\n  datacenters?: string[];\n}\n\nexport interface TimingInfo {\n  processing?: number;\n  database?: number;\n  asyncDatabase?: number;\n  render?: number;\n  compression?: number;\n}\n\n/** Known Server-Timing metrics that don't map onto cdn/platform/timing shapes. */\nexport interface ServerTimingExtras {\n  edge?: string;\n  country?: string;\n  asn?: string;\n  theme?: string;\n  pageType?: string;\n}\n\nexport interface GenericProviderMatch {\n  provider: string;\n  /** Header names that triggered detection - evidence, not proof. */\n  evidence: string[];\n  /** A few raw, unparsed values worth surfacing verbatim. */\n  details: Record\u003cstring, string\u003e;\n}\n\nexport interface InfrastructureInfo {\n  cdn?: CdnInfo;\n  platform?: PlatformInfo;\n  timing?: TimingInfo;\n  serverTimingExtras?: ServerTimingExtras;\n  /** Full structured parse of the Server-Timing header, in header order. */\n  serverTimingRaw: ServerTimingMetric[];\n  /** Other CDN/hosting providers detected from generic header signatures. */\n  genericProviders: GenericProviderMatch[];\n  /** Header names are lower-cased; values are exactly as received. */\n  rawHeaders: Record\u003cstring, string\u003e;\n}\n\n/** How confident/direct a displayed value is. Used by the UI to label things honestly. */\nexport type ValueKind = \"observed\" | \"parsed\" | \"inferred\";\n\nexport interface CaptureMeta {\n  url: string;\n  tabId: number;\n  timestamp: number;\n  statusCode: number;\n}\n\nexport interface Capture {\n  meta: CaptureMeta;\n  info: InfrastructureInfo;\n}\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/types.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52ifxwmcyKBKrLdzEFk",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 565,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 565,
+      "cache_read_input_tokens": 71176,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 565,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 565,
+          "cache_read_input_tokens": 71176,
+          "input_tokens": 2,
+          "output_tokens": 1155,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1155,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "462eca1f-6f39-41df-9b76-1487661edb9e",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52ifRwpzXXCH6YZNgtA",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:00:29.922Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "3b2ead26-2c4b-42f9-918a-65d75be0a0c6",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01J2Fw6b8eEzVnuodXQJKj5y": {
+      "content": "/**\n * Normalized, provider-agnostic representation of what a document response's\n * headers reveal about the serving infrastructure. UI code must depend only\n * on these shapes, never on raw Cloudflare/Shopify/etc. header names.\n */\n\nexport interface ServerTimingMetric {\n  /** Metric name exactly as sent, e.g. \"db_async\" */\n  name: string;\n  /** Duration in milliseconds, if the metric carried a `dur` param. */\n  duration?: number;\n  /** Free-text description from the `desc` param, if present. */\n  description?: string;\n}\n\nexport interface CdnInfo {\n  provider?: string;\n  requestId?: string;\n  /** Parsed PoP / edge location code (e.g. \"MXP\"), not the raw ray/id string. */\n  edgeLocation?: string;\n  cacheStatus?: string;\n  /** Cloudflare-specific: the raw `cf-ray` value (hash-pop). */\n  rayId?: string;\n}\n\nexport interface PlatformInfo {\n  provider?: string;\n  requestId?: string;\n  /**\n   * An identifier for the process/node that served the request. This is\n   * explicitly NOT guaranteed to be a physical server - it may be a\n   * container, worker, or cache node. Never label it \"Server\" in the UI.\n   */\n  servingNode?: string;\n  datacenters?: string[];\n}\n\nexport interface TimingInfo {\n  processing?: number;\n  database?: number;\n  asyncDatabase?: number;\n  render?: number;\n  compression?: number;\n}\n\n/** Known Server-Timing metrics that don't map onto cdn/platform/timing shapes. */\nexport interface ServerTimingExtras {\n  edge?: string;\n  country?: string;\n  asn?: string;\n  theme?: string;\n  pageType?: string;\n}\n\nexport interface GenericProviderMatch {\n  provider: string;\n  /** Header names that triggered detection - evidence, not proof. */\n  evidence: string[];\n  /** A few raw, unparsed values worth surfacing verbatim. */\n  details: Record\u003cstring, string\u003e;\n}\n\nexport interface InfrastructureInfo {\n  cdn?: CdnInfo;\n  platform?: PlatformInfo;\n  timing?: TimingInfo;\n  serverTimingExtras?: ServerTimingExtras;\n  /** Full structured parse of the Server-Timing header, in header order. */\n  serverTimingRaw: ServerTimingMetric[];\n  /** Other CDN/hosting providers detected from generic header signatures. */\n  genericProviders: GenericProviderMatch[];\n  /** Header names are lower-cased; values are exactly as received. */\n  rawHeaders: Record\u003cstring, string\u003e;\n}\n\n/** How confident/direct a displayed value is. Used by the UI to label things honestly. */\nexport type ValueKind = \"observed\" | \"parsed\" | \"inferred\";\n\nexport interface CaptureMeta {\n  url: string;\n  tabId: number;\n  timestamp: number;\n  statusCode: number;\n}\n\nexport interface Capture {\n  meta: CaptureMeta;\n  info: InfrastructureInfo;\n}\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/types.ts"
+    }
+  }
+}

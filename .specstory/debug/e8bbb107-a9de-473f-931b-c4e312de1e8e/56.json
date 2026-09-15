@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/src/parsers/serverTiming.ts (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01TvCin71B1LHCVNqqT2GwS1",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "cd7ae560-73e3-4aac-bbff-50b0f923e073",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "cd7ae560-73e3-4aac-bbff-50b0f923e073",
+  "timestamp": "2026-09-15T10:00:49.224Z",
+  "toolUseResult": {
+    "content": "import type { ServerTimingMetric } from \"./types.js\";\n\n/**\n * Splits a Server-Timing header value into its comma-separated metric\n * entries, respecting commas that appear inside a quoted `desc=\"...\"`\n * param. Per RFC 8996 / the Server-Timing spec, entries look like:\n *\n *   name;dur=123.4;desc=\"quoted, text\", name2;dur=5\n */\nfunction splitEntries(value: string): string[] {\n  const entries: string[] = [];\n  let current = \"\";\n  let inQuotes = false;\n\n  for (const char of value) {\n    if (char === '\"') {\n      inQuotes = !inQuotes;\n      current += char;\n    } else if (char === \",\" \u0026\u0026 !inQuotes) {\n      entries.push(current);\n      current = \"\";\n    } else {\n      current += char;\n    }\n  }\n  if (current.trim().length \u003e 0) {\n    entries.push(current);\n  }\n  return entries;\n}\n\nfunction parseEntry(entry: string): ServerTimingMetric | undefined {\n  const parts = entry.split(\";\").map((p) =\u003e p.trim()).filter(Boolean);\n  const name = parts[0];\n  if (!name) return undefined;\n\n  const metric: ServerTimingMetric = { name };\n\n  for (const part of parts.slice(1)) {\n    const eq = part.indexOf(\"=\");\n    if (eq === -1) continue;\n    const key = part.slice(0, eq).trim().toLowerCase();\n    let raw = part.slice(eq + 1).trim();\n    if (raw.startsWith('\"') \u0026\u0026 raw.endsWith('\"')) {\n      raw = raw.slice(1, -1);\n    }\n    if (key === \"dur\") {\n      const dur = Number.parseFloat(raw);\n      if (!Number.isNaN(dur)) metric.duration = dur;\n    } else if (key === \"desc\") {\n      metric.description = raw;\n    }\n  }\n\n  return metric;\n}\n\n/**\n * Parses a raw `Server-Timing` header value into structured metrics.\n * Returns an empty array for an empty/missing header - it never guesses.\n */\nexport function parseServerTimingHeader(headerValue: string | undefined): ServerTimingMetric[] {\n  if (!headerValue || headerValue.trim().length === 0) return [];\n\n  return splitEntries(headerValue)\n    .map(parseEntry)\n    .filter((m): m is ServerTimingMetric =\u003e m !== undefined);\n}\n\n/** Case-insensitive lookup of a single metric by name. */\nexport function findMetric(\n  metrics: ServerTimingMetric[],\n  name: string,\n): ServerTimingMetric | undefined {\n  const lower = name.toLowerCase();\n  return metrics.find((m) =\u003e m.name.toLowerCase() === lower);\n}\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/src/parsers/serverTiming.ts",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "99dd91fe-42d3-4e50-a9b6-b6c73153a093",
+  "version": "2.1.270"
+}

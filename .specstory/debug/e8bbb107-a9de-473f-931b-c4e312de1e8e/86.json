@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/src/parsers/generic.test.ts (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01VLPuPFb8FcAPdsvWRyoFtt",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "89777255-4dc1-4083-bbd2-41607a7f41a3",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "89777255-4dc1-4083-bbd2-41607a7f41a3",
+  "timestamp": "2026-09-15T10:02:11.752Z",
+  "toolUseResult": {
+    "content": "import { describe, expect, it } from \"vitest\";\nimport { detectGenericProviders } from \"./generic.js\";\n\ndescribe(\"detectGenericProviders\", () =\u003e {\n  it(\"returns an empty list when nothing matches\", () =\u003e {\n    expect(detectGenericProviders({})).toEqual([]);\n  });\n\n  it(\"detects Fastly via x-served-by\", () =\u003e {\n    const matches = detectGenericProviders({ \"x-served-by\": \"cache-mxp1234\" });\n    expect(matches).toHaveLength(1);\n    expect(matches[0]?.provider).toBe(\"Fastly\");\n    expect(matches[0]?.evidence).toContain(\"x-served-by\");\n  });\n\n  it(\"detects Amazon CloudFront via x-amz-cf-id\", () =\u003e {\n    const matches = detectGenericProviders({ \"x-amz-cf-id\": \"abc123\" });\n    expect(matches.map((m) =\u003e m.provider)).toContain(\"Amazon CloudFront\");\n  });\n\n  it(\"detects Vercel via server header when no dedicated header is present\", () =\u003e {\n    const matches = detectGenericProviders({ server: \"Vercel\" });\n    expect(matches.map((m) =\u003e m.provider)).toContain(\"Vercel\");\n  });\n\n  it(\"can detect multiple providers at once\", () =\u003e {\n    const matches = detectGenericProviders({\n      \"x-served-by\": \"cache-mxp1234\",\n      \"x-amz-cf-id\": \"abc123\",\n    });\n    expect(matches.map((m) =\u003e m.provider).sort()).toEqual([\"Amazon CloudFront\", \"Fastly\"]);\n  });\n\n  it(\"only surfaces detail headers that are actually present\", () =\u003e {\n    const matches = detectGenericProviders({ \"x-served-by\": \"cache-mxp1234\" });\n    expect(matches[0]?.details).toEqual({ \"x-served-by\": \"cache-mxp1234\" });\n  });\n});\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/src/parsers/generic.test.ts",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "2114c821-4f1a-4ffc-a2f2-8c72f67f65ab",
+  "version": "2.1.270"
+}

@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "total 8\ndrwxr-xr-x   5 andreacollet  staff   160 Sep 15 11:50 .\ndrwxr-xr-x  27 andreacollet  staff   864 Sep 15 11:50 ..\ndrwxr-xr-x  14 andreacollet  staff   448 Sep 15 11:52 .git\ndrwxr-xr-x   7 andreacollet  staff   224 Sep 15 11:52 .specstory\n-rw-r--r--   1 andreacollet  staff  2790 Sep 15 11:50 nabz.code-workspace\n---\n/Users/andreacollet/Projects/nabz\n/Users/andreacollet/Projects/nabz/.specstory\n/Users/andreacollet/Projects/nabz/nabz.code-workspace\n/Users/andreacollet/Projects/nabz/.git\n/Users/andreacollet/Projects/nabz/.specstory/cli\n/Users/andreacollet/Projects/nabz/.specstory/statistics.json\n/Users/andreacollet/Projects/nabz/.specstory/history\n/Users/andreacollet/Projects/nabz/.specstory/.project.json\n/Users/andreacollet/Projects/nabz/.specstory/debug\n/Users/andreacollet/Projects/nabz/.git/config\n/Users/andreacollet/Projects/nabz/.git/objects\n/Users/andreacollet/Projects/nabz/.git/HEAD\n/Users/andreacollet/Projects/nabz/.git/info\n/Users/andreacollet/Projects/nabz/.git/logs\n/Users/andreacollet/Projects/nabz/.git/description\n/Users/andreacollet/Projects/nabz/.git/hooks\n/Users/andreacollet/Projects/nabz/.git/refs\n/Users/andreacollet/Projects/nabz/.git/gk\n/Users/andreacollet/Projects/nabz/.git/index\n/Users/andreacollet/Projects/nabz/.git/COMMIT_EDITMSG\n/Users/andreacollet/Projects/nabz/.git/FETCH_HEAD",
+        "is_error": false,
+        "tool_use_id": "toolu_01D9RrecdiS86bQv62foyR57",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "c0650ab1-c89c-4b44-936a-0dc9078df8ca",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "c0650ab1-c89c-4b44-936a-0dc9078df8ca",
+  "timestamp": "2026-09-15T09:52:33.493Z",
+  "toolUseResult": {
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false,
+    "stderr": "",
+    "stdout": "total 8\ndrwxr-xr-x   5 andreacollet  staff   160 Sep 15 11:50 .\ndrwxr-xr-x  27 andreacollet  staff   864 Sep 15 11:50 ..\ndrwxr-xr-x  14 andreacollet  staff   448 Sep 15 11:52 .git\ndrwxr-xr-x   7 andreacollet  staff   224 Sep 15 11:52 .specstory\n-rw-r--r--   1 andreacollet  staff  2790 Sep 15 11:50 nabz.code-workspace\n---\n/Users/andreacollet/Projects/nabz\n/Users/andreacollet/Projects/nabz/.specstory\n/Users/andreacollet/Projects/nabz/nabz.code-workspace\n/Users/andreacollet/Projects/nabz/.git\n/Users/andreacollet/Projects/nabz/.specstory/cli\n/Users/andreacollet/Projects/nabz/.specstory/statistics.json\n/Users/andreacollet/Projects/nabz/.specstory/history\n/Users/andreacollet/Projects/nabz/.specstory/.project.json\n/Users/andreacollet/Projects/nabz/.specstory/debug\n/Users/andreacollet/Projects/nabz/.git/config\n/Users/andreacollet/Projects/nabz/.git/objects\n/Users/andreacollet/Projects/nabz/.git/HEAD\n/Users/andreacollet/Projects/nabz/.git/info\n/Users/andreacollet/Projects/nabz/.git/logs\n/Users/andreacollet/Projects/nabz/.git/description\n/Users/andreacollet/Projects/nabz/.git/hooks\n/Users/andreacollet/Projects/nabz/.git/refs\n/Users/andreacollet/Projects/nabz/.git/gk\n/Users/andreacollet/Projects/nabz/.git/index\n/Users/andreacollet/Projects/nabz/.git/COMMIT_EDITMSG\n/Users/andreacollet/Projects/nabz/.git/FETCH_HEAD"
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "7b1c0310-76fc-4c75-875c-52dc4941e38a",
+  "version": "2.1.270"
+}

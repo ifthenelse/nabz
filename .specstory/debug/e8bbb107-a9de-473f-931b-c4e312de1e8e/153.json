@@ -1,0 +1,51 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "The file /Users/andreacollet/Projects/nabz/src/parsers/index.ts has been updated successfully. (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_014WfAzUcB7mmKySsmPvBo5P",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "dd72a675-17c2-41dc-90f7-9653729f5cda",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "dd72a675-17c2-41dc-90f7-9653729f5cda",
+  "timestamp": "2026-09-15T10:05:35.081Z",
+  "toolUseResult": {
+    "filePath": "/Users/andreacollet/Projects/nabz/src/parsers/index.ts",
+    "newString": "export { parseShopify, parseDatacenterRegion } from \"./shopify.js\";\nexport { detectGenericProviders } from \"./generic.js\";\nexport { fieldLabel, fieldKind, FIELD_LABELS, FIELD_KIND } from \"./fieldMeta.js\";",
+    "oldString": "export { parseShopify } from \"./shopify.js\";\nexport { detectGenericProviders } from \"./generic.js\";\nexport { fieldLabel, fieldKind, FIELD_LABELS, FIELD_KIND } from \"./fieldMeta.js\";",
+    "originalFile": "import type { InfrastructureInfo, ServerTimingExtras } from \"./types.js\";\nimport { parseServerTimingHeader, findMetric } from \"./serverTiming.js\";\nimport { parseCloudflare } from \"./cloudflare.js\";\nimport { parseShopify } from \"./shopify.js\";\nimport { detectGenericProviders } from \"./generic.js\";\n\nexport * from \"./types.js\";\nexport { parseServerTimingHeader, findMetric } from \"./serverTiming.js\";\nexport { parseCloudflare } from \"./cloudflare.js\";\nexport { parseShopify } from \"./shopify.js\";\nexport { detectGenericProviders } from \"./generic.js\";\nexport { fieldLabel, fieldKind, FIELD_LABELS, FIELD_KIND } from \"./fieldMeta.js\";\n\n/** Lower-cases header names so lookups are case-insensitive and consistent. */\nexport function normalizeHeaders(headers: Record\u003cstring, string\u003e): Record\u003cstring, string\u003e {\n  const normalized: Record\u003cstring, string\u003e = {};\n  for (const [key, value] of Object.entries(headers)) {\n    normalized[key.toLowerCase()] = value;\n  }\n  return normalized;\n}\n\nfunction numberOrUndefined(n: number | undefined): number | undefined {\n  return typeof n === \"number\" \u0026\u0026 !Number.isNaN(n) ? n : undefined;\n}\n\n/**\n * Builds the normalized InfrastructureInfo from a raw header map. This is\n * the single entry point the UI/background layers should call - it never\n * touches chrome.* APIs and has no side effects, so it's fully unit\n * testable in isolation.\n */\nexport function buildInfrastructureInfo(rawHeaders: Record\u003cstring, string\u003e): InfrastructureInfo {\n  const headers = normalizeHeaders(rawHeaders);\n  const serverTimingRaw = parseServerTimingHeader(headers[\"server-timing\"]);\n\n  const cf = parseCloudflare(headers, serverTimingRaw);\n  const shop = parseShopify(headers, serverTimingRaw);\n  const generic = detectGenericProviders(headers);\n\n  const info: InfrastructureInfo = {\n    rawHeaders: headers,\n    serverTimingRaw,\n    genericProviders: generic,\n  };\n\n  if (cf.detected) {\n    info.cdn = {\n      provider: \"Cloudflare\",\n      edgeLocation: cf.edgeLocation,\n      cacheStatus: cf.cacheStatus,\n      rayId: cf.rayId,\n    };\n  } else if (generic.length \u003e 0) {\n    // Fall back to the first generic CDN-ish match so the Overview section\n    // isn't empty when a non-Cloudflare CDN is present.\n    const first = generic[0];\n    if (first) {\n      info.cdn = { provider: first.provider };\n    }\n  }\n\n  if (shop.detected) {\n    info.platform = {\n      provider: \"Shopify\",\n      requestId: shop.requestId,\n      servingNode: shop.servingNode,\n      datacenters: shop.datacenter ? [shop.datacenter] : undefined,\n    };\n  }\n\n  const processing = findMetric(serverTimingRaw, \"processing\");\n  const db = findMetric(serverTimingRaw, \"db\");\n  const dbAsync = findMetric(serverTimingRaw, \"db_async\");\n  const render = findMetric(serverTimingRaw, \"render\");\n  const compression = findMetric(serverTimingRaw, \"compression\");\n\n  if (processing || db || dbAsync || render || compression) {\n    info.timing = {\n      processing: numberOrUndefined(processing?.duration),\n      database: numberOrUndefined(db?.duration),\n      asyncDatabase: numberOrUndefined(dbAsync?.duration),\n      render: numberOrUndefined(render?.duration),\n      compression: numberOrUndefined(compression?.duration),\n    };\n  }\n\n  const extras: ServerTimingExtras = {\n    edge: findMetric(serverTimingRaw, \"edge\")?.description,\n    country: findMetric(serverTimingRaw, \"country\")?.description,\n    asn: findMetric(serverTimingRaw, \"asn\")?.description,\n    theme: findMetric(serverTimingRaw, \"theme\")?.description,\n    pageType: findMetric(serverTimingRaw, \"pageType\")?.description,\n  };\n  if (Object.values(extras).some((v) =\u003e v !== undefined)) {\n    info.serverTimingExtras = extras;\n  }\n\n  return info;\n}\n",
+    "replaceAll": false,
+    "structuredPatch": [
+      {
+        "lines": [
+          " export * from \"./types.js\";",
+          " export { parseServerTimingHeader, findMetric } from \"./serverTiming.js\";",
+          " export { parseCloudflare } from \"./cloudflare.js\";",
+          "-export { parseShopify } from \"./shopify.js\";",
+          "+export { parseShopify, parseDatacenterRegion } from \"./shopify.js\";",
+          " export { detectGenericProviders } from \"./generic.js\";",
+          " export { fieldLabel, fieldKind, FIELD_LABELS, FIELD_KIND } from \"./fieldMeta.js\";",
+          " "
+        ],
+        "newLines": 7,
+        "newStart": 7,
+        "oldLines": 7,
+        "oldStart": 7
+      }
+    ],
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "6afa7ba7-a2a4-4eea-ab76-e991eadbff04",
+  "version": "2.1.270"
+}

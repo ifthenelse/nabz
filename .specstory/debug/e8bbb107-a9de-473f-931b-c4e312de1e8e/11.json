@@ -1,0 +1,27 @@
+{
+  "attachment": {
+    "commit": "Co-Authored-By: Claude Sonnet 5 \u003cnoreply@anthropic.com\u003e",
+    "managedCommit": false,
+    "managedPr": false,
+    "pr": "🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+    "sendUserFileHint": false,
+    "type": "remote_session_change",
+    "url": null
+  },
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "parentUuid": "fa76ae36-d25b-48f7-9128-1ac2859429d3",
+  "rendered": [
+    {
+      "content": "\u003csystem-reminder\u003e\nAttribution for git commits and pull requests you create from here on (this replaces Claude Code's own earlier attribution guidance, such as a previous copy of this reminder; the user's own instructions about these lines, such as a CLAUDE.md or memory rule, take precedence over this reminder, but do not add attribution lines this reminder leaves out):\n- End git commit messages with:\nCo-Authored-By: Claude Sonnet 5 \u003cnoreply@anthropic.com\u003e\n- End pull request descriptions with:\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\u003c/system-reminder\u003e"
+    }
+  ],
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T09:51:36.060Z",
+  "type": "attachment",
+  "userType": "external",
+  "uuid": "39375e77-370c-4f8e-b54e-57bb722b8545",
+  "version": "2.1.270"
+}

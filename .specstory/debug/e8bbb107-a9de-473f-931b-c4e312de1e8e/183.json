@@ -1,0 +1,50 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "The file /Users/andreacollet/Projects/nabz/package.json has been updated successfully. (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01AobTp58C3RdL3aEHMEZGTF",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "32a9ffa2-903e-40b0-abd2-87a220adf6ed",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "32a9ffa2-903e-40b0-abd2-87a220adf6ed",
+  "timestamp": "2026-09-15T10:06:32.246Z",
+  "toolUseResult": {
+    "filePath": "/Users/andreacollet/Projects/nabz/package.json",
+    "newString": "    \"vitest\": \"^5.0.0\"",
+    "oldString": "    \"vitest\": \"^3.0.0\"",
+    "originalFile": "{\n  \"name\": \"infra-inspector\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"description\": \"Chrome extension (Manifest V3) that surfaces CDN / edge / backend infrastructure headers for the currently inspected page.\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"node build.mjs\",\n    \"watch\": \"node build.mjs --watch\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest run\",\n    \"test:watch\": \"vitest\"\n  },\n  \"devDependencies\": {\n    \"@types/chrome\": \"^0.0.280\",\n    \"esbuild\": \"^0.25.0\",\n    \"typescript\": \"^5.6.0\",\n    \"vitest\": \"^3.0.0\"\n  }\n}\n",
+    "replaceAll": false,
+    "structuredPatch": [
+      {
+        "lines": [
+          "     \"@types/chrome\": \"^0.0.280\",",
+          "     \"esbuild\": \"^0.25.0\",",
+          "     \"typescript\": \"^5.6.0\",",
+          "-    \"vitest\": \"^3.0.0\"",
+          "+    \"vitest\": \"^5.0.0\"",
+          "   }",
+          " }"
+        ],
+        "newLines": 6,
+        "newStart": 15,
+        "oldLines": 6,
+        "oldStart": 15
+      }
+    ],
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "34721cef-ba0f-4509-b7e3-259d1e737d7d",
+  "version": "2.1.270"
+}

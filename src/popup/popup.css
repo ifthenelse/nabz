@@ -1,0 +1,28 @@
+body {
+  width: 340px;
+  max-height: 560px;
+  overflow-y: auto;
+}
+
+.popup-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 14px;
+  z-index: 1;
+}
+
+.popup-header h1 {
+  font-size: 13px;
+}
+
+.popup-host {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

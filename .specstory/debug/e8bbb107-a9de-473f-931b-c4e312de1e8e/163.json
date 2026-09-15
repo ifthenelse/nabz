@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_014tWoqyRNSrikbLxNAZdQoL",
+        "input": {
+          "content": "import { buildInfrastructureInfo, parseDatacenterRegion } from \"../parsers/index.js\";\nimport type { Capture } from \"../parsers/types.js\";\nimport { mergeHeaderPairs } from \"../utils/headers.js\";\nimport { renderCapture } from \"../utils/render.js\";\n\nconst MAX_HISTORY = 25;\n\nconst historyListEl = document.getElementById(\"history-list\");\nconst detailEl = document.getElementById(\"detail\");\nconst clearBtn = document.getElementById(\"clear-history\");\n\nconst history: Capture[] = [];\nlet selectedIndex: number | null = null;\nlet currentNavigationUrl: string | undefined;\n\nfunction summaryLine(capture: Capture): string[] {\n  const lines: string[] = [];\n  const { info } = capture;\n\n  if (info.cdn?.provider === \"Cloudflare\") {\n    lines.push(`Cloudflare PoP: ${info.cdn.edgeLocation ?? \"unknown\"}`);\n  } else if (info.cdn?.provider) {\n    lines.push(`CDN: ${info.cdn.provider}`);\n  }\n\n  if (info.platform?.provider === \"Shopify\") {\n    lines.push(`Shopify node: ${info.platform.servingNode ?? \"unknown\"}`);\n    const dc = info.platform.datacenters?.[0];\n    const region = dc ? parseDatacenterRegion(dc) : undefined;\n    if (region) lines.push(`GCP region: ${region}`);\n    else if (dc) lines.push(`Datacenter: ${dc}`);\n  }\n\n  if (lines.length === 0) lines.push(\"No known infrastructure headers detected\");\n  return lines;\n}\n\nfunction renderHistoryList(): void {\n  if (!historyListEl) return;\n  historyListEl.replaceChildren();\n\n  history.forEach((capture, index) =\u003e {\n    const item = document.createElement(\"div\");\n    item.className = \"history-item\" + (index === selectedIndex ? \" selected\" : \"\");\n\n    const title = document.createElement(\"div\");\n    title.className = \"history-item-title\";\n    title.textContent = `Request ${index + 1}`;\n\n    const urlLine = document.createElement(\"div\");\n    urlLine.className = \"history-item-line\";\n    urlLine.textContent = capture.meta.url;\n    urlLine.title = capture.meta.url;\n\n    item.append(title, urlLine);\n    for (const line of summaryLine(capture)) {\n      const lineEl = document.createElement(\"div\");\n      lineEl.className = \"history-item-line\";\n      lineEl.textContent = line;\n      item.append(lineEl);\n    }\n\n    item.addEventListener(\"click\", () =\u003e selectEntry(index));\n    historyListEl.append(item);\n  });\n}\n\nfunction selectEntry(index: number): void {\n  selectedIndex = index;\n  renderHistoryList();\n  if (detailEl) renderCapture(detailEl, history[index]);\n}\n\nfunction addCapture(capture: Capture): void {\n  history.push(capture);\n  if (history.length \u003e MAX_HISTORY) history.shift();\n  selectEntry(history.length - 1);\n}\n\nfunction handleRequestFinished(request: chrome.devtools.network.Request): void {\n  const url = request.request.url;\n  // The DevTools network API exposes every request, not just the document.\n  // We identify the main document response by matching the URL the\n  // inspected window most recently navigated to - simple, and accurate for\n  // the common case of a single top-level navigation per history entry.\n  if (!currentNavigationUrl || url !== currentNavigationUrl) return;\n\n  const headers = mergeHeaderPairs(\n    request.response.headers.map((h) =\u003e ({ name: h.name, value: h.value })),\n  );\n  const info = buildInfrastructureInfo(headers);\n\n  addCapture({\n    meta: {\n      url,\n      tabId: chrome.devtools.inspectedWindow.tabId,\n      timestamp: Date.now(),\n      statusCode: request.response.status,\n    },\n    info,\n  });\n\n  // Only consume one document per navigation.\n  currentNavigationUrl = undefined;\n}\n\nchrome.devtools.network.onNavigated.addListener((url) =\u003e {\n  currentNavigationUrl = url;\n});\n\nchrome.devtools.network.onRequestFinished.addListener(handleRequestFinished);\n\nchrome.devtools.inspectedWindow.eval\u003cstring\u003e(\"location.href\", (result) =\u003e {\n  if (typeof result === \"string\") currentNavigationUrl = result;\n});\n\nclearBtn?.addEventListener(\"click\", () =\u003e {\n  history.length = 0;\n  selectedIndex = null;\n  renderHistoryList();\n  if (detailEl) renderCapture(detailEl, undefined);\n});\n\nif (detailEl) renderCapture(detailEl, undefined);\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/devtools/panel.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf538j9rpCzAbvFriXt1L",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 744,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 744,
+      "cache_read_input_tokens": 106867,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 744,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 744,
+          "cache_read_input_tokens": 106867,
+          "input_tokens": 2,
+          "output_tokens": 1767,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1767,
+      "output_tokens_details": {
+        "thinking_tokens": 79
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "d183b332-ca7d-4ff8-a265-e02d717bcbef",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf538ie65Bo142zuQZ844",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:05:59.058Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "f9056cc3-927c-4552-bc1b-dbe84a34b06c",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_014tWoqyRNSrikbLxNAZdQoL": {
+      "content": "import { buildInfrastructureInfo, parseDatacenterRegion } from \"../parsers/index.js\";\nimport type { Capture } from \"../parsers/types.js\";\nimport { mergeHeaderPairs } from \"../utils/headers.js\";\nimport { renderCapture } from \"../utils/render.js\";\n\nconst MAX_HISTORY = 25;\n\nconst historyListEl = document.getElementById(\"history-list\");\nconst detailEl = document.getElementById(\"detail\");\nconst clearBtn = document.getElementById(\"clear-history\");\n\nconst history: Capture[] = [];\nlet selectedIndex: number | null = null;\nlet currentNavigationUrl: string | undefined;\n\nfunction summaryLine(capture: Capture): string[] {\n  const lines: string[] = [];\n  const { info } = capture;\n\n  if (info.cdn?.provider === \"Cloudflare\") {\n    lines.push(`Cloudflare PoP: ${info.cdn.edgeLocation ?? \"unknown\"}`);\n  } else if (info.cdn?.provider) {\n    lines.push(`CDN: ${info.cdn.provider}`);\n  }\n\n  if (info.platform?.provider === \"Shopify\") {\n    lines.push(`Shopify node: ${info.platform.servingNode ?? \"unknown\"}`);\n    const dc = info.platform.datacenters?.[0];\n    const region = dc ? parseDatacenterRegion(dc) : undefined;\n    if (region) lines.push(`GCP region: ${region}`);\n    else if (dc) lines.push(`Datacenter: ${dc}`);\n  }\n\n  if (lines.length === 0) lines.push(\"No known infrastructure headers detected\");\n  return lines;\n}\n\nfunction renderHistoryList(): void {\n  if (!historyListEl) return;\n  historyListEl.replaceChildren();\n\n  history.forEach((capture, index) =\u003e {\n    const item = document.createElement(\"div\");\n    item.className = \"history-item\" + (index === selectedIndex ? \" selected\" : \"\");\n\n    const title = document.createElement(\"div\");\n    title.className = \"history-item-title\";\n    title.textContent = `Request ${index + 1}`;\n\n    const urlLine = document.createElement(\"div\");\n    urlLine.className = \"history-item-line\";\n    urlLine.textContent = capture.meta.url;\n    urlLine.title = capture.meta.url;\n\n    item.append(title, urlLine);\n    for (const line of summaryLine(capture)) {\n      const lineEl = document.createElement(\"div\");\n      lineEl.className = \"history-item-line\";\n      lineEl.textContent = line;\n      item.append(lineEl);\n    }\n\n    item.addEventListener(\"click\", () =\u003e selectEntry(index));\n    historyListEl.append(item);\n  });\n}\n\nfunction selectEntry(index: number): void {\n  selectedIndex = index;\n  renderHistoryList();\n  if (detailEl) renderCapture(detailEl, history[index]);\n}\n\nfunction addCapture(capture: Capture): void {\n  history.push(capture);\n  if (history.length \u003e MAX_HISTORY) history.shift();\n  selectEntry(history.length - 1);\n}\n\nfunction handleRequestFinished(request: chrome.devtools.network.Request): void {\n  const url = request.request.url;\n  // The DevTools network API exposes every request, not just the document.\n  // We identify the main document response by matching the URL the\n  // inspected window most recently navigated to - simple, and accurate for\n  // the common case of a single top-level navigation per history entry.\n  if (!currentNavigationUrl || url !== currentNavigationUrl) return;\n\n  const headers = mergeHeaderPairs(\n    request.response.headers.map((h) =\u003e ({ name: h.name, value: h.value })),\n  );\n  const info = buildInfrastructureInfo(headers);\n\n  addCapture({\n    meta: {\n      url,\n      tabId: chrome.devtools.inspectedWindow.tabId,\n      timestamp: Date.now(),\n      statusCode: request.response.status,\n    },\n    info,\n  });\n\n  // Only consume one document per navigation.\n  currentNavigationUrl = undefined;\n}\n\nchrome.devtools.network.onNavigated.addListener((url) =\u003e {\n  currentNavigationUrl = url;\n});\n\nchrome.devtools.network.onRequestFinished.addListener(handleRequestFinished);\n\nchrome.devtools.inspectedWindow.eval\u003cstring\u003e(\"location.href\", (result) =\u003e {\n  if (typeof result === \"string\") currentNavigationUrl = result;\n});\n\nclearBtn?.addEventListener(\"click\", () =\u003e {\n  history.length = 0;\n  selectedIndex = null;\n  renderHistoryList();\n  if (detailEl) renderCapture(detailEl, undefined);\n});\n\nif (detailEl) renderCapture(detailEl, undefined);\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/devtools/panel.ts"
+    }
+  }
+}

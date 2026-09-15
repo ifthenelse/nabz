@@ -1,0 +1,68 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "text": "No errors. Now run the test suite.",
+        "type": "text"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf53DQz6SUT4sSJahwZgz",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 215,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 215,
+      "cache_read_input_tokens": 113126,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 215,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 215,
+          "cache_read_input_tokens": 113126,
+          "input_tokens": 2,
+          "output_tokens": 124,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 124,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "e01db486-aab1-42e9-84a0-3b31590e6716",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf53DQPd4q4Fw8BEMgnp9",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:06:50.859Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "04477b57-ea7e-4a7f-80fa-a8c142fea17e",
+  "version": "2.1.270"
+}

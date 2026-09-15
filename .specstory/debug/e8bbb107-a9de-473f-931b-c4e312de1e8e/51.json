@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_0182x4z34Az7EytJA2pSuho2",
+        "input": {
+          "content": "import type { ValueKind } from \"./types.js\";\n\n/**\n * Display metadata for every field the UI can render, keyed by a dotted\n * path into InfrastructureInfo (e.g. \"platform.servingNode\"). Keeping this\n * separate from the parsers means the UI never has to know which provider\n * produced a value, only how to label and badge it honestly.\n */\nexport const FIELD_LABELS: Record\u003cstring, string\u003e = {\n  \"cdn.provider\": \"Provider\",\n  \"cdn.rayId\": \"Ray ID\",\n  \"cdn.edgeLocation\": \"PoP (edge location)\",\n  \"cdn.cacheStatus\": \"Cache\",\n  \"cdn.requestId\": \"CDN request ID\",\n\n  \"platform.provider\": \"Platform\",\n  \"platform.requestId\": \"Request ID\",\n  \"platform.servingNode\": \"Serving node identifier\",\n  \"platform.datacenters\": \"Datacenter\",\n\n  \"timing.processing\": \"Processing\",\n  \"timing.database\": \"Database\",\n  \"timing.asyncDatabase\": \"Async DB\",\n  \"timing.render\": \"Render\",\n  \"timing.compression\": \"Compression\",\n\n  \"serverTimingExtras.edge\": \"Edge\",\n  \"serverTimingExtras.country\": \"Country\",\n  \"serverTimingExtras.asn\": \"ASN\",\n  \"serverTimingExtras.theme\": \"Theme\",\n  \"serverTimingExtras.pageType\": \"Page type\",\n};\n\nexport const FIELD_KIND: Record\u003cstring, ValueKind\u003e = {\n  \"cdn.provider\": \"inferred\",\n  \"cdn.rayId\": \"observed\",\n  \"cdn.edgeLocation\": \"parsed\",\n  \"cdn.cacheStatus\": \"observed\",\n  \"cdn.requestId\": \"observed\",\n\n  \"platform.provider\": \"inferred\",\n  \"platform.requestId\": \"observed\",\n  \"platform.servingNode\": \"observed\",\n  \"platform.datacenters\": \"parsed\",\n\n  \"timing.processing\": \"parsed\",\n  \"timing.database\": \"parsed\",\n  \"timing.asyncDatabase\": \"parsed\",\n  \"timing.render\": \"parsed\",\n  \"timing.compression\": \"parsed\",\n\n  \"serverTimingExtras.edge\": \"observed\",\n  \"serverTimingExtras.country\": \"observed\",\n  \"serverTimingExtras.asn\": \"observed\",\n  \"serverTimingExtras.theme\": \"observed\",\n  \"serverTimingExtras.pageType\": \"observed\",\n};\n\nexport function fieldLabel(path: string): string {\n  return FIELD_LABELS[path] ?? path;\n}\n\nexport function fieldKind(path: string): ValueKind {\n  return FIELD_KIND[path] ?? \"observed\";\n}\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/fieldMeta.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52jVRTtEmwsFPAs9fS1",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1252,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 1252,
+      "cache_read_input_tokens": 71741,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1252,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 1252,
+          "cache_read_input_tokens": 71741,
+          "input_tokens": 2,
+          "output_tokens": 1019,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1019,
+      "output_tokens_details": {
+        "thinking_tokens": 21
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "91f1a664-fe28-48f0-9673-92acb6e868b2",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52jUwC5aKtWGWXLBRqi",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:00:38.240Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "63a3c1dd-e442-4c01-ad2f-2007e84cf4ce",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_0182x4z34Az7EytJA2pSuho2": {
+      "content": "import type { ValueKind } from \"./types.js\";\n\n/**\n * Display metadata for every field the UI can render, keyed by a dotted\n * path into InfrastructureInfo (e.g. \"platform.servingNode\"). Keeping this\n * separate from the parsers means the UI never has to know which provider\n * produced a value, only how to label and badge it honestly.\n */\nexport const FIELD_LABELS: Record\u003cstring, string\u003e = {\n  \"cdn.provider\": \"Provider\",\n  \"cdn.rayId\": \"Ray ID\",\n  \"cdn.edgeLocation\": \"PoP (edge location)\",\n  \"cdn.cacheStatus\": \"Cache\",\n  \"cdn.requestId\": \"CDN request ID\",\n\n  \"platform.provider\": \"Platform\",\n  \"platform.requestId\": \"Request ID\",\n  \"platform.servingNode\": \"Serving node identifier\",\n  \"platform.datacenters\": \"Datacenter\",\n\n  \"timing.processing\": \"Processing\",\n  \"timing.database\": \"Database\",\n  \"timing.asyncDatabase\": \"Async DB\",\n  \"timing.render\": \"Render\",\n  \"timing.compression\": \"Compression\",\n\n  \"serverTimingExtras.edge\": \"Edge\",\n  \"serverTimingExtras.country\": \"Country\",\n  \"serverTimingExtras.asn\": \"ASN\",\n  \"serverTimingExtras.theme\": \"Theme\",\n  \"serverTimingExtras.pageType\": \"Page type\",\n};\n\nexport const FIELD_KIND: Record\u003cstring, ValueKind\u003e = {\n  \"cdn.provider\": \"inferred\",\n  \"cdn.rayId\": \"observed\",\n  \"cdn.edgeLocation\": \"parsed\",\n  \"cdn.cacheStatus\": \"observed\",\n  \"cdn.requestId\": \"observed\",\n\n  \"platform.provider\": \"inferred\",\n  \"platform.requestId\": \"observed\",\n  \"platform.servingNode\": \"observed\",\n  \"platform.datacenters\": \"parsed\",\n\n  \"timing.processing\": \"parsed\",\n  \"timing.database\": \"parsed\",\n  \"timing.asyncDatabase\": \"parsed\",\n  \"timing.render\": \"parsed\",\n  \"timing.compression\": \"parsed\",\n\n  \"serverTimingExtras.edge\": \"observed\",\n  \"serverTimingExtras.country\": \"observed\",\n  \"serverTimingExtras.asn\": \"observed\",\n  \"serverTimingExtras.theme\": \"observed\",\n  \"serverTimingExtras.pageType\": \"observed\",\n};\n\nexport function fieldLabel(path: string): string {\n  return FIELD_LABELS[path] ?? path;\n}\n\nexport function fieldKind(path: string): ValueKind {\n  return FIELD_KIND[path] ?? \"observed\";\n}\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/fieldMeta.ts"
+    }
+  }
+}

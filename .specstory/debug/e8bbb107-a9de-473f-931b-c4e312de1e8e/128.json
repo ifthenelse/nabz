@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01NWmzqtzNhUprkmA3e9nyAn",
+        "input": {
+          "content": "import { loadCapture } from \"../utils/storage.js\";\nimport { renderCapture } from \"../utils/render.js\";\n\nasync function main(): Promise\u003cvoid\u003e {\n  const app = document.getElementById(\"app\");\n  const hostEl = document.getElementById(\"host\");\n  if (!app) return;\n\n  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });\n  if (!tab?.id) {\n    renderCapture(app, undefined);\n    return;\n  }\n\n  if (hostEl \u0026\u0026 tab.url) {\n    try {\n      hostEl.textContent = new URL(tab.url).host;\n    } catch {\n      hostEl.textContent = tab.url;\n    }\n  }\n\n  const capture = await loadCapture(tab.id);\n  renderCapture(app, capture);\n\n  // If the page was still loading when the popup opened, the background\n  // worker may write the capture a moment later - pick it up live instead\n  // of asking the user to reopen the popup.\n  chrome.storage.session.onChanged.addListener((changes) =\u003e {\n    const key = `capture:${tab.id}`;\n    if (key in changes) {\n      renderCapture(app, changes[key]?.newValue);\n    }\n  });\n}\n\nvoid main();\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/popup/popup.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf532ka1iqZkRZRYc4USU",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 408,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 408,
+      "cache_read_input_tokens": 99254,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 408,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 408,
+          "cache_read_input_tokens": 99254,
+          "input_tokens": 2,
+          "output_tokens": 494,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 494,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "e7ae162e-63e3-41fc-94ad-05fa378bfb20",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf532jyYLWLXNJkPpBiPf",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:04:29.306Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "158ee39a-8c3b-4ab1-a3da-1c040ed74591",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01NWmzqtzNhUprkmA3e9nyAn": {
+      "content": "import { loadCapture } from \"../utils/storage.js\";\nimport { renderCapture } from \"../utils/render.js\";\n\nasync function main(): Promise\u003cvoid\u003e {\n  const app = document.getElementById(\"app\");\n  const hostEl = document.getElementById(\"host\");\n  if (!app) return;\n\n  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });\n  if (!tab?.id) {\n    renderCapture(app, undefined);\n    return;\n  }\n\n  if (hostEl \u0026\u0026 tab.url) {\n    try {\n      hostEl.textContent = new URL(tab.url).host;\n    } catch {\n      hostEl.textContent = tab.url;\n    }\n  }\n\n  const capture = await loadCapture(tab.id);\n  renderCapture(app, capture);\n\n  // If the page was still loading when the popup opened, the background\n  // worker may write the capture a moment later - pick it up live instead\n  // of asking the user to reopen the popup.\n  chrome.storage.session.onChanged.addListener((changes) =\u003e {\n    const key = `capture:${tab.id}`;\n    if (key in changes) {\n      renderCapture(app, changes[key]?.newValue);\n    }\n  });\n}\n\nvoid main();\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/popup/popup.ts"
+    }
+  }
+}

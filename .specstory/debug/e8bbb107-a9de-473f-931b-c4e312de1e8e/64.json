@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/src/parsers/shopify.ts (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01M6yyjEX6fnfovJyGdFqPoC",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "c0366d82-e80c-40fe-9438-27b1ef1e0436",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "c0366d82-e80c-40fe-9438-27b1ef1e0436",
+  "timestamp": "2026-09-15T10:01:11.433Z",
+  "toolUseResult": {
+    "content": "import type { ServerTimingMetric } from \"./types.js\";\nimport { findMetric } from \"./serverTiming.js\";\n\nexport interface ShopifyParseResult {\n  detected: boolean;\n  poweredBy?: string;\n  requestId?: string;\n  /** Raw `x-dc` value, e.g. \"gcp-europe-west1\". */\n  datacenter?: string;\n  /** Cloud region parsed out of x-dc, e.g. \"europe-west1\". Undefined if the\n   * prefix isn't a recognized cloud provider marker - we don't guess. */\n  datacenterRegion?: string;\n  complexityScore?: string;\n  complexityScoreV2?: string;\n  /**\n   * Best-effort serving node identifier, read from a `servedBy`-style\n   * Server-Timing entry when present. This is explicitly NOT a physical\n   * server - see PlatformInfo.servingNode.\n   */\n  servingNode?: string;\n}\n\nconst KNOWN_DC_PREFIXES = [\"gcp\", \"aws\", \"azure\", \"gce\"];\n\nfunction parseDatacenterRegion(dc: string): string | undefined {\n  const [prefix, ...rest] = dc.split(\"-\");\n  if (!prefix || rest.length === 0) return undefined;\n  if (!KNOWN_DC_PREFIXES.includes(prefix.toLowerCase())) return undefined;\n  return rest.join(\"-\");\n}\n\nexport function parseShopify(\n  headers: Record\u003cstring, string\u003e,\n  serverTiming: ServerTimingMetric[],\n): ShopifyParseResult {\n  const poweredBy = headers[\"powered-by\"];\n  const complexityScore = headers[\"shopify-complexity-score\"];\n  const complexityScoreV2 = headers[\"shopify-complexity-score-v2\"];\n\n  const detected =\n    /shopify/i.test(poweredBy ?? \"\") || Boolean(complexityScore) || Boolean(complexityScoreV2);\n\n  const datacenter = headers[\"x-dc\"];\n  const servedByMetric = findMetric(serverTiming, \"servedBy\") ?? findMetric(serverTiming, \"served-by\");\n\n  return {\n    detected,\n    poweredBy,\n    requestId: headers[\"x-request-id\"],\n    datacenter,\n    datacenterRegion: datacenter ? parseDatacenterRegion(datacenter) : undefined,\n    complexityScore,\n    complexityScoreV2,\n    servingNode: servedByMetric?.description,\n  };\n}\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/src/parsers/shopify.ts",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "e958c74a-9508-41ab-b633-d74ae4510ce1",
+  "version": "2.1.270"
+}

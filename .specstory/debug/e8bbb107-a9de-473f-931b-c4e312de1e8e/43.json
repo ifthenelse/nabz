@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 1,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_0167pHG7SEqFzeYKMz8TuGUo",
+        "input": {
+          "content": "{\n  \"manifest_version\": 3,\n  \"name\": \"Infra Inspector\",\n  \"short_name\": \"Infra Inspector\",\n  \"description\": \"Shows CDN, edge, and backend infrastructure identifiers exposed by the current page's HTTP response headers.\",\n  \"version\": \"0.1.0\",\n  \"minimum_chrome_version\": \"116\",\n  \"action\": {\n    \"default_popup\": \"popup/popup.html\",\n    \"default_title\": \"Infra Inspector\"\n  },\n  \"background\": {\n    \"service_worker\": \"background/service-worker.js\",\n    \"type\": \"module\"\n  },\n  \"devtools_page\": \"devtools/devtools.html\",\n  \"permissions\": [\"webRequest\", \"storage\"],\n  \"host_permissions\": [\"http://*/*\", \"https://*/*\"]\n}\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/manifest.json"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52iHc2Yky1LBWUsPgDk",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 911,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 911,
+      "cache_read_input_tokens": 70265,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 911,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 911,
+          "cache_read_input_tokens": 70265,
+          "input_tokens": 2,
+          "output_tokens": 473,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 473,
+      "output_tokens_details": {
+        "thinking_tokens": 122
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "12c36cad-8536-4b4a-b205-37603b9655f2",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52iH6GpCbKxKbrHupH6",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:00:18.808Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "d16ff2e6-2fca-4264-8415-f68115097e08",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_0167pHG7SEqFzeYKMz8TuGUo": {
+      "content": "{\n  \"manifest_version\": 3,\n  \"name\": \"Infra Inspector\",\n  \"short_name\": \"Infra Inspector\",\n  \"description\": \"Shows CDN, edge, and backend infrastructure identifiers exposed by the current page's HTTP response headers.\",\n  \"version\": \"0.1.0\",\n  \"minimum_chrome_version\": \"116\",\n  \"action\": {\n    \"default_popup\": \"popup/popup.html\",\n    \"default_title\": \"Infra Inspector\"\n  },\n  \"background\": {\n    \"service_worker\": \"background/service-worker.js\",\n    \"type\": \"module\"\n  },\n  \"devtools_page\": \"devtools/devtools.html\",\n  \"permissions\": [\"webRequest\", \"storage\"],\n  \"host_permissions\": [\"http://*/*\", \"https://*/*\"]\n}\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/manifest.json"
+    }
+  }
+}

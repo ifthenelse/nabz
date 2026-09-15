@@ -1,0 +1,31 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "error": {
+    "connection": {
+      "code": "StreamSuspended",
+      "isSSLError": false,
+      "message": "Stream watchdog detected system suspend; aborting to retry on a fresh connection"
+    },
+    "formatted": "Connection lost while your computer was asleep",
+    "isNetworkDown": false,
+    "message": "Connection error.",
+    "noResponse": null,
+    "rateLimits": null
+  },
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "level": "error",
+  "maxRetries": 10,
+  "parentUuid": "3fb6c25c-ddc6-4c7d-b42a-3927e0cd2dd6",
+  "retryAttempt": 1,
+  "retryInMs": 563,
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "source": "request_retry",
+  "subtype": "api_error",
+  "timestamp": "2026-09-15T10:00:02.564Z",
+  "type": "system",
+  "userType": "external",
+  "uuid": "cd86afb6-6419-4b23-9b3a-6b668b48c3bc",
+  "version": "2.1.270"
+}

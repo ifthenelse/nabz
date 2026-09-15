@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_018tW58BsZ817QSwj3WHKsmw",
+        "input": {
+          "content": "import { describe, expect, it } from \"vitest\";\nimport { parseCloudflare } from \"./cloudflare.js\";\nimport { parseServerTimingHeader } from \"./serverTiming.js\";\n\ndescribe(\"parseCloudflare\", () =\u003e {\n  it(\"reports not detected when no Cloudflare headers are present\", () =\u003e {\n    const result = parseCloudflare({}, []);\n    expect(result.detected).toBe(false);\n    expect(result.edgeLocation).toBeUndefined();\n  });\n\n  it(\"detects via cf-ray and parses the PoP code out of it\", () =\u003e {\n    const result = parseCloudflare({ \"cf-ray\": \"a3b69dd28bce4c46-MXP\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.rayId).toBe(\"a3b69dd28bce4c46-MXP\");\n    expect(result.edgeLocation).toBe(\"MXP\");\n  });\n\n  it(\"detects via cf-cache-status alone\", () =\u003e {\n    const result = parseCloudflare({ \"cf-cache-status\": \"DYNAMIC\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.cacheStatus).toBe(\"DYNAMIC\");\n  });\n\n  it(\"detects via server: cloudflare\", () =\u003e {\n    const result = parseCloudflare({ server: \"cloudflare\" }, []);\n    expect(result.detected).toBe(true);\n  });\n\n  it(\"does not fabricate an edge location from a malformed cf-ray\", () =\u003e {\n    const result = parseCloudflare({ \"cf-ray\": \"not-a-ray-id-format-123\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.edgeLocation).toBeUndefined();\n  });\n\n  it(\"filters server-timing entries to cf-prefixed ones only\", () =\u003e {\n    const metrics = parseServerTimingHeader(\n      \"cfRequestDuration;dur=12, processing;dur=401, cfCacheStatus;desc=HIT\",\n    );\n    const result = parseCloudflare({ \"cf-ray\": \"abc123-MXP\" }, metrics);\n    expect(result.serverTimingEntries.map((m) =\u003e m.name)).toEqual([\n      \"cfRequestDuration\",\n      \"cfCacheStatus\",\n    ]);\n  });\n});\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/cloudflare.test.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52q3RCAv1iT3SsuE96A",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1380,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 1380,
+      "cache_read_input_tokens": 80899,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1380,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 1380,
+          "cache_read_input_tokens": 80899,
+          "input_tokens": 2,
+          "output_tokens": 869,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 869,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "9899c2c9-2446-4043-a39c-9a434c9a3c6a",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52q2rxWgE96muikr4jA",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:01:52.771Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "931417cc-5ea1-4bd5-820a-235ad3d7fcd3",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_018tW58BsZ817QSwj3WHKsmw": {
+      "content": "import { describe, expect, it } from \"vitest\";\nimport { parseCloudflare } from \"./cloudflare.js\";\nimport { parseServerTimingHeader } from \"./serverTiming.js\";\n\ndescribe(\"parseCloudflare\", () =\u003e {\n  it(\"reports not detected when no Cloudflare headers are present\", () =\u003e {\n    const result = parseCloudflare({}, []);\n    expect(result.detected).toBe(false);\n    expect(result.edgeLocation).toBeUndefined();\n  });\n\n  it(\"detects via cf-ray and parses the PoP code out of it\", () =\u003e {\n    const result = parseCloudflare({ \"cf-ray\": \"a3b69dd28bce4c46-MXP\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.rayId).toBe(\"a3b69dd28bce4c46-MXP\");\n    expect(result.edgeLocation).toBe(\"MXP\");\n  });\n\n  it(\"detects via cf-cache-status alone\", () =\u003e {\n    const result = parseCloudflare({ \"cf-cache-status\": \"DYNAMIC\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.cacheStatus).toBe(\"DYNAMIC\");\n  });\n\n  it(\"detects via server: cloudflare\", () =\u003e {\n    const result = parseCloudflare({ server: \"cloudflare\" }, []);\n    expect(result.detected).toBe(true);\n  });\n\n  it(\"does not fabricate an edge location from a malformed cf-ray\", () =\u003e {\n    const result = parseCloudflare({ \"cf-ray\": \"not-a-ray-id-format-123\" }, []);\n    expect(result.detected).toBe(true);\n    expect(result.edgeLocation).toBeUndefined();\n  });\n\n  it(\"filters server-timing entries to cf-prefixed ones only\", () =\u003e {\n    const metrics = parseServerTimingHeader(\n      \"cfRequestDuration;dur=12, processing;dur=401, cfCacheStatus;desc=HIT\",\n    );\n    const result = parseCloudflare({ \"cf-ray\": \"abc123-MXP\" }, metrics);\n    expect(result.serverTimingEntries.map((m) =\u003e m.name)).toEqual([\n      \"cfRequestDuration\",\n      \"cfCacheStatus\",\n    ]);\n  });\n});\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/cloudflare.test.ts"
+    }
+  }
+}

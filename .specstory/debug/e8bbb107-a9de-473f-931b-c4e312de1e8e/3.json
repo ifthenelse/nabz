@@ -1,0 +1,27 @@
+{
+  "attachment": {
+    "identity": {
+      "knowledgeCutoff": "January 2026",
+      "marketingName": "Sonnet 5",
+      "modelId": "claude-sonnet-5"
+    },
+    "text": "You are powered by the model named Sonnet 5. The exact model ID is claude-sonnet-5. Assistant knowledge cutoff is January 2026.",
+    "type": "model"
+  },
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "parentUuid": "e2b5b5e8-5db9-4720-8ddb-9c4babca50a9",
+  "rendered": [
+    {
+      "content": "\u003csystem-reminder\u003e\nYou are powered by the model named Sonnet 5. The exact model ID is claude-sonnet-5. Assistant knowledge cutoff is January 2026.\n\u003c/system-reminder\u003e"
+    }
+  ],
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T09:51:36.047Z",
+  "type": "attachment",
+  "userType": "external",
+  "uuid": "53e5673d-26e0-432e-b16a-81a6e1962511",
+  "version": "2.1.270"
+}

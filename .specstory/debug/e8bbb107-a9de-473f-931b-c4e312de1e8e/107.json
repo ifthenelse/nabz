@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/src/styles/theme.css (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01Buyu1RkGa64YexzA4zuD2B",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "9c0e85c6-c679-4ed8-a8da-9fe556a0e529",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "9c0e85c6-c679-4ed8-a8da-9fe556a0e529",
+  "timestamp": "2026-09-15T10:03:03.203Z",
+  "toolUseResult": {
+    "content": ":root {\n  color-scheme: light dark;\n  --bg: #ffffff;\n  --bg-subtle: #f5f5f7;\n  --border: #e0e0e3;\n  --text: #1c1c1e;\n  --text-muted: #6b6b70;\n  --accent: #0a66ff;\n  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;\n  --sans: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  --badge-observed: #2f7d32;\n  --badge-parsed: #a15c00;\n  --badge-inferred: #5c5cd6;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --bg: #1e1e1e;\n    --bg-subtle: #2a2a2c;\n    --border: #3a3a3d;\n    --text: #f0f0f2;\n    --text-muted: #9a9a9e;\n    --badge-observed: #6bd06f;\n    --badge-parsed: #e0a84a;\n    --badge-inferred: #a9a9f5;\n  }\n}\n\n* {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  font-family: var(--sans);\n  background: var(--bg);\n  color: var(--text);\n  font-size: 13px;\n}\n\nh1, h2, h3 {\n  margin: 0;\n  font-weight: 600;\n}\n\n.section {\n  border-bottom: 1px solid var(--border);\n  padding: 10px 14px;\n}\n\n.section:last-child {\n  border-bottom: none;\n}\n\n.section-title {\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  color: var(--text-muted);\n  margin-bottom: 6px;\n}\n\n.row {\n  display: flex;\n  align-items: baseline;\n  justify-content: space-between;\n  gap: 8px;\n  padding: 3px 0;\n}\n\n.row-label {\n  color: var(--text-muted);\n  white-space: nowrap;\n  flex: 0 0 auto;\n}\n\n.row-value-group {\n  display: flex;\n  align-items: baseline;\n  gap: 6px;\n  min-width: 0;\n  overflow: hidden;\n}\n\n.row-value {\n  font-family: var(--mono);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.badge {\n  font-size: 9px;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n  padding: 1px 5px;\n  border-radius: 3px;\n  border: 1px solid currentColor;\n  flex: 0 0 auto;\n}\n\n.badge-observed { color: var(--badge-observed); }\n.badge-parsed { color: var(--badge-parsed); }\n.badge-inferred { color: var(--badge-inferred); }\n\n.copy-btn {\n  border: none;\n  background: transparent;\n  color: var(--text-muted);\n  cursor: pointer;\n  font-size: 12px;\n  line-height: 1;\n  padding: 2px 4px;\n  border-radius: 3px;\n  flex: 0 0 auto;\n}\n\n.copy-btn:hover {\n  background: var(--bg-subtle);\n  color: var(--text);\n}\n\n.copy-btn.copied {\n  color: var(--badge-observed);\n}\n\n.empty-state {\n  color: var(--text-muted);\n  padding: 24px 14px;\n  text-align: center;\n}\n\ndetails.raw-headers {\n  padding: 10px 14px;\n}\n\ndetails.raw-headers summary {\n  cursor: pointer;\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n  color: var(--text-muted);\n}\n\n.raw-headers pre {\n  margin: 8px 0 0;\n  font-family: var(--mono);\n  font-size: 11px;\n  white-space: pre-wrap;\n  word-break: break-all;\n  background: var(--bg-subtle);\n  border-radius: 6px;\n  padding: 8px;\n  max-height: 220px;\n  overflow-y: auto;\n}\n\n.provider-chip {\n  display: inline-block;\n  font-weight: 600;\n}\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/src/styles/theme.css",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "b01668a1-737c-4022-9309-5a1307011908",
+  "version": "2.1.270"
+}

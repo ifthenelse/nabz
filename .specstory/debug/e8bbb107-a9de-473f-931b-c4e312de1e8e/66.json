@@ -1,0 +1,69 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "signature": "EsoCCqgBCBEYAipASe4E28SAgpPZu3gwxqxy0L1QYMgkEgqJH8yZ4VmsPBiorXp2syPNxNB/GgV1wE0Qmzj1UeyjHItzt6JQx9IjajIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1ZTk1MTZlYy0xN2Y1LTRlZmYtYmQxZC1kNmFkOTRhYzNiMDNyEE1AdPfp/9YdA8k7/bLusiyIAQGoAeiupNUGsAECEgyThbQN3oWWk+l23WUaDE6ZM/2IY90Ab0i7wSIwMCKbt5RcQYT+ROXjCe/VLDNmkljs3j18Fo0wrk7R3t6hTl4vv0lmnLpLzkIJFwq6Kk+zwphWNaJXBRfoo1tjbAeHYCNlIoC9FpcRvJzDs5kwPIWzB6joTPZWOpBfYWV/orIKegWcqg9ZGVRTJ6+7O4sQQRYtsIqnzC9eg5nucZ7cGAE=",
+        "thinking": "",
+        "type": "thinking"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52nUrKkRbWkjFYptAnq",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1309,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 1309,
+      "cache_read_input_tokens": 76440,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1309,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 1309,
+          "cache_read_input_tokens": 76440,
+          "input_tokens": 2,
+          "output_tokens": 1316,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1316,
+      "output_tokens_details": {
+        "thinking_tokens": 36
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "02f24720-2582-49a9-8542-f4bd1bcaee73",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52nU7fX6Zrn3cjDShZE",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:01:12.752Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "0a996daa-3fd2-44f9-b130-2c3aa82b9ff8",
+  "version": "2.1.270"
+}

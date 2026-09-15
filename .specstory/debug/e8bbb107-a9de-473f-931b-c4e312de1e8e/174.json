@@ -1,0 +1,69 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "signature": "EvkGCqgBCBEYAipAHtKnGLKutDLDfonRs0N9ufY+8CmpWzlf+ee+AwoeMX02qfsFkrsTqqFeL+HBenKTbspBfqQTHWnji90aJ1wdFDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1ZTk1MTZlYy0xN2Y1LTRlZmYtYmQxZC1kNmFkOTRhYzNiMDNyEE1AdPfp/9YdA8k7/bLusiyIAQGoAZuxpNUGsAECEgyBSez+VqBu30qHzOYaDJoEOBM2BsDsCZFCCiIwH2p071Zzun5V3PHKmO7Kn0kQc0YcM97CUHKoawDsY1XJTP0yEok4Jqre1BrhLjijKv0EqAZ9Rj60/7N+gnt5ACgmbD6Mb3x9cIjiibn/eiQUr5PMYHxJjRq8TiJdGrFYIEUqO2NF9t328RYClXuwZan63YDEAJtrlG5jCJr5lGDZ1UtLkSuJZ/vfhgRM4gy2LPdiPE/aTL3JEh+3A7YvXzQzaZM+S0IK+K5GXTbWZVgM8ch3xB7xKtw+vXYAlWwZ17MUpf7/kh5dwXzlEfmZ8IhvSrZLoCkWAzpJ8bV8ZapRURbc4STLt0aBQoyh7EIUc42AQVAiBAeNimwcNBE32hlxvu2Ku9uoJooT0dUxS24CBEE4KtCTWbp6hLBQgJPhiWtr8m+8Ni9F/am7iokZDA+BomTUD2+1Lsad/48Jg8PL3tCs8/U4QJ2ephsAvfMSvPZxUw3rj7fCaXMMiRDoPyuRDW+xW+l0q5i4/5Yd1zTYp4t+PbnkNfKgE3ShfzdvI6x0voZrcnyEioDs6JOF92e0zek6ZB+pukT2XdyS/j+FQOjXMrKBKbT8jC9sy12fuSuROffJyqVkFxmeBTMV447R0gKuJsxXe3BuD57yqxKqjTNN/bTAjk5rH/XUjG/lNQ+ZSlQKoioY11TGw2eSAsymYbta9cYSI4cpvy2pnVQt8rI80dVFB+IfSyKlKAp1Ipq3zItbtJ+9PoUI7hwLayz9pp9+7ux459iE/q9B0LeIN53JC/Ve113L9LVIN8lhNZFL4ZmOa/pNa/tVnU14RisllwoZLH4upNjUzOyBJcd5a9y3FiePL+aBqcIkdgdOrHFVQwqMHRfosoqZwTymeFck/TtEq2u7qjwrhM0tCJTs4xubUQWhCtruPS+1kKvgoE6QE7/9F8w5Sa1qyAuABBgB",
+        "thinking": "",
+        "type": "thinking"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf53AvdiSaMLWz24GuM2h",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 724,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 724,
+      "cache_read_input_tokens": 109833,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 724,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 724,
+          "cache_read_input_tokens": 109833,
+          "input_tokens": 2,
+          "output_tokens": 473,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 473,
+      "output_tokens_details": {
+        "thinking_tokens": 233
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "4aca1870-e362-4c5e-9b37-faaeebd892b3",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf53AuwYcBwni2tDuXYt7",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:06:19.560Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "e3fa5162-ee68-4232-9b7a-11d2e71eb0a2",
+  "version": "2.1.270"
+}

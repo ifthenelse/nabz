@@ -1,0 +1,82 @@
+{
+  "apiBlockIndex": 0,
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "effort": "high",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "container": null,
+    "content": [
+      {
+        "caller": {
+          "type": "direct"
+        },
+        "id": "toolu_01LHnSwBptgnB9hgu8BxNVJL",
+        "input": {
+          "content": "import { describe, expect, it } from \"vitest\";\nimport { buildInfrastructureInfo, normalizeHeaders } from \"./index.js\";\n\ndescribe(\"normalizeHeaders\", () =\u003e {\n  it(\"lower-cases header names but preserves values\", () =\u003e {\n    expect(normalizeHeaders({ \"Cf-Ray\": \"abc-MXP\", Server: \"cloudflare\" })).toEqual({\n      \"cf-ray\": \"abc-MXP\",\n      server: \"cloudflare\",\n    });\n  });\n});\n\ndescribe(\"buildInfrastructureInfo\", () =\u003e {\n  it(\"returns rawHeaders and empty collections for an empty response\", () =\u003e {\n    const info = buildInfrastructureInfo({});\n    expect(info.cdn).toBeUndefined();\n    expect(info.platform).toBeUndefined();\n    expect(info.timing).toBeUndefined();\n    expect(info.serverTimingRaw).toEqual([]);\n    expect(info.genericProviders).toEqual([]);\n  });\n\n  it(\"assembles a full Cloudflare + Shopify response like the README example\", () =\u003e {\n    const info = buildInfrastructureInfo({\n      server: \"cloudflare\",\n      \"cf-ray\": \"a3b69dd28bce4c46-MXP\",\n      \"cf-cache-status\": \"DYNAMIC\",\n      \"powered-by\": \"Shopify\",\n      \"x-request-id\": \"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\",\n      \"x-dc\": \"gcp-europe-west1\",\n      \"server-timing\":\n        'servedBy;desc=\"2plk\", processing;dur=401, db;dur=65, db_async;dur=99, render;dur=152, compression;dur=21.754',\n    });\n\n    expect(info.cdn).toEqual({\n      provider: \"Cloudflare\",\n      edgeLocation: \"MXP\",\n      cacheStatus: \"DYNAMIC\",\n      rayId: \"a3b69dd28bce4c46-MXP\",\n    });\n\n    expect(info.platform).toEqual({\n      provider: \"Shopify\",\n      requestId: \"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\",\n      servingNode: \"2plk\",\n      datacenters: [\"gcp-europe-west1\"],\n    });\n\n    expect(info.timing).toEqual({\n      processing: 401,\n      database: 65,\n      asyncDatabase: 99,\n      render: 152,\n      compression: 21.754,\n    });\n  });\n\n  it(\"falls back to a generic provider for the Overview when Cloudflare isn't present\", () =\u003e {\n    const info = buildInfrastructureInfo({ \"x-amz-cf-id\": \"abc123\" });\n    expect(info.cdn?.provider).toBe(\"Amazon CloudFront\");\n    expect(info.genericProviders.map((p) =\u003e p.provider)).toContain(\"Amazon CloudFront\");\n  });\n\n  it(\"never invents a value that wasn't present in headers\", () =\u003e {\n    const info = buildInfrastructureInfo({ \"cf-ray\": \"a3b69dd28bce4c46-MXP\" });\n    expect(info.cdn?.cacheStatus).toBeUndefined();\n    expect(info.platform).toBeUndefined();\n  });\n});\n",
+          "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/index.test.ts"
+        },
+        "name": "Write",
+        "type": "tool_use"
+      }
+    ],
+    "context_management": null,
+    "diagnostics": null,
+    "id": "msg_011Cf52rwGAqZRb3NXfoNNuc",
+    "model": "claude-sonnet-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 822,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 822,
+      "cache_read_input_tokens": 84605,
+      "inference_geo": "not_available",
+      "input_tokens": 2,
+      "iterations": [
+        {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 822,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 822,
+          "cache_read_input_tokens": 84605,
+          "input_tokens": 2,
+          "output_tokens": 1182,
+          "type": "message"
+        }
+      ],
+      "output_tokens": 1182,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  },
+  "parentUuid": "d4c4301f-cfcc-4742-ae1a-59fda3b90201",
+  "perTurnEffort": null,
+  "requestId": "req_011Cf52rvNLYbYqG65dQxufU",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "timestamp": "2026-09-15T10:02:20.764Z",
+  "type": "assistant",
+  "userType": "external",
+  "uuid": "eb85043e-d153-4103-9ee9-9bc567e3fcd6",
+  "version": "2.1.270",
+  "wireToolInputs": {
+    "toolu_01LHnSwBptgnB9hgu8BxNVJL": {
+      "content": "import { describe, expect, it } from \"vitest\";\nimport { buildInfrastructureInfo, normalizeHeaders } from \"./index.js\";\n\ndescribe(\"normalizeHeaders\", () =\u003e {\n  it(\"lower-cases header names but preserves values\", () =\u003e {\n    expect(normalizeHeaders({ \"Cf-Ray\": \"abc-MXP\", Server: \"cloudflare\" })).toEqual({\n      \"cf-ray\": \"abc-MXP\",\n      server: \"cloudflare\",\n    });\n  });\n});\n\ndescribe(\"buildInfrastructureInfo\", () =\u003e {\n  it(\"returns rawHeaders and empty collections for an empty response\", () =\u003e {\n    const info = buildInfrastructureInfo({});\n    expect(info.cdn).toBeUndefined();\n    expect(info.platform).toBeUndefined();\n    expect(info.timing).toBeUndefined();\n    expect(info.serverTimingRaw).toEqual([]);\n    expect(info.genericProviders).toEqual([]);\n  });\n\n  it(\"assembles a full Cloudflare + Shopify response like the README example\", () =\u003e {\n    const info = buildInfrastructureInfo({\n      server: \"cloudflare\",\n      \"cf-ray\": \"a3b69dd28bce4c46-MXP\",\n      \"cf-cache-status\": \"DYNAMIC\",\n      \"powered-by\": \"Shopify\",\n      \"x-request-id\": \"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\",\n      \"x-dc\": \"gcp-europe-west1\",\n      \"server-timing\":\n        'servedBy;desc=\"2plk\", processing;dur=401, db;dur=65, db_async;dur=99, render;dur=152, compression;dur=21.754',\n    });\n\n    expect(info.cdn).toEqual({\n      provider: \"Cloudflare\",\n      edgeLocation: \"MXP\",\n      cacheStatus: \"DYNAMIC\",\n      rayId: \"a3b69dd28bce4c46-MXP\",\n    });\n\n    expect(info.platform).toEqual({\n      provider: \"Shopify\",\n      requestId: \"491233dc-80f2-4ee9-ab11-d572587bf25c-1789464666\",\n      servingNode: \"2plk\",\n      datacenters: [\"gcp-europe-west1\"],\n    });\n\n    expect(info.timing).toEqual({\n      processing: 401,\n      database: 65,\n      asyncDatabase: 99,\n      render: 152,\n      compression: 21.754,\n    });\n  });\n\n  it(\"falls back to a generic provider for the Overview when Cloudflare isn't present\", () =\u003e {\n    const info = buildInfrastructureInfo({ \"x-amz-cf-id\": \"abc123\" });\n    expect(info.cdn?.provider).toBe(\"Amazon CloudFront\");\n    expect(info.genericProviders.map((p) =\u003e p.provider)).toContain(\"Amazon CloudFront\");\n  });\n\n  it(\"never invents a value that wasn't present in headers\", () =\u003e {\n    const info = buildInfrastructureInfo({ \"cf-ray\": \"a3b69dd28bce4c46-MXP\" });\n    expect(info.cdn?.cacheStatus).toBeUndefined();\n    expect(info.platform).toBeUndefined();\n  });\n});\n",
+      "file_path": "/Users/andreacollet/Projects/nabz/src/parsers/index.test.ts"
+    }
+  }
+}

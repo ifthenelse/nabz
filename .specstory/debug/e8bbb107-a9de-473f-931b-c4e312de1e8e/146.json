@@ -1,0 +1,51 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "The file /Users/andreacollet/Projects/nabz/src/background/service-worker.ts has been updated successfully. (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01Fpc34hXowadAjJk5mYK8a7",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "9766102a-da6d-4872-8d67-5b8c27acd64e",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "9766102a-da6d-4872-8d67-5b8c27acd64e",
+  "timestamp": "2026-09-15T10:05:14.400Z",
+  "toolUseResult": {
+    "filePath": "/Users/andreacollet/Projects/nabz/src/background/service-worker.ts",
+    "newString": "    const headers = mergeHeaderPairs(details.responseHeaders);",
+    "oldString": "    const headers = toHeaderMap(details.responseHeaders);",
+    "originalFile": "import { buildInfrastructureInfo } from \"../parsers/index.js\";\nimport type { Capture } from \"../parsers/types.js\";\nimport { clearCapture, saveCapture } from \"../utils/storage.js\";\nimport { mergeHeaderPairs } from \"../utils/headers.js\";\n\nchrome.webRequest.onResponseStarted.addListener(\n  (details) =\u003e {\n    // onResponseStarted only fires for the final, non-redirect response, so\n    // this is always the document that actually rendered - not an\n    // intermediate 3xx hop.\n    if (details.type !== \"main_frame\" || details.tabId \u003c 0) return;\n\n    const headers = toHeaderMap(details.responseHeaders);\n    const info = buildInfrastructureInfo(headers);\n\n    const capture: Capture = {\n      meta: {\n        url: details.url,\n        tabId: details.tabId,\n        timestamp: Date.now(),\n        statusCode: details.statusCode,\n      },\n      info,\n    };\n\n    void saveCapture(details.tabId, capture);\n  },\n  { urls: [\"http://*/*\", \"https://*/*\"], types: [\"main_frame\"] },\n  [\"responseHeaders\"],\n);\n\nchrome.tabs.onRemoved.addListener((tabId) =\u003e {\n  void clearCapture(tabId);\n});\n",
+    "replaceAll": false,
+    "structuredPatch": [
+      {
+        "lines": [
+          "     // intermediate 3xx hop.",
+          "     if (details.type !== \"main_frame\" || details.tabId \u003c 0) return;",
+          " ",
+          "-    const headers = toHeaderMap(details.responseHeaders);",
+          "+    const headers = mergeHeaderPairs(details.responseHeaders);",
+          "     const info = buildInfrastructureInfo(headers);",
+          " ",
+          "     const capture: Capture = {"
+        ],
+        "newLines": 7,
+        "newStart": 10,
+        "oldLines": 7,
+        "oldStart": 10
+      }
+    ],
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "07a00f5e-4be4-4b07-815c-3a6fa152d9a9",
+  "version": "2.1.270"
+}

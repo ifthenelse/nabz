@@ -1,0 +1,33 @@
+{
+  "cwd": "/Users/andreacollet/Projects/nabz",
+  "entrypoint": "claude-vscode",
+  "gitBranch": "HEAD",
+  "isSidechain": false,
+  "message": {
+    "content": [
+      {
+        "content": "File created successfully at: /Users/andreacollet/Projects/nabz/src/utils/storage.ts (file state is current in your context — no need to Read it back)",
+        "tool_use_id": "toolu_01Ki1au9HkJpDvzHmQ6qsc33",
+        "type": "tool_result"
+      }
+    ],
+    "role": "user"
+  },
+  "parentUuid": "bda743b0-d27d-4220-8fb3-5255b474faf1",
+  "promptId": "bcc8be99-f081-450b-a58e-56c6a7f26b1d",
+  "sessionId": "e8bbb107-a9de-473f-931b-c4e312de1e8e",
+  "sourceToolAssistantUUID": "bda743b0-d27d-4220-8fb3-5255b474faf1",
+  "timestamp": "2026-09-15T10:02:29.725Z",
+  "toolUseResult": {
+    "content": "import type { Capture } from \"../parsers/types.js\";\n\n/**\n * Thin wrapper around chrome.storage.session for sharing the latest capture\n * per tab between the background service worker (writer) and the popup\n * (reader). session storage is in-memory, per-browser-session, and never\n * touches disk or leaves the device - it survives service worker restarts,\n * which plain module-level variables would not.\n */\n\nfunction key(tabId: number): string {\n  return `capture:${tabId}`;\n}\n\nexport async function saveCapture(tabId: number, capture: Capture): Promise\u003cvoid\u003e {\n  await chrome.storage.session.set({ [key(tabId)]: capture });\n}\n\nexport async function loadCapture(tabId: number): Promise\u003cCapture | undefined\u003e {\n  const result = await chrome.storage.session.get(key(tabId));\n  return result[key(tabId)] as Capture | undefined;\n}\n\nexport async function clearCapture(tabId: number): Promise\u003cvoid\u003e {\n  await chrome.storage.session.remove(key(tabId));\n}\n",
+    "filePath": "/Users/andreacollet/Projects/nabz/src/utils/storage.ts",
+    "originalFile": null,
+    "structuredPatch": [],
+    "type": "create",
+    "userModified": false
+  },
+  "type": "user",
+  "userType": "external",
+  "uuid": "6b21b3ec-cc62-4892-af55-5439189a5b18",
+  "version": "2.1.270"
+}
